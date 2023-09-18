@@ -19,4 +19,17 @@ public class SinglePalindromesTests
         // Assert
         Assert.Equal(expectedReturn, currentReturn);
     }
+
+    [Fact]
+    public void CheckValidPalindromeNumbers()
+    {
+        // Arrange
+        uint currentNumber = 121;
+
+        // Act
+        var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
+
+        // Assert
+        Assert.True(palindromNumber);
+    }
 }
