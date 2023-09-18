@@ -11,7 +11,7 @@ public class SinglePalindromesTests
     {
         // Arrange
         uint currentNumber = 123;
-        short[] expectedReturn = { 3, 2, 1 };
+        short[] expectedReturn = { 1, 2, 3};
 
         // Act
         var currentReturn = SinglePalindromes.GetDigits(currentNumber);

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PalindromicLib;
 
@@ -24,6 +25,8 @@ public static class SinglePalindromes
             remainder = remainder / 10;
             digits.Add((short)currentDigit);
         }
+
+        digits.Reverse();
 
         return digits.ToArray();
     }
