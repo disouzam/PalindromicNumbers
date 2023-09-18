@@ -54,9 +54,9 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "[{mainProjectName}] Clean",
+                "[PalindromicLib] Clean",
                 "[{testProjectName}] Clean",
-                "[{mainProjectName}] Remove bin and obj folders",
+                "[PalindromicLib] Remove bin and obj folders",
                 "[{testProjectName}] Remove bin and obj folders",
             ],
             "problemMatcher": "$msCompile"
@@ -77,7 +77,7 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "[{mainProjectName}] Build",
+                "[PalindromicLib] Build",
                 "[{testProjectName}] Build",
             ],
             "problemMatcher": "$msCompile"
@@ -122,7 +122,7 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "[GIT] Get the last commit hash (in current branch)",
-                "[{mainProjectName}] Build, Test, Generate and Open Report"
+                "[PalindromicLib] Build, Test, Generate and Open Report"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -142,14 +142,14 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "[{mainProjectName}] Open Tests Report",
+                "[PalindromicLib] Open Tests Report",
             ],
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ CLEAN
-        // Task ------ [{mainProjectName}] Clean
+        // Task ------ [PalindromicLib] Clean
         {
-            "label": "[{mainProjectName}] Clean",
+            "label": "[PalindromicLib] Clean",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -163,7 +163,7 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\{mainProjectName}\\{mainProjectName}.vbproj"
+                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.vbproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -188,9 +188,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ REMOVE BIN AND OBJ FOLDERS
-        // Task ------ [{mainProjectName}] Remove bin and obj folders
+        // Task ------ [PalindromicLib] Remove bin and obj folders
         {
-            "label": "[{mainProjectName}] Remove bin and obj folders",
+            "label": "[PalindromicLib] Remove bin and obj folders",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -200,7 +200,7 @@
                 "clear": false
             },
             "hide": false,
-            "command": "cd .vscode\\BatchScripts && {mainProjectName}-remove-bin-obj.bat",
+            "command": "cd .vscode\\BatchScripts && PalindromicLib-remove-bin-obj.bat",
             "type": "shell",
             "args": [],
             "problemMatcher": "$msCompile"
@@ -223,9 +223,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ BUILD AND TEST
-        // Task ------ [{mainProjectName}] Build, Test, Generate and Open Report
+        // Task ------ [PalindromicLib] Build, Test, Generate and Open Report
         {
-            "label": "[{mainProjectName}] Build, Test, Generate and Open Report",
+            "label": "[PalindromicLib] Build, Test, Generate and Open Report",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -235,22 +235,22 @@
                 "clear": false
             },
             "hide": false,
-            "command": "echo Finished task \"[{mainProjectName}] Build, Test, Generate and Open Report\"",
+            "command": "echo Finished task \"[PalindromicLib] Build, Test, Generate and Open Report\"",
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "[GIT] Get the last commit hash (in current branch)",
                 "[{testProjectName}] Build",
-                "[{mainProjectName}] Run Tests",
-                "[{mainProjectName}] Generate Tests Report",
-                "[{mainProjectName}] Open Tests Report"
+                "[PalindromicLib] Run Tests",
+                "[PalindromicLib] Generate Tests Report",
+                "[PalindromicLib] Open Tests Report"
             ],
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ BUILD TASKS
-        // Task ------ [{mainProjectName}] Build
+        // Task ------ [PalindromicLib] Build
         {
-            "label": "[{mainProjectName}] Build",
+            "label": "[PalindromicLib] Build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -264,7 +264,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}\\{mainProjectName}\\{mainProjectName}.vbproj",
+                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.vbproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -318,7 +318,7 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "[{mainProjectName}] Publish project",
+            "label": "[PalindromicLib] Publish project",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -332,7 +332,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\{mainProjectName}\\{mainProjectName}.vbproj",
+                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.vbproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -388,9 +388,9 @@
         },
         // TASK GROUP ------ TESTS TASKS
         // Cobertura: https://docs.microsoft.com/pt-br/dotnet/core/testing/unit-testing-code-coverage?tabs=windows
-        // Task ------ [{mainProjectName}] Run Tests
+        // Task ------ [PalindromicLib] Run Tests
         {
-            "label": "[{mainProjectName}] Run Tests",
+            "label": "[PalindromicLib] Run Tests",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -411,16 +411,16 @@
                 "-p:CoverletOutputFormat=opencover",
                 "-p:CoverletOutput=${workspaceFolder}\\{testProjectName}\\coverage.opencover.xml",
                 "-p:ThresholdType=Branch",
-                "-p:Threshold=${config:{mainProjectName}.branchCoverage.threshold}",
-                "-p:Exclude=\"[{otherProjects}]*,[{otherProjects2}]*,[{mainProjectName}.otherNamespace]*\"",
+                "-p:Threshold=${config:PalindromicLib.branchCoverage.threshold}",
+                "-p:Exclude=\"[{otherProjects}]*,[{otherProjects2}]*,[PalindromicLib.otherNamespace]*\"",
                 "--no-build"
             ],
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ GENERATE TESTS REPORTS
-        // Task ------ [{mainProjectName}] Generate Tests Report
+        // Task ------ [PalindromicLib] Generate Tests Report
         {
-            "label": "[{mainProjectName}] Generate Tests Report",
+            "label": "[PalindromicLib] Generate Tests Report",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -437,15 +437,15 @@
                 "-targetdir:\"${workspaceFolder}\\{testProjectName}\\coveragereport\"",
                 "-reporttypes:Html",
                 "-historydir:\"${workspaceFolder}\\{testProjectName}\\coveragehistory\"",
-                "-Title:\"{mainProjectName} - Test report\"",
+                "-Title:\"PalindromicLib - Test report\"",
                 "-Tag:${input:last.commit.hash}"
             ],
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ OPEN TESTS REPORT
-        // Task ------ [{mainProjectName}] Open Tests Report
+        // Task ------ [PalindromicLib] Open Tests Report
         {
-            "label": "[{mainProjectName}] Open Tests Report",
+            "label": "[PalindromicLib] Open Tests Report",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
