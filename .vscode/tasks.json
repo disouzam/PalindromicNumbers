@@ -1,0 +1,478 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // TASK GROUP ------ GIT TASKS
+        // Task ------ [GIT] Get the last commit hash (in current branch)
+        {
+            "label": "[GIT] Get the last commit hash (in current branch)",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "git log --pretty=format:%h  -1",
+            "type": "shell",
+            "detail": "",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "[dotnet] Check outdated packages in all projects under this repo",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet list package --outdated --interactive",
+            "type": "shell",
+            "detail": "",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ COMPLETE REPOSITORY / ALL PROJECTS
+        // Task ------ [REPOSITORY-LEVEL] Clean and Remove bin and obj folders
+        {
+            "label": "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Clean and Remove bin and obj folders\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[{mainProjectName}] Clean",
+                "[{testProjectName}] Clean",
+                "[{mainProjectName}] Remove bin and obj folders",
+                "[{testProjectName}] Remove bin and obj folders",
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Build All Projects
+        {
+            "label": "[REPOSITORY-LEVEL] Build All Projects",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build All Projects\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[{mainProjectName}] Build",
+                "[{testProjectName}] Build",
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Projects and Test
+        {
+            "label": "[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
+                "[REPOSITORY-LEVEL] Build All Projects",
+                "[REPOSITORY-LEVEL] Run all tests and generate reports"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Run all tests and generate reports
+        {
+            "label": "[REPOSITORY-LEVEL] Run all tests and generate reports",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"Run all tests and generate reports\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[{mainProjectName}] Build, Test, Generate and Open Report"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Open reports tasks
+        {
+            "label": "[REPOSITORY-LEVEL] Open all reports",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"Open all reports\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[{mainProjectName}] Open Tests Report",
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ CLEAN
+        // Task ------ [{mainProjectName}] Clean
+        {
+            "label": "[{mainProjectName}] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\{mainProjectName}\\{mainProjectName}.vbproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [{testProjectName}] Clean
+        {
+            "label": "[{testProjectName}] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ REMOVE BIN AND OBJ FOLDERS
+        // Task ------ [{mainProjectName}] Remove bin and obj folders
+        {
+            "label": "[{mainProjectName}] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && {mainProjectName}-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [{testProjectName}] Remove bin and obj folders
+        {
+            "label": "[{testProjectName}] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && {testProjectName}-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ BUILD AND TEST
+        // Task ------ [{mainProjectName}] Build, Test, Generate and Open Report
+        {
+            "label": "[{mainProjectName}] Build, Test, Generate and Open Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[{mainProjectName}] Build, Test, Generate and Open Report\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[{testProjectName}] Build",
+                "[{mainProjectName}] Run Tests",
+                "[{mainProjectName}] Generate Tests Report",
+                "[{mainProjectName}] Open Tests Report"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ BUILD TASKS
+        // Task ------ [{mainProjectName}] Build
+        {
+            "label": "[{mainProjectName}] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\{mainProjectName}\\{mainProjectName}.vbproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [{testProjectName}] Build
+        {
+            "label": "[{testProjectName}] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ PUBLISH TASKS
+        // Task ------ [{testProjectName}] Publish project
+        {
+            "label": "[{testProjectName}] Publish project",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "[{mainProjectName}] Publish project",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\{mainProjectName}\\{mainProjectName}.vbproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ WATCH TASKS
+        // [{testProjectName}] Watch
+        {
+            "label": "[{testProjectName}] Watch",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ RUN TASKS
+        // [{consoleAppProject}] Run
+        {
+            "label": "[{consoleAppProject}] Run",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}\\{consoleAppProject}\\{consoleAppProject}.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ TESTS TASKS
+        // Cobertura: https://docs.microsoft.com/pt-br/dotnet/core/testing/unit-testing-code-coverage?tabs=windows
+        // Task ------ [{mainProjectName}] Run Tests
+        {
+            "label": "[{mainProjectName}] Run Tests",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "-v:Minimal",
+                "-c:${config:configuration}",
+                "-p:CollectCoverage=true",
+                "-p:CoverletOutputFormat=opencover",
+                "-p:CoverletOutput=${workspaceFolder}\\{testProjectName}\\coverage.opencover.xml",
+                "-p:ThresholdType=Branch",
+                "-p:Threshold=${config:{mainProjectName}.branchCoverage.threshold}",
+                "-p:Exclude=\"[{otherProjects}]*,[{otherProjects2}]*,[{mainProjectName}.otherNamespace]*\"",
+                "--no-build"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ GENERATE TESTS REPORTS
+        // Task ------ [{mainProjectName}] Generate Tests Report
+        {
+            "label": "[{mainProjectName}] Generate Tests Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "reportgenerator",
+            "type": "process",
+            "args": [
+                "-reports:\"${workspaceFolder}\\{testProjectName}\\coverage.opencover.xml\"",
+                "-targetdir:\"${workspaceFolder}\\{testProjectName}\\coveragereport\"",
+                "-reporttypes:Html",
+                "-historydir:\"${workspaceFolder}\\{testProjectName}\\coveragehistory\"",
+                "-Title:\"{mainProjectName} - Test report\"",
+                "-Tag:${input:last.commit.hash}"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ OPEN TESTS REPORT
+        // Task ------ [{mainProjectName}] Open Tests Report
+        {
+            "label": "[{mainProjectName}] Open Tests Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "start",
+            "type": "shell",
+            "windows": {
+                "command": "start"
+            },
+            "args": [
+                "chrome",
+                "${workspaceFolder}\\{testProjectName}\\coveragereport\\index.html"
+            ],
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "last.commit.hash",
+            "description": "Enter the last commit hash",
+            "default": "00000000"
+        }
+    ]
+}
