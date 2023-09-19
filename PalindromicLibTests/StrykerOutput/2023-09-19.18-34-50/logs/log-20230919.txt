@@ -1,0 +1,163 @@
+2023-09-19T18:34:50.6634069-03:00  [INF] Logging enabled at level Debug (3cce0059)
+2023-09-19T18:34:51.2096746-03:00  [INF] Stryker will use a max of 2 parallel testsessions. (b15d750f)
+2023-09-19T18:34:57.3526168-03:00  [DBG] Stryker started with options: StrykerOptions { MsBuildPath: null, DevMode: False, ProjectPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests", IsSolutionContext: False, WorkingDirectory: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests", OutputPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\StrykerOutput\2023-09-19.18-34-50", ReportPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\StrykerOutput\2023-09-19.18-34-50\reports", ReportFileName: "stryker-partial-report", SolutionPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicLib.sln", TargetFramework: "net6.0", LogOptions: LogOptions { LogToFile: True, LogLevel: Debug }, MutationLevel: Complete, Thresholds: Thresholds { High: 80, Low: 70, Break: 50 }, AdditionalTimeout: 30000, LanguageVersion: CSharp10, Concurrency: 2, SourceProjectName: "PalindromicLib\PalindromicLib.csproj", TestProjects: ["D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj"], TestCaseFilter: "", Reporters: [Progress, Html, ClearText], WithBaseline: False, BaselineProvider: Disk, AzureFileStorageUrl: "", AzureFileStorageSas: "", DashboardUrl: "https://dashboard.stryker-mutator.io", DashboardApiKey: null, Since: True, SinceTarget: "main", DiffIgnoreChanges: [], FallbackVersion: "master", ModuleName: "", ReportTypeToOpen: Html, Mutate: [FilePattern { Glob: Glob { Tokens: [WildcardDirectoryToken { TrailingPathSeparator: PathSeparatorToken { Value: \ }, LeadingPathSeparator: null }, WildcardToken {  }] }, IsExclude: False, TextSpans: [TextSpan { Start: 0, End: 2147483647, Length: 2147483647, IsEmpty: False }] }], IgnoredMethods: [], ExcludedMutations: [], ExcludedLinqExpressions: [], OptimizationMode: CoverageBasedTest, ProjectName: "", ProjectVersion: "", BreakOnInitialTestFailure: True } (fac41b16)
+2023-09-19T18:34:57.4778614-03:00  [INF] Analysis starting. (7076a364)
+2023-09-19T18:34:57.4881194-03:00  [DBG] Using "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj" as test project (00c34121)
+2023-09-19T18:34:57.5168408-03:00  [DBG] Analyzing project file "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj" (59a92a9a)
+2023-09-19T18:35:08.3151133-03:00  [DBG] Using "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj" as project under test (b012007c)
+2023-09-19T18:35:08.3177411-03:00  [DBG] Analyzing project file "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj" (59a92a9a)
+2023-09-19T18:35:18.8659775-03:00  [DBG] Skipping auto-generated code file: "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" (1e1226c3)
+2023-09-19T18:35:18.8892919-03:00  [DBG] Skipping auto-generated code file: "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\obj\Debug\net6.0\PalindromicLib.AssemblyInfo.cs" (1e1226c3)
+2023-09-19T18:35:19.2007189-03:00  [INF] Found project "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj" to mutate. (2d705ac3)
+2023-09-19T18:35:19.5211168-03:00  [INF] Analysis complete. (f039f576)
+2023-09-19T18:35:19.5449739-03:00  [INF] Building test project "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj" (1/1) (e2c15ab4)
+2023-09-19T18:35:19.7467553-03:00  [DBG] Started initial build using "dotnet build" (a4e1a5e2)
+2023-09-19T18:35:19.7642345-03:00  [DBG] Initial build using path: "D:\GitHubRepos\PalindromicNumbers\PalindromicLib.sln" (657c8664)
+2023-09-19T18:36:00.2691405-03:00  [DBG] Initial build successful (61599426)
+2023-09-19T18:36:02.7069117-03:00  [DBG] VsTest zip was copied to: "C:\Users\Dickson\AppData\Local\Temp\22qpqyr4.beg\.vstest\vstest.zip" (8e340ff1)
+2023-09-19T18:36:09.6357322-03:00  [DBG] VsTest zip was unzipped to: "C:\Users\Dickson\AppData\Local\Temp\22qpqyr4.beg\.vstest" (679800d3)
+2023-09-19T18:36:09.7919629-03:00  [DBG] Using vstest from deployed vstest package (6132c740)
+2023-09-19T18:36:09.9702831-03:00  [DBG] Using vstest.console: "WINDOWS" for OS "C:\Users\Dickson\AppData\Local\Temp\22qpqyr4.beg\.vstest\tools\net462\vstest.console.exe" (38dfd549)
+2023-09-19T18:36:34.1327574-03:00  [INF] Number of tests found: 50 for project "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj". Initial test run started. (a32fa62b)
+2023-09-19T18:36:44.9073683-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-19T18:36:44.9138412-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-19T18:36:45.6649135-03:00  [DBG] Initial test run output: "". (e3b6099a)
+2023-09-19T18:36:46.0230313-03:00  [DBG] Mutating D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs (c5cda00a)
+2023-09-19T18:36:46.3343064-03:00  [DBG] Mutant 0 created "{
+        var normalOrderDigits = GetDigits(number);
+        var numberOfDigits = normalOrderDigits.Count();
+
+        short[] reverseOrderDigits = new short[normalOrderDigits.Length];
+        normalOrderDigits.CopyTo(reverseOrderDigits, 0);
+
+        reverseOrderDigits = reverseOrderDigits.Reverse().ToArray();
+
+        var i = 0;
+        var foundDifferentDigit = false;
+
+        while(i < numberOfDigits && !foundDifferentDigit)
+        {
+            var nextDigit = normalOrderDigits[i];
+            var reverseDigit = reverseOrderDigits[i];
+
+            if(nextDigit != reverseDigit)
+            {
+                foundDifferentDigit = true;
+            }
+
+            i++;
+        }
+
+        return !foundDifferentDigit;
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-19T18:36:46.4420498-03:00  [DBG] Mutant 1 created "normalOrderDigits.Count()" -> "normalOrderDigits.Sum()" using "Stryker.Core.Mutators.LinqMutator" (310d25d3)
+2023-09-19T18:36:46.5704340-03:00  [DBG] Mutant 2 created "normalOrderDigits.CopyTo(reverseOrderDigits, 0);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-19T18:36:46.9506784-03:00  [DBG] Mutant 3 created "reverseOrderDigits.Reverse().ToArray()" -> "reverseOrderDigits.AsEnumerable().ToArray()" using "Stryker.Core.Mutators.LinqMutator" (310d25d3)
+2023-09-19T18:36:46.9591859-03:00  [DBG] Mutant 4 created "false" -> "true" using "Stryker.Core.Mutators.BooleanMutator" (310d25d3)
+2023-09-19T18:36:47.0183307-03:00  [DBG] Mutant 5 created "i < numberOfDigits && !foundDifferentDigit" -> "i < numberOfDigits || !foundDifferentDigit" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.0332585-03:00  [DBG] Mutant 6 created "i < numberOfDigits && !foundDifferentDigit" -> "!(i < numberOfDigits && !foundDifferentDigit)" using "Stryker.Core.Mutators.NegateConditionMutator" (310d25d3)
+2023-09-19T18:36:47.0560092-03:00  [DBG] Mutant 7 created "i < numberOfDigits" -> "i > numberOfDigits" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.0751089-03:00  [DBG] Mutant 8 created "i < numberOfDigits" -> "i <= numberOfDigits" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.0930830-03:00  [DBG] Mutant 9 created "!foundDifferentDigit" -> "foundDifferentDigit" using "Stryker.Core.Mutators.PrefixUnaryMutator" (310d25d3)
+2023-09-19T18:36:47.1095227-03:00  [DBG] Mutant 10 created "{
+            var nextDigit = normalOrderDigits[i];
+            var reverseDigit = reverseOrderDigits[i];
+
+            if(nextDigit != reverseDigit)
+            {
+                foundDifferentDigit = true;
+            }
+
+            i++;
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-19T18:36:47.1239844-03:00  [DBG] Mutant 11 created "nextDigit != reverseDigit" -> "nextDigit == reverseDigit" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.1466600-03:00  [DBG] Mutant 12 created "{
+                foundDifferentDigit = true;
+            }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-19T18:36:47.1871522-03:00  [DBG] Mutant 13 created "true" -> "false" using "Stryker.Core.Mutators.BooleanMutator" (310d25d3)
+2023-09-19T18:36:47.2121553-03:00  [DBG] Mutant 14 created "i++;" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-19T18:36:47.2280980-03:00  [DBG] Mutant 15 created "i++" -> "i--" using "Stryker.Core.Mutators.PostfixUnaryMutator" (310d25d3)
+2023-09-19T18:36:47.2419053-03:00  [DBG] Mutant 16 created "!foundDifferentDigit" -> "foundDifferentDigit" using "Stryker.Core.Mutators.PrefixUnaryMutator" (310d25d3)
+2023-09-19T18:36:47.3268960-03:00  [DBG] Mutant 17 created "{
+        var digits = new List<short>();
+        var remainder = number;
+        uint currentDigit;
+
+        while(remainder > 0)
+        {
+            currentDigit = remainder % 10;
+            remainder = remainder / 10;
+            digits.Add((short)currentDigit);
+        }
+
+        digits.Reverse();
+
+        return digits.ToArray();
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-19T18:36:47.3642667-03:00  [DBG] Mutant 18 created "remainder > 0" -> "remainder < 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.3739602-03:00  [DBG] Mutant 19 created "remainder > 0" -> "remainder >= 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.3906043-03:00  [DBG] Mutant 20 created "remainder > 0" -> "!(remainder > 0)" using "Stryker.Core.Mutators.NegateConditionMutator" (310d25d3)
+2023-09-19T18:36:47.4444822-03:00  [DBG] Mutant 21 created "{
+            currentDigit = remainder % 10;
+            remainder = remainder / 10;
+            digits.Add((short)currentDigit);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-19T18:36:47.4603326-03:00  [DBG] Mutant 22 created "remainder % 10" -> "remainder * 10" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.4723907-03:00  [DBG] Mutant 23 created "remainder / 10" -> "remainder * 10" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-19T18:36:47.5109262-03:00  [DBG] Mutant 24 created "digits.Add((short)currentDigit);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-19T18:36:47.5468859-03:00  [DBG] Mutant 25 created "digits.Reverse();" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-19T18:36:47.5561453-03:00  [DBG] Mutant 26 created "digits.Reverse()" -> "digits.AsEnumerable()" using "Stryker.Core.Mutators.LinqMutator" (310d25d3)
+2023-09-19T18:36:47.5868710-03:00  [DBG] 27 mutants created (edec1dee)
+2023-09-19T18:36:52.8998727-03:00  [DBG] Trying compilation for the "first" time. (f2d91e8b)
+2023-09-19T18:37:03.3262362-03:00  [DBG] Compilation failed (5193a3b0)
+2023-09-19T18:37:04.9826932-03:00  [DBG] "\"short[]\" não contém uma definição para \"Sum\" e a melhor sobrecarga do método de extensão \"Enumerable.Sum(IEnumerable<decimal>)\" requer um receptor do tipo \"System.Collections.Generic.IEnumerable<decimal>\"", "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs" (36070c24)
+2023-09-19T18:37:05.1806481-03:00  [DBG] "Tipo de expressão condicional não pode ser determinado porque não há conversão implícita entre \"System.Collections.Generic.IEnumerable<short>\" e \"void\"", "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs" (36070c24)
+2023-09-19T18:37:05.4287719-03:00  [DBG] "Somente as expressões de atribuição, chamada, incremento, diminuição, espera e novo objeto podem ser utilizadas como uma instrução", "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs" (36070c24)
+2023-09-19T18:37:05.6301828-03:00  [DBG] RollBacking mutations from D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs. (d39bc5be)
+2023-09-19T18:37:05.7056868-03:00  [DBG] Found mutant 1 of type '"Linq"' controlled by '"ConditionalInstrumentationEngine"'. (ea1665cd)
+2023-09-19T18:37:05.7696178-03:00  [DBG] Found mutant 26 of type '"Linq"' controlled by '"ConditionalInstrumentationEngine"'. (ea1665cd)
+2023-09-19T18:37:06.1118293-03:00  [DBG] Found mutant 26 of type '"Linq"' controlled by '"ConditionalInstrumentationEngine"'. (ea1665cd)
+2023-09-19T18:37:06.3511341-03:00  [DBG] Trying compilation for the "second" time. (f2d91e8b)
+2023-09-19T18:37:07.4592617-03:00  [DBG] Compilation successful (17bf6fae)
+2023-09-19T18:37:07.4671879-03:00  [DBG] Injected the mutated assembly file into "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\bin\Debug\net6.0\PalindromicLib.dll" (92a3e3c8)
+2023-09-19T18:37:07.4988957-03:00  [INF] 27 mutants created (edec1dee)
+2023-09-19T18:37:07.5719694-03:00  [INF] Capture mutant coverage using 'CoverageBasedTest' mode. (133c36d4)
+2023-09-19T18:37:17.1978482-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-19T18:37:17.2003921-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-19T18:37:17.5194230-03:00  [DBG] Mutant 0 will be tested against (46) tests. (c50cd18b)
+2023-09-19T18:37:17.6638997-03:00  [DBG] Mutant 1 will be tested against (0) tests. (ad551661)
+2023-09-19T18:37:17.7041958-03:00  [DBG] Mutant 2 will be tested against (46) tests. (4c54754e)
+2023-09-19T18:37:17.7474744-03:00  [DBG] Mutant 3 will be tested against (46) tests. (811542b9)
+2023-09-19T18:37:17.8217056-03:00  [DBG] Mutant 4 will be tested against (46) tests. (0296fd1a)
+2023-09-19T18:37:18.0886297-03:00  [DBG] Mutant 5 will be tested against (46) tests. (aee9c05d)
+2023-09-19T18:37:18.0957764-03:00  [DBG] Mutant 6 will be tested against (46) tests. (7aa06461)
+2023-09-19T18:37:18.1007991-03:00  [DBG] Mutant 7 will be tested against (46) tests. (2103f66e)
+2023-09-19T18:37:18.1205278-03:00  [DBG] Mutant 8 will be tested against (46) tests. (37ba7abc)
+2023-09-19T18:37:18.1522886-03:00  [DBG] Mutant 9 will be tested against (46) tests. (db393bcc)
+2023-09-19T18:37:18.1675085-03:00  [DBG] Mutant 10 will be tested against (46) tests. (dd06d727)
+2023-09-19T18:37:18.1789416-03:00  [DBG] Mutant 11 will be tested against (46) tests. (b9d3190c)
+2023-09-19T18:37:18.1866947-03:00  [DBG] Mutant 12 will be tested against (12) tests. (ea79c5fc)
+2023-09-19T18:37:18.2843334-03:00  [DBG] Mutant 13 will be tested against (12) tests. (cf8565a1)
+2023-09-19T18:37:18.2872716-03:00  [DBG] Mutant 14 will be tested against (46) tests. (ce6266b1)
+2023-09-19T18:37:18.3153538-03:00  [DBG] Mutant 15 will be tested against (46) tests. (d5d5d802)
+2023-09-19T18:37:18.3205956-03:00  [DBG] Mutant 16 will be tested against (46) tests. (6c656978)
+2023-09-19T18:37:18.3362305-03:00  [DBG] Mutant 17 will be tested against (50) tests. (6e8d39d5)
+2023-09-19T18:37:18.3538111-03:00  [DBG] Mutant 18 will be tested against (50) tests. (3560d01d)
+2023-09-19T18:37:18.3666641-03:00  [DBG] Mutant 19 will be tested against (50) tests. (f89e282d)
+2023-09-19T18:37:18.3774829-03:00  [DBG] Mutant 20 will be tested against (50) tests. (bdd854cc)
+2023-09-19T18:37:18.3808840-03:00  [DBG] Mutant 21 will be tested against (50) tests. (d089dec8)
+2023-09-19T18:37:18.3842938-03:00  [DBG] Mutant 22 will be tested against (50) tests. (c7536da0)
+2023-09-19T18:37:18.3907252-03:00  [DBG] Mutant 23 will be tested against (50) tests. (94ed240e)
+2023-09-19T18:37:18.3952591-03:00  [DBG] Mutant 24 will be tested against (50) tests. (dd67cbdd)
+2023-09-19T18:37:18.4003983-03:00  [DBG] Mutant 25 will be tested against (50) tests. (e0f301a0)
+2023-09-19T18:37:18.4217536-03:00  [DBG] Mutant 26 will be tested against (0) tests. (c61cd97f)
+2023-09-19T18:37:18.4958104-03:00  [DBG] Looking for branch matching "main" (d7e261c8)
+2023-09-19T18:37:18.5827505-03:00  [DBG] Matched with upstream canonical name "refs/heads/main" (2b1a95cc)
+2023-09-19T18:37:18.8161102-03:00  [INF] 0 files changed (8364427c)
+2023-09-19T18:37:26.9850107-03:00  [INF] 2     mutants got status CompileError. Reason: "Mutant caused compile errors" (3d197dbf)
+2023-09-19T18:37:30.3772570-03:00  [INF] 25    mutants got status Ignored.      Reason: "Mutant not changed compared to target commit" (55cfec49)
+2023-09-19T18:37:31.4047425-03:00  [INF] 27    total mutants are skipped for the above mentioned reasons (506ffda1)
+2023-09-19T18:37:31.7434290-03:00  [INF] 0     total mutants will be tested (f78142b2)
+2023-09-19T18:37:31.8120104-03:00  [WRN] It looks like all mutants with tests were ignored. Try a re-run with less ignoring! (f9974927)
+2023-09-19T18:37:31.8374277-03:00  [WRN] It looks like all mutants resulted in compile errors. Mutants sure are strange! (22ff4a10)
+2023-09-19T18:37:33.4010345-03:00  [INF] Time Elapsed 00:02:42.3313285 (f4427d77)
