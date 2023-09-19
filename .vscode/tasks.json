@@ -55,9 +55,9 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "[PalindromicLib] Clean",
-                "[{testProjectName}] Clean",
+                "[PalindromicLibTests] Clean",
                 "[PalindromicLib] Remove bin and obj folders",
-                "[{testProjectName}] Remove bin and obj folders",
+                "[PalindromicLibTests] Remove bin and obj folders",
             ],
             "problemMatcher": "$msCompile"
         },
@@ -78,7 +78,7 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "[PalindromicLib] Build",
-                "[{testProjectName}] Build",
+                "[PalindromicLibTests] Build",
             ],
             "problemMatcher": "$msCompile"
         },
@@ -167,9 +167,9 @@
             ],
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [{testProjectName}] Clean
+        // Task ------ [PalindromicLibTests] Clean
         {
-            "label": "[{testProjectName}] Clean",
+            "label": "[PalindromicLibTests] Clean",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -183,7 +183,7 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj"
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -205,9 +205,9 @@
             "args": [],
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [{testProjectName}] Remove bin and obj folders
+        // Task ------ [PalindromicLibTests] Remove bin and obj folders
         {
-            "label": "[{testProjectName}] Remove bin and obj folders",
+            "label": "[PalindromicLibTests] Remove bin and obj folders",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -217,7 +217,7 @@
                 "clear": false
             },
             "hide": false,
-            "command": "cd .vscode\\BatchScripts && {testProjectName}-remove-bin-obj.bat",
+            "command": "cd .vscode\\BatchScripts && PalindromicLibTests-remove-bin-obj.bat",
             "type": "shell",
             "args": [],
             "problemMatcher": "$msCompile"
@@ -240,7 +240,7 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "[GIT] Get the last commit hash (in current branch)",
-                "[{testProjectName}] Build",
+                "[PalindromicLibTests] Build",
                 "[PalindromicLib] Run Tests",
                 "[PalindromicLib] Generate Tests Report",
                 "[PalindromicLib] Open Tests Report"
@@ -271,9 +271,9 @@
             ],
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [{testProjectName}] Build
+        // Task ------ [PalindromicLibTests] Build
         {
-            "label": "[{testProjectName}] Build",
+            "label": "[PalindromicLibTests] Build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -287,7 +287,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -295,9 +295,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ PUBLISH TASKS
-        // Task ------ [{testProjectName}] Publish project
+        // Task ------ [PalindromicLibTests] Publish project
         {
-            "label": "[{testProjectName}] Publish project",
+            "label": "[PalindromicLibTests] Publish project",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -311,7 +311,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -339,9 +339,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ WATCH TASKS
-        // [{testProjectName}] Watch
+        // [PalindromicLibTests] Watch
         {
-            "label": "[{testProjectName}] Watch",
+            "label": "[PalindromicLibTests] Watch",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -356,7 +356,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -404,12 +404,12 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}\\{testProjectName}\\{testProjectName}.csproj",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
                 "-v:Minimal",
                 "-c:${config:configuration}",
                 "-p:CollectCoverage=true",
                 "-p:CoverletOutputFormat=opencover",
-                "-p:CoverletOutput=${workspaceFolder}\\{testProjectName}\\coverage.opencover.xml",
+                "-p:CoverletOutput=${workspaceFolder}\\PalindromicLibTests\\coverage.opencover.xml",
                 "-p:ThresholdType=Branch",
                 "-p:Threshold=${config:PalindromicLib.branchCoverage.threshold}",
                 "-p:Exclude=\"[{otherProjects}]*,[{otherProjects2}]*,[PalindromicLib.otherNamespace]*\"",
@@ -433,10 +433,10 @@
             "command": "reportgenerator",
             "type": "process",
             "args": [
-                "-reports:\"${workspaceFolder}\\{testProjectName}\\coverage.opencover.xml\"",
-                "-targetdir:\"${workspaceFolder}\\{testProjectName}\\coveragereport\"",
+                "-reports:\"${workspaceFolder}\\PalindromicLibTests\\coverage.opencover.xml\"",
+                "-targetdir:\"${workspaceFolder}\\PalindromicLibTests\\coveragereport\"",
                 "-reporttypes:Html",
-                "-historydir:\"${workspaceFolder}\\{testProjectName}\\coveragehistory\"",
+                "-historydir:\"${workspaceFolder}\\PalindromicLibTests\\coveragehistory\"",
                 "-Title:\"PalindromicLib - Test report\"",
                 "-Tag:${input:last.commit.hash}"
             ],
@@ -462,7 +462,7 @@
             },
             "args": [
                 "chrome",
-                "${workspaceFolder}\\{testProjectName}\\coveragereport\\index.html"
+                "${workspaceFolder}\\PalindromicLibTests\\coveragereport\\index.html"
             ],
             "problemMatcher": []
         }
