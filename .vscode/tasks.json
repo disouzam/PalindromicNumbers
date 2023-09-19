@@ -492,6 +492,30 @@
             },
             "problemMatcher": "$msCompile"
         },
+        // Task ------ [PalindromicLibTests] Run partial Stryker.NET analysis
+        {
+            "label": "[PalindromicLibTests] Run partial Stryker.NET analysis",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "stryker",
+                "--config-file:stryker-partial-config.json",
+                "--open-report"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\PalindromicLibTests"
+            },
+            "problemMatcher": "$msCompile"
+        },
         // TASK GROUP ------ Solution-based tasks
         // Task ------ [Solution] Build
         {
