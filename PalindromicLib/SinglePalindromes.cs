@@ -36,6 +36,7 @@ public static class SinglePalindromes
 
         return !foundDifferentDigit;
     }
+
     public static short[] GetDigits(uint number)
     {
         var digits = new List<short>();

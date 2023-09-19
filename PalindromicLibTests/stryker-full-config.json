@@ -1,0 +1,37 @@
+{
+    "stryker-config": {
+        "additional-timeout": 30000,
+        "baseline": {},
+        "concurrency": 2,
+        "since": {},
+        "coverage-analysis": "perTest",
+        "disable-bail": false,
+        "disable-mix-mutants": false,
+        "ignore-methods": [],
+        "ignore-mutations": [],
+        "language-version": "Csharp10",
+        "mutate": [],
+        "mutation-level": "Complete",
+        "project": "PalindromicLib\\PalindromicLib.csproj",
+        "project-info": {},
+        "report-file-name": "stryker-full-report.html",
+        "reporters": [
+            "progress",
+            "html",
+            "cleartext"
+        ],
+        "solution": "..\\PalindromicLib.sln",
+        "target-framework": "net6.0",
+        "test-case-filter": "",
+        "test-projects": [
+            "PalindromicLibTests.csproj"
+        ],
+        "thresholds": {
+            "high": 80,
+            "low": 70,
+            "break": 50
+        },
+        "verbosity": "debug",
+        "break-on-initial-test-failure": true
+    }
+}
