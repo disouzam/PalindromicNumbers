@@ -14,12 +14,18 @@ public class SinglePalindromesTests
         // Arrange
         uint currentNumber = 123;
         short[] expectedReturn = { 1, 2, 3};
+        var arrayLength = expectedReturn.Length;
 
         // Act
         var currentReturn = SinglePalindromes.GetDigits(currentNumber);
 
         // Assert
         currentReturn.Should().BeEquivalentTo(expectedReturn);
+
+        for ( var i = 0; i < arrayLength; i++)
+        {
+            currentReturn[i].Should().Be(expectedReturn[i]);
+        }
     }
 
     [Theory]
