@@ -484,6 +484,7 @@
             "type": "process",
             "args": [
                 "stryker",
+                "--config-file:stryker-config.json",
                 "--open-report"
             ],
             "options": {
