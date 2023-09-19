@@ -96,4 +96,17 @@ public class SinglePalindromesTests
         // Assert
         palindromNumber.Should().BeFalse();
     }
+
+    [Fact]
+    public void CheckTheNextLowestPalindrome()
+    {
+        // Arrange
+        uint? nextLowestPalindrome = null;
+
+        // Act
+        nextLowestPalindrome = SinglePalindromes.GetLowestNextPalindrome(0);
+
+        // Assert
+        nextLowestPalindrome.Should().Be(1);
+    }
 }
