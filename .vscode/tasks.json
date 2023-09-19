@@ -466,6 +466,46 @@
                 "${workspaceFolder}\\PalindromicLibTests\\coveragereport\\index.html"
             ],
             "problemMatcher": []
+        },
+        // TASK GROUP ------ Solution-based tasks
+        // Task ------ [Solution] Build
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PalindromicLib.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [Solution] Publish
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PalindromicLib.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [Solution] Watch
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/PalindromicLib.sln"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ],
     "inputs": [
