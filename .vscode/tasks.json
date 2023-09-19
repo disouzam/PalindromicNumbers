@@ -483,7 +483,8 @@
             "command": "dotnet",
             "type": "process",
             "args": [
-                "stryker"
+                "stryker",
+                "--open-report"
             ],
             "options": {
                 "cwd": "${workspaceFolder}\\PalindromicLibTests"
