@@ -1,3 +1,5 @@
+using FluentAssertions;
+
 using PalindromicLib;
 
 using Xunit;
@@ -17,7 +19,7 @@ public class SinglePalindromesTests
         var currentReturn = SinglePalindromes.GetDigits(currentNumber);
 
         // Assert
-        Assert.Equal(expectedReturn, currentReturn);
+        currentReturn.Should().BeEquivalentTo(expectedReturn);
     }
 
     [Fact]
@@ -30,7 +32,7 @@ public class SinglePalindromesTests
         var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
 
         // Assert
-        Assert.True(palindromNumber);
+        palindromNumber.Should().BeTrue();
     }
 
     [Fact]
@@ -43,6 +45,6 @@ public class SinglePalindromesTests
         var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
 
         // Assert
-        Assert.False(palindromNumber);
+        palindromNumber.Should().BeFalse();
     }
 }
