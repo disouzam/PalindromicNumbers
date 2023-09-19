@@ -32,4 +32,17 @@ public class SinglePalindromesTests
         // Assert
         Assert.True(palindromNumber);
     }
+
+    [Fact]
+    public void CheckInvalidPalindromeNumbers()
+    {
+        // Arrange
+        uint currentNumber = 123;
+
+        // Act
+        var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
+
+        // Assert
+        Assert.False(palindromNumber);
+    }
 }
