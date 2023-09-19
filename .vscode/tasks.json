@@ -430,9 +430,10 @@
                 "clear": false
             },
             "hide": false,
-            "command": "reportgenerator",
+            "command": "dotnet",
             "type": "process",
             "args": [
+                "reportgenerator",
                 "-reports:\"${workspaceFolder}\\PalindromicLibTests\\coverage.opencover.xml\"",
                 "-targetdir:\"${workspaceFolder}\\PalindromicLibTests\\coveragereport\"",
                 "-reporttypes:Html",
