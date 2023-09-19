@@ -1,0 +1,519 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // TASK GROUP ------ GIT TASKS
+        // Task ------ [GIT] Get the last commit hash (in current branch)
+        {
+            "label": "[GIT] Get the last commit hash (in current branch)",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "git log --pretty=format:%h  -1",
+            "type": "shell",
+            "detail": "",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "[dotnet] Check outdated packages in all projects under this repo",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet list package --outdated --interactive",
+            "type": "shell",
+            "detail": "",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ COMPLETE REPOSITORY / ALL PROJECTS
+        // Task ------ [REPOSITORY-LEVEL] Clean and Remove bin and obj folders
+        {
+            "label": "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Clean and Remove bin and obj folders\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[PalindromicLib] Clean",
+                "[PalindromicLibTests] Clean",
+                "[PalindromicLib] Remove bin and obj folders",
+                "[PalindromicLibTests] Remove bin and obj folders",
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Build All Projects
+        {
+            "label": "[REPOSITORY-LEVEL] Build All Projects",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build All Projects\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[PalindromicLib] Build",
+                "[PalindromicLibTests] Build",
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Projects and Test
+        {
+            "label": "[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
+                "[REPOSITORY-LEVEL] Build All Projects",
+                "[REPOSITORY-LEVEL] Run all tests and generate reports"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Run all tests and generate reports
+        {
+            "label": "[REPOSITORY-LEVEL] Run all tests and generate reports",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"Run all tests and generate reports\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[PalindromicLib] Build, Test, Generate and Open Report"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Open reports tasks
+        {
+            "label": "[REPOSITORY-LEVEL] Open all reports",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"Open all reports\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[PalindromicLib] Open Tests Report",
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ CLEAN
+        // Task ------ [PalindromicLib] Clean
+        {
+            "label": "[PalindromicLib] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.vbproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [PalindromicLibTests] Clean
+        {
+            "label": "[PalindromicLibTests] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ REMOVE BIN AND OBJ FOLDERS
+        // Task ------ [PalindromicLib] Remove bin and obj folders
+        {
+            "label": "[PalindromicLib] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && PalindromicLib-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [PalindromicLibTests] Remove bin and obj folders
+        {
+            "label": "[PalindromicLibTests] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && PalindromicLibTests-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ BUILD AND TEST
+        // Task ------ [PalindromicLib] Build, Test, Generate and Open Report
+        {
+            "label": "[PalindromicLib] Build, Test, Generate and Open Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[PalindromicLib] Build, Test, Generate and Open Report\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[PalindromicLibTests] Build",
+                "[PalindromicLib] Run Tests",
+                "[PalindromicLib] Generate Tests Report",
+                "[PalindromicLib] Open Tests Report"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ BUILD TASKS
+        // Task ------ [PalindromicLib] Build
+        {
+            "label": "[PalindromicLib] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.vbproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [PalindromicLibTests] Build
+        {
+            "label": "[PalindromicLibTests] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ PUBLISH TASKS
+        // Task ------ [PalindromicLibTests] Publish project
+        {
+            "label": "[PalindromicLibTests] Publish project",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "[PalindromicLib] Publish project",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.vbproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ WATCH TASKS
+        // [PalindromicLibTests] Watch
+        {
+            "label": "[PalindromicLibTests] Watch",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ RUN TASKS
+        // [{consoleAppProject}] Run
+        {
+            "label": "[{consoleAppProject}] Run",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}\\{consoleAppProject}\\{consoleAppProject}.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ TESTS TASKS
+        // Cobertura: https://docs.microsoft.com/pt-br/dotnet/core/testing/unit-testing-code-coverage?tabs=windows
+        // Task ------ [PalindromicLib] Run Tests
+        {
+            "label": "[PalindromicLib] Run Tests",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "-v:Minimal",
+                "-c:${config:configuration}",
+                "-p:CollectCoverage=true",
+                "-p:CoverletOutputFormat=opencover",
+                "-p:CoverletOutput=${workspaceFolder}\\PalindromicLibTests\\coverage.opencover.xml",
+                "-p:ThresholdType=Branch",
+                "-p:Threshold=${config:PalindromicLib.branchCoverage.threshold}",
+                "-p:Exclude=\"[{otherProjects}]*,[{otherProjects2}]*,[PalindromicLib.otherNamespace]*\"",
+                "--no-build"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ GENERATE TESTS REPORTS
+        // Task ------ [PalindromicLib] Generate Tests Report
+        {
+            "label": "[PalindromicLib] Generate Tests Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "reportgenerator",
+                "-reports:\"${workspaceFolder}\\PalindromicLibTests\\coverage.opencover.xml\"",
+                "-targetdir:\"${workspaceFolder}\\PalindromicLibTests\\coveragereport\"",
+                "-reporttypes:Html",
+                "-historydir:\"${workspaceFolder}\\PalindromicLibTests\\coveragehistory\"",
+                "-Title:\"PalindromicLib - Test report\"",
+                "-Tag:${input:last.commit.hash}"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ OPEN TESTS REPORT
+        // Task ------ [PalindromicLib] Open Tests Report
+        {
+            "label": "[PalindromicLib] Open Tests Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "start",
+            "type": "shell",
+            "windows": {
+                "command": "start"
+            },
+            "args": [
+                "chrome",
+                "${workspaceFolder}\\PalindromicLibTests\\coveragereport\\index.html"
+            ],
+            "problemMatcher": []
+        },
+        // TASK GROUP ------ Solution-based tasks
+        // Task ------ [Solution] Build
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PalindromicLib.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [Solution] Publish
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PalindromicLib.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [Solution] Watch
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/PalindromicLib.sln"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "last.commit.hash",
+            "description": "Enter the last commit hash",
+            "default": "00000000"
+        }
+    ]
+}
