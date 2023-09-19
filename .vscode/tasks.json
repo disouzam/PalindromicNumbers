@@ -485,6 +485,7 @@
             "args": [
                 "stryker",
                 "--config-file:stryker-full-config.json",
+                "--log-to-file",
                 "--open-report"
             ],
             "options": {
@@ -509,6 +510,7 @@
             "args": [
                 "stryker",
                 "--config-file:stryker-partial-config.json",
+                "--log-to-file",
                 "--open-report"
             ],
             "options": {

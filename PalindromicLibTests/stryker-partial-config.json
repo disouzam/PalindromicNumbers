@@ -2,7 +2,11 @@
     "stryker-config": {
         "additional-timeout": 30000,
         "baseline": {},
-        "concurrency": 4,
+        "since": {
+            "enabled": true,
+            "target": "main"
+        },
+        "concurrency": 2,
         "coverage-analysis": "perTest",
         "disable-bail": false,
         "disable-mix-mutants": false,
@@ -19,7 +23,6 @@
             "html",
             "cleartext"
         ],
-        "since": {},
         "solution": "..\\PalindromicLib.sln",
         "target-framework": "net6.0",
         "test-case-filter": "",
@@ -31,6 +34,7 @@
             "low": 70,
             "break": 50
         },
-        "verbosity": "debug"
+        "verbosity": "debug",
+        "break-on-initial-test-failure": true
     }
 }
