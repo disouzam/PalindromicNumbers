@@ -8,12 +8,14 @@ namespace PalindromicLibTests;
 
 public class SinglePalindromesTests
 {
-    [Fact]
-    public void GetDigitsShouldReturnAnArrayOfDigits()
+    [Theory]
+    [InlineData(102, new short[]{1, 0, 2})]
+    [InlineData(100, new short[]{1, 0, 0})]
+    [InlineData(120, new short[]{1, 2, 0})]
+    [InlineData(123, new short[]{1, 2, 3})]
+    public void GetDigitsShouldReturnAnArrayOfDigits(uint currentNumber, short[] expectedReturn)
     {
         // Arrange
-        uint currentNumber = 123;
-        short[] expectedReturn = { 1, 2, 3};
         var arrayLength = expectedReturn.Length;
 
         // Act
