@@ -39,7 +39,16 @@ public static class SinglePalindromes
 
     public static uint GetLowestNextPalindrome(uint number)
     {
-        return 0;
+        var isNextPalindrome = false;
+        var i = number;
+
+        while(!isNextPalindrome)
+        {
+            i++;
+            isNextPalindrome = IsPalindrome(i);
+        }
+
+        return i;
     }
 
     public static short[] GetDigits(uint number)
