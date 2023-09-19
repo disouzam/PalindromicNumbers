@@ -22,12 +22,10 @@ public class SinglePalindromesTests
         currentReturn.Should().BeEquivalentTo(expectedReturn);
     }
 
-    [Fact]
-    public void CheckValidPalindromeNumbers()
+    [Theory]
+    [InlineData(121)]
+    public void CheckValidPalindromeNumbers(uint currentNumber)
     {
-        // Arrange
-        uint currentNumber = 121;
-
         // Act
         var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
 
@@ -35,12 +33,10 @@ public class SinglePalindromesTests
         palindromNumber.Should().BeTrue();
     }
 
-    [Fact]
-    public void CheckInvalidPalindromeNumbers()
+    [Theory]
+    [InlineData(123)]
+    public void CheckInvalidPalindromeNumbers(uint currentNumber)
     {
-        // Arrange
-        uint currentNumber = 123;
-
         // Act
         var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
 
