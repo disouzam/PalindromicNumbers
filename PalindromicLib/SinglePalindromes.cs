@@ -37,6 +37,20 @@ public static class SinglePalindromes
         return !foundDifferentDigit;
     }
 
+    public static uint GetLowestNextPalindrome(uint number)
+    {
+        var isNextPalindrome = false;
+        var i = number;
+
+        while(!isNextPalindrome)
+        {
+            i++;
+            isNextPalindrome = IsPalindrome(i);
+        }
+
+        return i;
+    }
+
     public static short[] GetDigits(uint number)
     {
         var digits = new List<short>();

@@ -23,7 +23,7 @@
             "html",
             "cleartext"
         ],
-        "solution": "..\\PalindromicLib.sln",
+        "solution": "..\\PalindromicNumbers.sln",
         "target-framework": "net6.0",
         "test-case-filter": "",
         "test-projects": [
