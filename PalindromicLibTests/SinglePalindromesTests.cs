@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using FluentAssertions;
 
 using PalindromicLib;
@@ -128,5 +130,20 @@ public class SinglePalindromesTests
 
         // Assert
         nextLowestPalindrome.Should().Be(nextPalindrome);
+    }
+
+    [Theory]
+    [InlineData(99, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u})]
+    [InlineData(100, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u})]
+    [InlineData(101, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u})]
+    public void CheckListOfPalindromesInARange(uint maxNumber, uint[] expectedList)
+    {
+        // Arrange
+
+        // Act
+        var currentList = SinglePalindromes.GetAllPalindromesInARange(maxNumber);
+
+        // Assert
+        currentList.Should().BeEquivalentTo(expectedList);
     }
 }

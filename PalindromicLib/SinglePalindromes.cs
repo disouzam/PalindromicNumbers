@@ -51,6 +51,21 @@ public static class SinglePalindromes
         return i;
     }
 
+    public static List<uint> GetAllPalindromesInARange(uint maxNumber)
+    {
+        var palindromes = new List<uint>();
+
+        var i = 0u;
+
+        while (i < maxNumber)
+        {
+            i = GetLowestNextPalindrome(i);
+            palindromes.Add(i);
+        }
+
+        return palindromes;
+    }
+
     public static short[] GetDigits(uint number)
     {
         var digits = new List<short>();
