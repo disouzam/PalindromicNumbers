@@ -1,0 +1,451 @@
+2023-09-20T12:24:24.7282541-03:00  [INF] Logging enabled at level Debug (3cce0059)
+2023-09-20T12:24:25.3953408-03:00  [INF] Stryker will use a max of 2 parallel testsessions. (b15d750f)
+2023-09-20T12:24:25.9233868-03:00  [DBG] Stryker started with options: StrykerOptions { MsBuildPath: null, DevMode: False, ProjectPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests", IsSolutionContext: False, WorkingDirectory: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests", OutputPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\StrykerOutput\2023-09-20.12-24-24", ReportPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\StrykerOutput\2023-09-20.12-24-24\reports", ReportFileName: "stryker-full-report", SolutionPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicNumbers.sln", TargetFramework: "net6.0", LogOptions: LogOptions { LogToFile: True, LogLevel: Debug }, MutationLevel: Complete, Thresholds: Thresholds { High: 80, Low: 70, Break: 50 }, AdditionalTimeout: 30000, LanguageVersion: CSharp10, Concurrency: 2, SourceProjectName: "PalindromicLib\PalindromicLib.csproj", TestProjects: ["D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj"], TestCaseFilter: "", Reporters: [Progress, Html, ClearText], WithBaseline: False, BaselineProvider: Disk, AzureFileStorageUrl: "", AzureFileStorageSas: "", DashboardUrl: "https://dashboard.stryker-mutator.io", DashboardApiKey: null, Since: False, SinceTarget: "master", DiffIgnoreChanges: [], FallbackVersion: "master", ModuleName: "", ReportTypeToOpen: Html, Mutate: [FilePattern { Glob: Glob { Tokens: [WildcardDirectoryToken { TrailingPathSeparator: PathSeparatorToken { Value: \ }, LeadingPathSeparator: null }, WildcardToken {  }] }, IsExclude: False, TextSpans: [TextSpan { Start: 0, End: 2147483647, Length: 2147483647, IsEmpty: False }] }], IgnoredMethods: [], ExcludedMutations: [], ExcludedLinqExpressions: [], OptimizationMode: CoverageBasedTest, ProjectName: "", ProjectVersion: "", BreakOnInitialTestFailure: True } (fac41b16)
+2023-09-20T12:24:25.9710725-03:00  [INF] Analysis starting. (7076a364)
+2023-09-20T12:24:25.9790066-03:00  [DBG] Using "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj" as test project (00c34121)
+2023-09-20T12:24:25.9820211-03:00  [DBG] Analyzing project file "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj" (59a92a9a)
+2023-09-20T12:24:31.3222440-03:00  [DBG] Using "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj" as project under test (b012007c)
+2023-09-20T12:24:31.3329419-03:00  [DBG] Analyzing project file "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj" (59a92a9a)
+2023-09-20T12:24:38.2175326-03:00  [DBG] Skipping auto-generated code file: "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" (1e1226c3)
+2023-09-20T12:24:38.6140957-03:00  [DBG] Skipping auto-generated code file: "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\obj\Debug\net6.0\PalindromicLib.AssemblyInfo.cs" (1e1226c3)
+2023-09-20T12:24:38.6386711-03:00  [INF] Found project "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj" to mutate. (2d705ac3)
+2023-09-20T12:24:38.6877385-03:00  [INF] Analysis complete. (f039f576)
+2023-09-20T12:24:38.7034752-03:00  [INF] Building test project "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\PalindromicLibTests.csproj" (1/1) (e2c15ab4)
+2023-09-20T12:24:38.8095141-03:00  [DBG] Started initial build using "dotnet build" (a4e1a5e2)
+2023-09-20T12:24:38.8118049-03:00  [DBG] Initial build using path: "D:\GitHubRepos\PalindromicNumbers\PalindromicNumbers.sln" (657c8664)
+2023-09-20T12:24:54.4996487-03:00  [DBG] Initial build successful (61599426)
+2023-09-20T12:24:54.9868798-03:00  [DBG] VsTest zip was copied to: "C:\Users\Dickson\AppData\Local\Temp\kuabhyff.w1b\.vstest\vstest.zip" (8e340ff1)
+2023-09-20T12:25:04.1664268-03:00  [DBG] VsTest zip was unzipped to: "C:\Users\Dickson\AppData\Local\Temp\kuabhyff.w1b\.vstest" (679800d3)
+2023-09-20T12:25:04.2093317-03:00  [DBG] Using vstest from deployed vstest package (6132c740)
+2023-09-20T12:25:04.2211763-03:00  [DBG] Using vstest.console: "WINDOWS" for OS "C:\Users\Dickson\AppData\Local\Temp\kuabhyff.w1b\.vstest\tools\net462\vstest.console.exe" (38dfd549)
+2023-09-20T12:25:13.0716864-03:00  [INF] Number of tests found: 79 for project "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\PalindromicLib.csproj". Initial test run started. (a32fa62b)
+2023-09-20T12:25:16.3219673-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:25:16.3280130-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:25:16.3445025-03:00  [DBG] Initial test run output: "". (e3b6099a)
+2023-09-20T12:25:16.5047458-03:00  [DBG] Mutating D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs (c5cda00a)
+2023-09-20T12:25:16.8057119-03:00  [DBG] Mutant 0 created "{
+        if(number == 0)
+        {
+            return false;
+        }
+
+        var normalOrderDigits = GetDigits(number);
+        var numberOfDigits = normalOrderDigits.Count();
+
+        short[] reverseOrderDigits = new short[normalOrderDigits.Length];
+        normalOrderDigits.CopyTo(reverseOrderDigits, 0);
+
+        reverseOrderDigits = reverseOrderDigits.Reverse().ToArray();
+
+        var i = 0;
+        var foundDifferentDigit = false;
+
+        while(i < numberOfDigits && !foundDifferentDigit)
+        {
+            var nextDigit = normalOrderDigits[i];
+            var reverseDigit = reverseOrderDigits[i];
+
+            if(nextDigit != reverseDigit)
+            {
+                foundDifferentDigit = true;
+            }
+
+            i++;
+        }
+
+        return !foundDifferentDigit;
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:16.8783008-03:00  [DBG] Mutant 1 created "number == 0" -> "number != 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:16.9481259-03:00  [DBG] Mutant 2 created "{
+            return false;
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:16.9553088-03:00  [DBG] Mutant 3 created "false" -> "true" using "Stryker.Core.Mutators.BooleanMutator" (310d25d3)
+2023-09-20T12:25:17.0210594-03:00  [DBG] Mutant 4 created "normalOrderDigits.Count()" -> "normalOrderDigits.Sum()" using "Stryker.Core.Mutators.LinqMutator" (310d25d3)
+2023-09-20T12:25:17.0723071-03:00  [DBG] Mutant 5 created "normalOrderDigits.CopyTo(reverseOrderDigits, 0);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:17.1211135-03:00  [DBG] Mutant 6 created "reverseOrderDigits.Reverse().ToArray()" -> "reverseOrderDigits.AsEnumerable().ToArray()" using "Stryker.Core.Mutators.LinqMutator" (310d25d3)
+2023-09-20T12:25:17.1449054-03:00  [DBG] Mutant 7 created "false" -> "true" using "Stryker.Core.Mutators.BooleanMutator" (310d25d3)
+2023-09-20T12:25:17.1629700-03:00  [DBG] Mutant 8 created "i < numberOfDigits && !foundDifferentDigit" -> "i < numberOfDigits || !foundDifferentDigit" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:17.2033500-03:00  [DBG] Mutant 9 created "i < numberOfDigits && !foundDifferentDigit" -> "!(i < numberOfDigits && !foundDifferentDigit)" using "Stryker.Core.Mutators.NegateConditionMutator" (310d25d3)
+2023-09-20T12:25:17.2470183-03:00  [DBG] Mutant 10 created "i < numberOfDigits" -> "i > numberOfDigits" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:17.2550769-03:00  [DBG] Mutant 11 created "i < numberOfDigits" -> "i <= numberOfDigits" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:17.2711582-03:00  [DBG] Mutant 12 created "!foundDifferentDigit" -> "foundDifferentDigit" using "Stryker.Core.Mutators.PrefixUnaryMutator" (310d25d3)
+2023-09-20T12:25:17.2977597-03:00  [DBG] Mutant 13 created "{
+            var nextDigit = normalOrderDigits[i];
+            var reverseDigit = reverseOrderDigits[i];
+
+            if(nextDigit != reverseDigit)
+            {
+                foundDifferentDigit = true;
+            }
+
+            i++;
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:17.3136926-03:00  [DBG] Mutant 14 created "nextDigit != reverseDigit" -> "nextDigit == reverseDigit" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:17.3295273-03:00  [DBG] Mutant 15 created "{
+                foundDifferentDigit = true;
+            }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:17.3555580-03:00  [DBG] Mutant 16 created "true" -> "false" using "Stryker.Core.Mutators.BooleanMutator" (310d25d3)
+2023-09-20T12:25:17.3715839-03:00  [DBG] Mutant 17 created "i++;" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:17.3871120-03:00  [DBG] Mutant 18 created "i++" -> "i--" using "Stryker.Core.Mutators.PostfixUnaryMutator" (310d25d3)
+2023-09-20T12:25:17.4085779-03:00  [DBG] Mutant 19 created "!foundDifferentDigit" -> "foundDifferentDigit" using "Stryker.Core.Mutators.PrefixUnaryMutator" (310d25d3)
+2023-09-20T12:25:17.4845115-03:00  [DBG] Mutant 20 created "{
+        var isNextPalindrome = false;
+        var i = number;
+
+        while(!isNextPalindrome)
+        {
+            i++;
+            isNextPalindrome = IsPalindrome(i);
+        }
+
+        return i;
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:17.6528235-03:00  [DBG] Mutant 21 created "false" -> "true" using "Stryker.Core.Mutators.BooleanMutator" (310d25d3)
+2023-09-20T12:25:17.6951751-03:00  [DBG] Mutant 22 created "!isNextPalindrome" -> "isNextPalindrome" using "Stryker.Core.Mutators.PrefixUnaryMutator" (310d25d3)
+2023-09-20T12:25:17.8202506-03:00  [DBG] Mutant 23 created "{
+            i++;
+            isNextPalindrome = IsPalindrome(i);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:17.9386913-03:00  [DBG] Mutant 24 created "i++;" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:18.0119170-03:00  [DBG] Mutant 25 created "i++" -> "i--" using "Stryker.Core.Mutators.PostfixUnaryMutator" (310d25d3)
+2023-09-20T12:25:18.0492967-03:00  [DBG] Mutant 26 created "{
+        var palindromes = new List<uint>();
+
+        var i = 1u;
+
+        do
+        {
+            palindromes.Add(i);
+            i = GetLowestNextPalindrome(i);
+        } while(i < maxNumber);
+
+        palindromes.Add(i);
+
+        var numberOfItems = palindromes.Count;
+
+        if(palindromes[numberOfItems - 1] > maxNumber)
+        {
+            palindromes.RemoveAt(numberOfItems - 1);
+        }
+
+        return palindromes;
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:18.0726934-03:00  [DBG] Mutant 27 created "{
+            palindromes.Add(i);
+            i = GetLowestNextPalindrome(i);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:18.1123792-03:00  [DBG] Mutant 28 created "palindromes.Add(i);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:18.1323060-03:00  [DBG] Mutant 29 created "i < maxNumber" -> "i > maxNumber" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.1535915-03:00  [DBG] Mutant 30 created "i < maxNumber" -> "i <= maxNumber" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.1772312-03:00  [DBG] Mutant 31 created "palindromes.Add(i);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:18.2374486-03:00  [DBG] Mutant 32 created "palindromes[numberOfItems - 1] > maxNumber" -> "palindromes[numberOfItems - 1] < maxNumber" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.2522369-03:00  [DBG] Mutant 33 created "palindromes[numberOfItems - 1] > maxNumber" -> "palindromes[numberOfItems - 1] >= maxNumber" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.2600796-03:00  [DBG] Mutant 34 created "palindromes[numberOfItems - 1] > maxNumber" -> "!(palindromes[numberOfItems - 1] > maxNumber)" using "Stryker.Core.Mutators.NegateConditionMutator" (310d25d3)
+2023-09-20T12:25:18.2696469-03:00  [DBG] Mutant 35 created "numberOfItems - 1" -> "numberOfItems + 1" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.2830985-03:00  [DBG] Mutant 36 created "{
+            palindromes.RemoveAt(numberOfItems - 1);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:18.2889712-03:00  [DBG] Mutant 37 created "palindromes.RemoveAt(numberOfItems - 1);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:18.2974410-03:00  [DBG] Mutant 38 created "numberOfItems - 1" -> "numberOfItems + 1" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.3168710-03:00  [DBG] Mutant 39 created "{
+        var digits = new List<short>();
+        var remainder = number;
+        uint currentDigit;
+
+        while(remainder > 0)
+        {
+            currentDigit = remainder % 10;
+            remainder = remainder / 10;
+            digits.Add((short)currentDigit);
+        }
+
+        digits.Reverse();
+
+        return digits.ToArray();
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:18.3275574-03:00  [DBG] Mutant 40 created "remainder > 0" -> "remainder < 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.3324744-03:00  [DBG] Mutant 41 created "remainder > 0" -> "remainder >= 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.3375993-03:00  [DBG] Mutant 42 created "remainder > 0" -> "!(remainder > 0)" using "Stryker.Core.Mutators.NegateConditionMutator" (310d25d3)
+2023-09-20T12:25:18.3474269-03:00  [DBG] Mutant 43 created "{
+            currentDigit = remainder % 10;
+            remainder = remainder / 10;
+            digits.Add((short)currentDigit);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-20T12:25:18.3528867-03:00  [DBG] Mutant 44 created "remainder % 10" -> "remainder * 10" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.3608185-03:00  [DBG] Mutant 45 created "remainder / 10" -> "remainder * 10" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-20T12:25:18.3663765-03:00  [DBG] Mutant 46 created "digits.Add((short)currentDigit);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:18.3804194-03:00  [DBG] Mutant 47 created "digits.Reverse();" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-20T12:25:18.3861873-03:00  [DBG] Mutant 48 created "digits.Reverse()" -> "digits.AsEnumerable()" using "Stryker.Core.Mutators.LinqMutator" (310d25d3)
+2023-09-20T12:25:18.3973199-03:00  [DBG] 49 mutants created (edec1dee)
+2023-09-20T12:25:21.3762844-03:00  [DBG] Trying compilation for the "first" time. (f2d91e8b)
+2023-09-20T12:25:25.0516351-03:00  [DBG] Compilation failed (5193a3b0)
+2023-09-20T12:25:25.1735192-03:00  [DBG] "\"short[]\" não contém uma definição para \"Sum\" e a melhor sobrecarga do método de extensão \"Enumerable.Sum(IEnumerable<decimal>)\" requer um receptor do tipo \"System.Collections.Generic.IEnumerable<decimal>\"", "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs" (36070c24)
+2023-09-20T12:25:25.1777137-03:00  [DBG] "Tipo de expressão condicional não pode ser determinado porque não há conversão implícita entre \"System.Collections.Generic.IEnumerable<short>\" e \"void\"", "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs" (36070c24)
+2023-09-20T12:25:25.1808554-03:00  [DBG] "Somente as expressões de atribuição, chamada, incremento, diminuição, espera e novo objeto podem ser utilizadas como uma instrução", "D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs" (36070c24)
+2023-09-20T12:25:25.1907336-03:00  [DBG] RollBacking mutations from D:\GitHubRepos\PalindromicNumbers\PalindromicLib\SinglePalindromes.cs. (d39bc5be)
+2023-09-20T12:25:25.2097936-03:00  [DBG] Found mutant 4 of type '"Linq"' controlled by '"ConditionalInstrumentationEngine"'. (ea1665cd)
+2023-09-20T12:25:25.2145911-03:00  [DBG] Found mutant 48 of type '"Linq"' controlled by '"ConditionalInstrumentationEngine"'. (ea1665cd)
+2023-09-20T12:25:25.2266389-03:00  [DBG] Found mutant 48 of type '"Linq"' controlled by '"ConditionalInstrumentationEngine"'. (ea1665cd)
+2023-09-20T12:25:25.3496433-03:00  [DBG] Trying compilation for the "second" time. (f2d91e8b)
+2023-09-20T12:25:25.8479078-03:00  [DBG] Compilation successful (17bf6fae)
+2023-09-20T12:25:25.8538886-03:00  [DBG] Injected the mutated assembly file into "D:\GitHubRepos\PalindromicNumbers\PalindromicLibTests\bin\Debug\net6.0\PalindromicLib.dll" (92a3e3c8)
+2023-09-20T12:25:25.8604149-03:00  [INF] 49 mutants created (edec1dee)
+2023-09-20T12:25:25.8641682-03:00  [INF] Capture mutant coverage using 'CoverageBasedTest' mode. (133c36d4)
+2023-09-20T12:25:28.1452944-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:25:28.1475468-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:25:28.2792283-03:00  [DBG] Mutant 0 will be tested against (75) tests. (630fe7f2)
+2023-09-20T12:25:28.2884806-03:00  [DBG] Mutant 1 will be tested against (75) tests. (40e695db)
+2023-09-20T12:25:28.2907705-03:00  [DBG] Mutant 2 will be tested against (1) tests. (aec0f2ed)
+2023-09-20T12:25:28.2956742-03:00  [DBG] Mutant 3 will be tested against (1) tests. (08d25eec)
+2023-09-20T12:25:28.3085645-03:00  [DBG] Mutant 4 will be tested against (0) tests. (f308a01d)
+2023-09-20T12:25:28.3202835-03:00  [DBG] Mutant 5 will be tested against (74) tests. (2f959c98)
+2023-09-20T12:25:28.3391828-03:00  [DBG] Mutant 6 will be tested against (74) tests. (d7ba0acf)
+2023-09-20T12:25:28.3715716-03:00  [DBG] Mutant 7 will be tested against (74) tests. (8777ae4c)
+2023-09-20T12:25:28.4046323-03:00  [DBG] Mutant 8 will be tested against (74) tests. (dd6da4d0)
+2023-09-20T12:25:28.4793765-03:00  [DBG] Mutant 9 will be tested against (74) tests. (1d6ed583)
+2023-09-20T12:25:28.8248690-03:00  [DBG] Mutant 10 will be tested against (74) tests. (7de64fdb)
+2023-09-20T12:25:28.8276254-03:00  [DBG] Mutant 11 will be tested against (74) tests. (e32b4f46)
+2023-09-20T12:25:28.8301181-03:00  [DBG] Mutant 12 will be tested against (74) tests. (13474b1e)
+2023-09-20T12:25:28.8554643-03:00  [DBG] Mutant 13 will be tested against (74) tests. (ffa32697)
+2023-09-20T12:25:28.8612534-03:00  [DBG] Mutant 14 will be tested against (74) tests. (646498bf)
+2023-09-20T12:25:28.8684510-03:00  [DBG] Mutant 15 will be tested against (32) tests. (63ab8ce3)
+2023-09-20T12:25:28.8900801-03:00  [DBG] Mutant 16 will be tested against (32) tests. (d89eb8e5)
+2023-09-20T12:25:28.9305132-03:00  [DBG] Mutant 17 will be tested against (74) tests. (26e725a8)
+2023-09-20T12:25:28.9375532-03:00  [DBG] Mutant 18 will be tested against (74) tests. (a8e8db1f)
+2023-09-20T12:25:28.9427281-03:00  [DBG] Mutant 19 will be tested against (74) tests. (c19da06b)
+2023-09-20T12:25:28.9464488-03:00  [DBG] Mutant 20 will be tested against (28) tests. (f2f33a44)
+2023-09-20T12:25:28.9561126-03:00  [DBG] Mutant 21 will be tested against (28) tests. (d9323070)
+2023-09-20T12:25:28.9626786-03:00  [DBG] Mutant 22 will be tested against (28) tests. (4a504805)
+2023-09-20T12:25:28.9968701-03:00  [DBG] Mutant 23 will be tested against (28) tests. (8687b8c4)
+2023-09-20T12:25:29.0104431-03:00  [DBG] Mutant 24 will be tested against (28) tests. (f19e892d)
+2023-09-20T12:25:29.0138099-03:00  [DBG] Mutant 25 will be tested against (28) tests. (e0de645e)
+2023-09-20T12:25:29.0257859-03:00  [DBG] Mutant 26 will be tested against (8) tests. (403f5eb1)
+2023-09-20T12:25:29.0341375-03:00  [DBG] Mutant 27 will be tested against (8) tests. (f78e156b)
+2023-09-20T12:25:29.0442002-03:00  [DBG] Mutant 28 will be tested against (8) tests. (52b60e59)
+2023-09-20T12:25:29.0543987-03:00  [DBG] Mutant 29 will be tested against (8) tests. (2b29126c)
+2023-09-20T12:25:29.0576324-03:00  [DBG] Mutant 30 will be tested against (8) tests. (120d5602)
+2023-09-20T12:25:29.0623997-03:00  [DBG] Mutant 31 will be tested against (8) tests. (0d812347)
+2023-09-20T12:25:29.0716769-03:00  [DBG] Mutant 32 will be tested against (8) tests. (f030262c)
+2023-09-20T12:25:29.0743098-03:00  [DBG] Mutant 33 will be tested against (8) tests. (b2fde319)
+2023-09-20T12:25:29.0950349-03:00  [DBG] Mutant 34 will be tested against (8) tests. (8a727330)
+2023-09-20T12:25:29.1119413-03:00  [DBG] Mutant 35 will be tested against (8) tests. (4159a32e)
+2023-09-20T12:25:29.1154885-03:00  [DBG] Mutant 36 will be tested against (5) tests. (f8274327)
+2023-09-20T12:25:29.1235531-03:00  [DBG] Mutant 37 will be tested against (5) tests. (fed33f63)
+2023-09-20T12:25:29.1285881-03:00  [DBG] Mutant 38 will be tested against (5) tests. (fdb2a0ba)
+2023-09-20T12:25:29.1346275-03:00  [DBG] Mutant 39 will be tested against (78) tests. (f0f11836)
+2023-09-20T12:25:29.1419381-03:00  [DBG] Mutant 40 will be tested against (78) tests. (cf1c9079)
+2023-09-20T12:25:29.1473535-03:00  [DBG] Mutant 41 will be tested against (78) tests. (dce8df46)
+2023-09-20T12:25:29.1620823-03:00  [DBG] Mutant 42 will be tested against (78) tests. (172526b2)
+2023-09-20T12:25:29.1685099-03:00  [DBG] Mutant 43 will be tested against (78) tests. (bfdd8a37)
+2023-09-20T12:25:29.1715079-03:00  [DBG] Mutant 44 will be tested against (78) tests. (99b8c0c3)
+2023-09-20T12:25:29.1743103-03:00  [DBG] Mutant 45 will be tested against (78) tests. (87dd1925)
+2023-09-20T12:25:29.1796193-03:00  [DBG] Mutant 46 will be tested against (78) tests. (9ccd8e45)
+2023-09-20T12:25:29.1881573-03:00  [DBG] Mutant 47 will be tested against (78) tests. (05fb11e7)
+2023-09-20T12:25:29.1921522-03:00  [DBG] Mutant 48 will be tested against (0) tests. (fc7ed8d1)
+2023-09-20T12:25:30.3294794-03:00  [INF] 2     mutants got status CompileError. Reason: "Mutant caused compile errors" (3d197dbf)
+2023-09-20T12:25:30.5233383-03:00  [INF] 11    mutants got status Ignored.      Reason: "Removed by block already covered filter" (55cfec49)
+2023-09-20T12:25:30.5645361-03:00  [INF] 13    total mutants are skipped for the above mentioned reasons (506ffda1)
+2023-09-20T12:25:30.5744621-03:00  [INF] 36    total mutants will be tested (db762a7b)
+2023-09-20T12:25:30.6234122-03:00  [DBG] Mutations will be tested in 35 test runs, instead of 36. (5da15473)
+2023-09-20T12:25:30.6606583-03:00  [DBG] Runner 0: Testing [7: Boolean mutation] (e73bffe6)
+2023-09-20T12:25:30.6846988-03:00  [DBG] Runner 1: Testing [3: Boolean mutation,37: Statement mutation] (203f1668)
+2023-09-20T12:25:30.6880042-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:25:30.6908575-03:00  [DBG] Runner 1: Using 34750 ms as test run timeout (3b060558)
+2023-09-20T12:25:38.9348566-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:25:41.4606437-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:25:41.4961419-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:25:41.5000095-03:00  [DBG] Test run for 3: Boolean mutation, 37: Statement mutation is failed  (4e1115ad)
+2023-09-20T12:25:41.5058542-03:00  [DBG] Runner 1: Testing [38: Arithmetic mutation] (62826413)
+2023-09-20T12:25:41.5089523-03:00  [DBG] Runner 1: Using 34750 ms as test run timeout (3b060558)
+2023-09-20T12:25:44.8351810-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:25:44.8383958-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:25:44.8440578-03:00  [DBG] Test run for 38: Arithmetic mutation is failed  (202a762b)
+2023-09-20T12:25:44.8468285-03:00  [DBG] Runner 1: Testing [28: Statement mutation] (f23f97d2)
+2023-09-20T12:25:44.8509784-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:25:49.0962859-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:25:49.0982905-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:25:49.1051544-03:00  [DBG] Test run for 28: Statement mutation is failed  (efa06f4b)
+2023-09-20T12:25:49.1290005-03:00  [DBG] Runner 1: Testing [29: Equality mutation] (7343027b)
+2023-09-20T12:25:49.1456383-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:25:52.7939370-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:25:52.9300540-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:25:52.9323026-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:25:52.9364386-03:00  [DBG] Test run for 29: Equality mutation is failed  (7640da4b)
+2023-09-20T12:25:52.9400126-03:00  [DBG] Runner 1: Testing [30: Equality mutation] (d97e3501)
+2023-09-20T12:25:52.9427060-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:25:55.5220248-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:25:55.5238449-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:25:55.5260128-03:00  [DBG] Test run for 30: Equality mutation is success  (722137ce)
+2023-09-20T12:25:55.5346473-03:00  [DBG] Runner 1: Testing [31: Statement mutation] (c60f05db)
+2023-09-20T12:25:55.5381847-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:25:58.7796970-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:25:58.7814983-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:25:58.7836897-03:00  [DBG] Test run for 31: Statement mutation is failed  (fff205f5)
+2023-09-20T12:25:58.7884144-03:00  [DBG] Runner 1: Testing [32: Equality mutation] (f3436b07)
+2023-09-20T12:25:58.7918494-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:26:01.4768916-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:26:01.4786439-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:26:01.4810482-03:00  [DBG] Test run for 32: Equality mutation is failed  (606f9780)
+2023-09-20T12:26:01.4839916-03:00  [DBG] Runner 1: Testing [33: Equality mutation] (0f898366)
+2023-09-20T12:26:01.4865870-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:26:04.2223304-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:26:04.2241070-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:26:04.2263617-03:00  [DBG] Test run for 33: Equality mutation is failed  (c66b6e59)
+2023-09-20T12:26:04.2309400-03:00  [DBG] Runner 1: Testing [34: Negate expression] (87be012f)
+2023-09-20T12:26:04.2362436-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:26:05.8894022-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:26:05.8914654-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:26:05.8940014-03:00  [DBG] Test run for 7: Boolean mutation is failed  (37266b56)
+2023-09-20T12:26:05.8978759-03:00  [DBG] Runner 0: Testing [8: Logical mutation] (4858e34c)
+2023-09-20T12:26:05.9003748-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:26:08.7106964-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:26:08.7128515-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:26:08.7174371-03:00  [DBG] Test run for 34: Negate expression is failed  (eea1b414)
+2023-09-20T12:26:08.7300724-03:00  [DBG] Runner 1: Testing [35: Arithmetic mutation] (c0affab2)
+2023-09-20T12:26:08.7434020-03:00  [DBG] Runner 1: Using 34753 ms as test run timeout (07192c41)
+2023-09-20T12:26:10.3716779-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:26:10.9026624-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:26:10.9044958-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:26:10.9069230-03:00  [DBG] Test run for 8: Logical mutation is failed  (f814b4a1)
+2023-09-20T12:26:10.9121358-03:00  [DBG] Runner 0: Testing [9: Negate expression] (73ee9e29)
+2023-09-20T12:26:10.9152526-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:26:12.6758415-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:26:12.6778149-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:26:12.6834740-03:00  [DBG] Test run for 35: Arithmetic mutation is failed  (f8cb5c8d)
+2023-09-20T12:26:12.6866923-03:00  [DBG] Runner 1: Testing [21: Boolean mutation] (9f276396)
+2023-09-20T12:26:12.7050688-03:00  [DBG] Runner 1: Using 34759 ms as test run timeout (9e687c66)
+2023-09-20T12:26:15.1250760-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:26:15.2927404-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:26:15.3043275-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:26:15.3071490-03:00  [DBG] Test run for 9: Negate expression is failed  (0a17e28e)
+2023-09-20T12:26:15.3106439-03:00  [DBG] Runner 0: Testing [10: Equality mutation] (801ebb6c)
+2023-09-20T12:26:15.3178046-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:26:18.0167795-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:26:20.9575162-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:26:21.7836485-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:26:21.7854973-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:26:21.7884126-03:00  [DBG] Test run for 10: Equality mutation is failed  (cec2cf06)
+2023-09-20T12:26:21.8926055-03:00  [DBG] Runner 0: Testing [11: Equality mutation] (7cf95000)
+2023-09-20T12:26:21.8971303-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:26:25.0542766-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:26:25.2331809-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:26:25.2354470-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:26:25.2383603-03:00  [DBG] Test run for 11: Equality mutation is failed  (49ca02ae)
+2023-09-20T12:26:25.2446405-03:00  [DBG] Runner 0: Testing [12: LogicalNotExpression to un-LogicalNotExpression mutation] (39be40ac)
+2023-09-20T12:26:25.2488722-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:26:28.8043846-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:26:28.9454438-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:26:28.9478280-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:26:28.9533875-03:00  [DBG] Test run for 12: LogicalNotExpression to un-LogicalNotExpression mutation is failed  (a3c5fc74)
+2023-09-20T12:26:28.9572095-03:00  [DBG] Runner 0: Testing [14: Equality mutation] (94c991eb)
+2023-09-20T12:26:28.9614502-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:26:33.6271851-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:26:34.8114990-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:26:34.8132840-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:26:34.8157671-03:00  [DBG] Test run for 14: Equality mutation is failed  (643c527e)
+2023-09-20T12:26:34.8179330-03:00  [DBG] Runner 0: Testing [17: Statement mutation] (447d24ac)
+2023-09-20T12:26:34.8238643-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:26:47.7205521-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:26:47.7248054-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:26:47.7294736-03:00  [DBG] Test run for 21: Boolean mutation is failed  (f21395d4)
+2023-09-20T12:26:47.7320053-03:00  [DBG] Runner 1: Testing [22: LogicalNotExpression to un-LogicalNotExpression mutation] (16b0f0b8)
+2023-09-20T12:26:47.7400655-03:00  [DBG] Runner 1: Using 34759 ms as test run timeout (9e687c66)
+2023-09-20T12:26:51.7339339-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:26:52.1773892-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:26:52.1818619-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:26:52.1849759-03:00  [DBG] Test run for 22: LogicalNotExpression to un-LogicalNotExpression mutation is failed  (6706ad03)
+2023-09-20T12:26:52.1942771-03:00  [DBG] Runner 1: Testing [24: Statement mutation] (2942ad59)
+2023-09-20T12:26:52.2007898-03:00  [DBG] Runner 1: Using 34759 ms as test run timeout (9e687c66)
+2023-09-20T12:26:59.9881421-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:27:09.8321879-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:27:09.8443404-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:27:09.8466691-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:27:09.8503009-03:00  [DBG] Test run for 17: Statement mutation is success  (9a14803a)
+2023-09-20T12:27:09.8562635-03:00  [DBG] Runner 0: Testing [18: PostIncrementExpression to PostDecrementExpression mutation] (63a5693f)
+2023-09-20T12:27:09.8591326-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:27:13.3225954-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:27:13.5368781-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:27:13.5415515-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:27:13.5440123-03:00  [DBG] Test run for 18: PostIncrementExpression to PostDecrementExpression mutation is failed  (28087d86)
+2023-09-20T12:27:13.5523868-03:00  [DBG] Runner 0: Testing [19: LogicalNotExpression to un-LogicalNotExpression mutation] (2c525076)
+2023-09-20T12:27:13.5610250-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:27:18.3603357-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:27:18.9565960-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:27:18.9587876-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:27:18.9620477-03:00  [DBG] Test run for 19: LogicalNotExpression to un-LogicalNotExpression mutation is failed  (4e7acd96)
+2023-09-20T12:27:19.0537770-03:00  [DBG] Runner 0: Testing [1: Equality mutation] (250365e1)
+2023-09-20T12:27:19.0687977-03:00  [DBG] Runner 0: Using 34876 ms as test run timeout (0f5d9db4)
+2023-09-20T12:27:22.7363723-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:27:22.9197886-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:27:22.9235022-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:27:22.9264722-03:00  [DBG] Test run for 1: Equality mutation is failed  (d6e82b6f)
+2023-09-20T12:27:22.9510698-03:00  [DBG] Runner 0: Testing [40: Equality mutation] (b84b5e69)
+2023-09-20T12:27:22.9789972-03:00  [DBG] Runner 0: Using 34902 ms as test run timeout (449aab33)
+2023-09-20T12:27:27.6095343-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:27.6993986-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:27.7663272-03:00  [DBG] Test run for 24: Statement mutation is failed  (26dace5d)
+2023-09-20T12:27:27.8519430-03:00  [DBG] Runner 1: Testing [25: PostIncrementExpression to PostDecrementExpression mutation] (acea0806)
+2023-09-20T12:27:27.8919520-03:00  [DBG] Runner 1: Using 34759 ms as test run timeout (9e687c66)
+2023-09-20T12:27:28.2099130-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:27:28.5129673-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:27:28.5150221-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:27:28.5174202-03:00  [DBG] Test run for 40: Equality mutation is failed  (176114c8)
+2023-09-20T12:27:28.5220649-03:00  [DBG] Runner 0: Testing [41: Equality mutation] (e6168abe)
+2023-09-20T12:27:28.5260987-03:00  [DBG] Runner 0: Using 34902 ms as test run timeout (449aab33)
+2023-09-20T12:27:32.2517127-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:27:32.5604699-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:32.5627472-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:32.5656721-03:00  [DBG] Test run for 25: PostIncrementExpression to PostDecrementExpression mutation is failed  (bca1b5af)
+2023-09-20T12:27:32.5750090-03:00  [DBG] Runner 1: Testing [16: Boolean mutation] (dcf0de1e)
+2023-09-20T12:27:32.5774805-03:00  [DBG] Runner 1: Using 34756 ms as test run timeout (67fb097a)
+2023-09-20T12:27:36.2567495-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:27:36.5275246-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:36.5291244-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:36.5316961-03:00  [DBG] Test run for 16: Boolean mutation is failed  (5f2def2a)
+2023-09-20T12:27:36.5364852-03:00  [DBG] Runner 1: Testing [5: Statement mutation] (b9fb7571)
+2023-09-20T12:27:36.5404287-03:00  [DBG] Runner 1: Using 34876 ms as test run timeout (964bc7c4)
+2023-09-20T12:27:41.0249705-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:27:43.1450485-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:43.1482251-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:43.1516099-03:00  [DBG] Test run for 5: Statement mutation is failed  (5fb52db6)
+2023-09-20T12:27:43.1535072-03:00  [DBG] Runner 1: Testing [6: Linq method mutation (Reverse() to AsEnumerable())] (4a7923dd)
+2023-09-20T12:27:43.1602073-03:00  [DBG] Runner 1: Using 34876 ms as test run timeout (964bc7c4)
+2023-09-20T12:27:47.5638875-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:27:47.7185775-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:47.7222172-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:47.7253223-03:00  [DBG] Test run for 6: Linq method mutation (Reverse() to AsEnumerable()) is failed  (5e72d06d)
+2023-09-20T12:27:47.7293393-03:00  [DBG] Runner 1: Testing [45: Arithmetic mutation] (9596b49a)
+2023-09-20T12:27:47.7325200-03:00  [DBG] Runner 1: Using 34902 ms as test run timeout (9878fb46)
+2023-09-20T12:27:51.5136313-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:27:52.6086438-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:52.6104184-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:52.6141795-03:00  [DBG] Test run for 45: Arithmetic mutation is failed  (6dd3cf64)
+2023-09-20T12:27:52.6178466-03:00  [DBG] Runner 1: Testing [46: Statement mutation] (90654abb)
+2023-09-20T12:27:52.6201835-03:00  [DBG] Runner 1: Using 34902 ms as test run timeout (9878fb46)
+2023-09-20T12:27:55.2988943-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-20T12:27:56.1210997-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:56.1332028-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:56.1366183-03:00  [DBG] Test run for 46: Statement mutation is failed  (e77d401d)
+2023-09-20T12:27:56.1389651-03:00  [DBG] Runner 1: Testing [47: Statement mutation] (f1e2fa23)
+2023-09-20T12:27:56.1416051-03:00  [DBG] Runner 1: Using 34902 ms as test run timeout (9878fb46)
+2023-09-20T12:27:59.2765504-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-20T12:27:59.2784620-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-20T12:27:59.2817482-03:00  [DBG] Test run for 47: Statement mutation is failed  (e4f5835c)
+2023-09-20T12:28:03.6553290-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:28:03.6647595-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:28:03.6686012-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:28:03.6720024-03:00  [DBG] Test run for 41: Equality mutation is success  (c135d0d2)
+2023-09-20T12:28:03.6760849-03:00  [DBG] Runner 0: Testing [42: Negate expression] (4cebdbb5)
+2023-09-20T12:28:03.6789012-03:00  [DBG] Runner 0: Using 34902 ms as test run timeout (449aab33)
+2023-09-20T12:28:06.8679375-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:28:08.5819924-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:28:08.5838685-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:28:08.5861859-03:00  [DBG] Test run for 42: Negate expression is failed  (4f340bb1)
+2023-09-20T12:28:08.5884071-03:00  [DBG] Runner 0: Testing [44: Arithmetic mutation] (acba565a)
+2023-09-20T12:28:08.5905492-03:00  [DBG] Runner 0: Using 34902 ms as test run timeout (449aab33)
+2023-09-20T12:28:11.1901568-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-20T12:28:11.3253758-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-20T12:28:11.3276701-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-20T12:28:11.3301591-03:00  [DBG] Test run for 44: Arithmetic mutation is failed  (8c0efdea)
+2023-09-20T12:28:12.5850628-03:00  [INF] Time Elapsed 00:03:47.2349307 (f4427d77)
+2023-09-20T12:28:12.5893867-03:00  [INF] The final mutation score is 97.22 % (2ef58de4)

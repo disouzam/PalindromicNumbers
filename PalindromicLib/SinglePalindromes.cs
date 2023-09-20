@@ -10,6 +10,11 @@ public static class SinglePalindromes
 {
     public static bool IsPalindrome(uint number)
     {
+        if(number == 0)
+        {
+            return false;
+        }
+
         var normalOrderDigits = GetDigits(number);
         var numberOfDigits = normalOrderDigits.Count();
 
@@ -49,6 +54,30 @@ public static class SinglePalindromes
         }
 
         return i;
+    }
+
+    public static List<uint> GetAllPalindromesInARange(uint maxNumber)
+    {
+        var palindromes = new List<uint>();
+
+        var i = 1u;
+
+        do
+        {
+            palindromes.Add(i);
+            i = GetLowestNextPalindrome(i);
+        } while(i < maxNumber);
+
+        palindromes.Add(i);
+
+        var numberOfItems = palindromes.Count;
+
+        if(palindromes[numberOfItems - 1] > maxNumber)
+        {
+            palindromes.RemoveAt(numberOfItems - 1);
+        }
+
+        return palindromes;
     }
 
     public static short[] GetDigits(uint number)
