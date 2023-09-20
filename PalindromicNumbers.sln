@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PalindromicLib", "PalindromicLib\PalindromicLib.csproj", "{00DFCCE8-469D-4BFA-BF58-821B24BDA73C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromicLibTests", "PalindromicLibTests\PalindromicLibTests.csproj", "{5B70131B-10D8-4A46-923D-73B64DA80F17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PalindromicLibTests", "PalindromicLibTests\PalindromicLibTests.csproj", "{5B70131B-10D8-4A46-923D-73B64DA80F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{8A8B532D-518D-4FFA-910D-BE659CA5A086}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5B70131B-10D8-4A46-923D-73B64DA80F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B70131B-10D8-4A46-923D-73B64DA80F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B70131B-10D8-4A46-923D-73B64DA80F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A8B532D-518D-4FFA-910D-BE659CA5A086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8B532D-518D-4FFA-910D-BE659CA5A086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8B532D-518D-4FFA-910D-BE659CA5A086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8B532D-518D-4FFA-910D-BE659CA5A086}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
