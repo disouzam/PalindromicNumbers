@@ -11,10 +11,10 @@ namespace PalindromicLibTests;
 public class SinglePalindromesTests
 {
     [Theory]
-    [InlineData(102, new short[]{1, 0, 2})]
-    [InlineData(100, new short[]{1, 0, 0})]
-    [InlineData(120, new short[]{1, 2, 0})]
-    [InlineData(123, new short[]{1, 2, 3})]
+    [InlineData(102, new short[] { 1, 0, 2 })]
+    [InlineData(100, new short[] { 1, 0, 0 })]
+    [InlineData(120, new short[] { 1, 2, 0 })]
+    [InlineData(123, new short[] { 1, 2, 3 })]
     public void GetDigitsShouldReturnAnArrayOfDigits(uint currentNumber, short[] expectedReturn)
     {
         // Arrange
@@ -26,7 +26,7 @@ public class SinglePalindromesTests
         // Assert
         currentReturn.Should().BeEquivalentTo(expectedReturn);
 
-        for ( var i = 0; i < arrayLength; i++)
+        for(var i = 0; i < arrayLength; i++)
         {
             currentReturn[i].Should().Be(expectedReturn[i]);
         }
@@ -100,9 +100,9 @@ public class SinglePalindromesTests
     }
 
     [Theory]
-    [InlineData(1,2)]
-    [InlineData(2,3)]
-    [InlineData(3,4)]
+    [InlineData(1, 2)]
+    [InlineData(2, 3)]
+    [InlineData(3, 4)]
     [InlineData(4, 5)]
     [InlineData(5, 6)]
     [InlineData(6, 7)]
@@ -133,12 +133,14 @@ public class SinglePalindromesTests
     }
 
     [Theory]
-    [InlineData(99, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u})]
-    [InlineData(100, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u})]
-    [InlineData(101, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u})]
-    [InlineData(102, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u})]
-    [InlineData(110, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u})]
-    [InlineData(111, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u, 111u})]
+    [InlineData(97, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u })]
+    [InlineData(98, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u })]
+    [InlineData(99, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u })]
+    [InlineData(100, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u })]
+    [InlineData(101, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u })]
+    [InlineData(102, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u })]
+    [InlineData(110, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u })]
+    [InlineData(111, new uint[] { 1u, 2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 11u, 22u, 33u, 44u, 55u, 66u, 77u, 88u, 99u, 101u, 111u })]
     public void CheckListOfPalindromesInARange(uint maxNumber, uint[] expectedList)
     {
         // Arrange
