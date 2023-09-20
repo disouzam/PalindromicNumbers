@@ -176,6 +176,9 @@ dotnet_naming_rule.nonFieldMembersRules.style = nonFieldMembers_Style
 
 [*.cs]
 
+# namespaces
+csharp_style_namespace_declarations=file_scoped:error
+
 # var preferences
 csharp_style_var_for_built_in_types = true:warning
 csharp_style_var_when_type_is_apparent = true:error
