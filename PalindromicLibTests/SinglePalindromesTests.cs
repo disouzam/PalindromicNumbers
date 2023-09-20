@@ -77,6 +77,7 @@ public class SinglePalindromesTests
     }
 
     [Theory]
+    [InlineData(0)]
     [InlineData(10)]
     [InlineData(12)]
     [InlineData(13)]

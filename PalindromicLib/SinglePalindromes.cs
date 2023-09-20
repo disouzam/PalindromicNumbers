@@ -10,6 +10,11 @@ public static class SinglePalindromes
 {
     public static bool IsPalindrome(uint number)
     {
+        if (number == 0)
+        {
+            return false;
+        }
+
         var normalOrderDigits = GetDigits(number);
         var numberOfDigits = normalOrderDigits.Count();
 
