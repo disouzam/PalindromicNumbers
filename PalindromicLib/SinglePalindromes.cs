@@ -10,7 +10,7 @@ public static class SinglePalindromes
 {
     public static bool IsPalindrome(uint number)
     {
-        if (number == 0)
+        if(number == 0)
         {
             return false;
         }
@@ -60,13 +60,15 @@ public static class SinglePalindromes
     {
         var palindromes = new List<uint>();
 
-        var i = 0u;
+        var i = 1u;
 
-        while(i < maxNumber)
+        do
         {
-            i = GetLowestNextPalindrome(i);
             palindromes.Add(i);
-        }
+            i = GetLowestNextPalindrome(i);
+        } while(i < maxNumber);
+
+        palindromes.Add(i);
 
         var numberOfItems = palindromes.Count;
 
