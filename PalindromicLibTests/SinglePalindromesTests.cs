@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using FluentAssertions;
 
@@ -124,7 +124,7 @@ public class SinglePalindromesTests
     public void CheckTheNextLowestPalindrome(uint currentNumber, uint nextPalindrome)
     {
         // Arrange
-        uint? nextLowestPalindrome = null;
+        uint? nextLowestPalindrome;
 
         // Act
         nextLowestPalindrome = SinglePalindromes.GetLowestNextPalindrome(currentNumber);
