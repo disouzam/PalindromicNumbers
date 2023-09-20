@@ -54,6 +54,10 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
+                "[ConsoleApp] Clean",
+                "[ConsoleAppTests] Clean",
+                "[ConsoleApp] Remove bin and obj folders",
+                "[ConsoleAppTests] Remove bin and obj folders",
                 "[PalindromicLib] Clean",
                 "[PalindromicLibTests] Clean",
                 "[PalindromicLib] Remove bin and obj folders",
@@ -77,6 +81,8 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
+                "[ConsoleApp] Build",
+                "[ConsoleAppTests] Build",
                 "[PalindromicLib] Build",
                 "[PalindromicLibTests] Build",
             ],
@@ -187,6 +193,26 @@
             ],
             "problemMatcher": "$msCompile"
         },
+        // Task ------ [ConsoleAppTests] Clean
+        {
+            "label": "[ConsoleAppTests] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\ConsoleAppTests\\ConsoleAppTests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
         // TASK GROUP ------ REMOVE BIN AND OBJ FOLDERS
         // Task ------ [PalindromicLib] Remove bin and obj folders
         {
@@ -222,6 +248,23 @@
             "args": [],
             "problemMatcher": "$msCompile"
         },
+        // Task ------ [ConsoleAppTests] Remove bin and obj folders
+        {
+            "label": "[ConsoleAppTests] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && ConsoleAppTests-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
         // TASK GROUP ------ BUILD AND TEST
         // Task ------ [PalindromicLib] Build, Test, Generate and Open Report
         {
@@ -244,6 +287,30 @@
                 "[PalindromicLib] Run Tests",
                 "[PalindromicLib] Generate Tests Report",
                 "[PalindromicLib] Open Tests Report"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [ConsoleApp] Build, Test, Generate and Open Report
+        {
+            "label": "[ConsoleApp] Build, Test, Generate and Open Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[ConsoleApp] Build, Test, Generate and Open Report\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[ConsoleAppTests] Build",
+                "[ConsoleApp] Run Tests",
+                "[ConsoleApp] Generate Tests Report",
+                "[ConsoleApp] Open Tests Report"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -294,6 +361,29 @@
             ],
             "problemMatcher": "$msCompile"
         },
+        // Task ------ [ConsoleAppTests] Build
+        {
+            "label": "[ConsoleAppTests] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\ConsoleAppTests\\ConsoleAppTests.csproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
         // TASK GROUP ------ PUBLISH TASKS
         // Task ------ [PalindromicLibTests] Publish project
         {
@@ -312,6 +402,28 @@
             "args": [
                 "publish",
                 "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [ConsoleAppTests] Publish project
+        {
+            "label": "[ConsoleAppTests] Publish project",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\ConsoleAppTests\\ConsoleAppTests.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -362,10 +474,33 @@
             ],
             "problemMatcher": "$msCompile"
         },
-        // TASK GROUP ------ RUN TASKS
-        // [{consoleAppProject}] Run
+        // [ConsoleAppTests] Watch
         {
-            "label": "[{consoleAppProject}] Run",
+            "label": "[ConsoleAppTests] Watch",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}\\ConsoleAppTests\\ConsoleAppTests.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ RUN TASKS
+        // [ConsoleApp] Run
+        {
+            "label": "[ConsoleApp] Run",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -380,7 +515,7 @@
             "args": [
                 "run",
                 "--project",
-                "${workspaceFolder}\\{consoleAppProject}\\{consoleAppProject}.csproj",
+                "${workspaceFolder}\\ConsoleApp\\ConsoleApp.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -515,6 +650,56 @@
             ],
             "options": {
                 "cwd": "${workspaceFolder}\\PalindromicLibTests"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [ConsoleAppTests] Run full Stryker.NET analysis
+        {
+            "label": "[ConsoleAppTests] Run full Stryker.NET analysis",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "stryker",
+                "--config-file:stryker-full-config.json",
+                "--log-to-file",
+                "--open-report"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\ConsoleAppTests"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [ConsoleAppTests] Run partial Stryker.NET analysis
+        {
+            "label": "[ConsoleAppTests] Run partial Stryker.NET analysis",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "stryker",
+                "--config-file:stryker-partial-config.json",
+                "--log-to-file",
+                "--open-report"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\ConsoleAppTests"
             },
             "problemMatcher": "$msCompile"
         },
