@@ -57,10 +57,17 @@ public static class SinglePalindromes
 
         var i = 0u;
 
-        while (i < maxNumber)
+        while(i < maxNumber)
         {
             i = GetLowestNextPalindrome(i);
             palindromes.Add(i);
+        }
+
+        var numberOfItems = palindromes.Count;
+
+        if(palindromes[numberOfItems - 1] > maxNumber)
+        {
+            palindromes.RemoveAt(numberOfItems - 1);
         }
 
         return palindromes;
