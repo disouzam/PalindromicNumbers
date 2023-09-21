@@ -1,0 +1,40 @@
+{
+    "stryker-config": {
+        "additional-timeout": 30000,
+        "baseline": {},
+        "since": {
+            "enabled": true,
+            "target": "main"
+        },
+        "concurrency": 2,
+        "coverage-analysis": "perTest",
+        "disable-bail": false,
+        "disable-mix-mutants": false,
+        "ignore-methods": [],
+        "ignore-mutations": [],
+        "language-version": "Csharp10",
+        "mutate": [],
+        "mutation-level": "Complete",
+        "project": "ConsoleApp\\ConsoleApp.csproj",
+        "project-info": {},
+        "report-file-name": "stryker-partial-report.html",
+        "reporters": [
+            "progress",
+            "html",
+            "cleartext"
+        ],
+        "solution": "..\\PalindromicNumbers.sln",
+        "target-framework": "net6.0",
+        "test-case-filter": "",
+        "test-projects": [
+            "ConsoleAppTests.csproj"
+        ],
+        "thresholds": {
+            "high": 80,
+            "low": 70,
+            "break": 50
+        },
+        "verbosity": "debug",
+        "break-on-initial-test-failure": true
+    }
+}
