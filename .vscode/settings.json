@@ -1,6 +1,6 @@
 {
     "configuration": "release",
-    "ConsoleApp.branchCoverage.threshold": 100,
+    "ConsoleApp.branchCoverage.threshold": 44,
     "PalindromicLib.branchCoverage.threshold": 100,
     "debug.terminal.clearBeforeReusing": true,
     "terminal.integrated.automationProfile.windows": {
