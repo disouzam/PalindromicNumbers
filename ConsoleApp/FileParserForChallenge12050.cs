@@ -54,11 +54,11 @@ public class FileParserForChallenge12050
         }
     }
 
-    private void FillListOfOutputs()
+    public void FillListOfOutputs()
     {
         listOfOutputs.Clear();
 
-        foreach (var input in listOfInputs) 
+        foreach (var input in listOfInputs)
         {
             var output = SinglePalindromes.GetNthPalindrome(input);
             listOfOutputs.Add(output);
@@ -74,7 +74,7 @@ public class FileParserForChallenge12050
         var file = File.Create(filePath);
         using var fileContent = new StreamWriter(file);
 
-        foreach (var output in listOfOutputs) 
+        foreach (var output in listOfOutputs)
         {
             fileContent.WriteLine(output);
         }
