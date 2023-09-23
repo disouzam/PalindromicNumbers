@@ -15,7 +15,7 @@ public class FileParserForChallenge12050Tests
     public void CheckReadFileBehaviorWithSampleInput()
     {
         // Arrange
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "SampleInput.txt");
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Samples", "SampleInput.txt");
         var fileParser = new FileParserForChallenge12050();
 
         // Act
@@ -31,7 +31,7 @@ public class FileParserForChallenge12050Tests
         }
 
         // New Arrangement
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), "SampleInput2.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), "Samples", "SampleInput2.txt");
 
         // New Act
         fileParser.ReadFile(filePath);
@@ -45,7 +45,7 @@ public class FileParserForChallenge12050Tests
         }
 
         //Arrangement for a third sample file with zero before end of stream
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), "SampleInput3.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), "Samples", "SampleInput3.txt");
 
         // Third act
         fileParser.ReadFile(filePath);
