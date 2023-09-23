@@ -53,9 +53,10 @@ public class FileParserForChallenge12050Tests
         // Third set of Assertions
         using (new AssertionScope())
         {
-            fileParser.ListOfInputs.Count.Should().Be(2);
-            fileParser.ListOfInputs[0].Should().Be(5);
-            fileParser.ListOfInputs[1].Should().Be(7);
+            fileParser.ListOfInputs.Count.Should().Be(3);
+            fileParser.ListOfInputs[0].Should().Be(10);
+            fileParser.ListOfInputs[1].Should().Be(20);
+            fileParser.ListOfInputs[2].Should().Be(15);
         }
     }
 
