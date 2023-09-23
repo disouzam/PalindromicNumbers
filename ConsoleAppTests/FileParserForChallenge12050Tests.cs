@@ -132,7 +132,6 @@ public class FileParserForChallenge12050Tests
 
         // Act for Sample Input 1
         fileParser.ReadFile(filePath);
-        fileParser.FillListOfOutputs();
 
         var output1File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, resultFileNames[0]);
         fileParser.WriteOutputFile(output1File);
@@ -155,7 +154,6 @@ public class FileParserForChallenge12050Tests
 
         // Act for Sample Input 2
         fileParser.ReadFile(filePath);
-        fileParser.FillListOfOutputs();
 
         var output2File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, resultFileNames[1]);
         fileParser.WriteOutputFile(output2File);
@@ -177,7 +175,6 @@ public class FileParserForChallenge12050Tests
 
         // Act for Sample Input 3
         fileParser.ReadFile(filePath);
-        fileParser.FillListOfOutputs();
 
         var output3File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, resultFileNames[2]);
         fileParser.WriteOutputFile(output3File);
@@ -224,7 +221,6 @@ public class FileParserForChallenge12050Tests
             File.Exists(output3File).Should().Be(false);
         }
     }
-
 
     private static List<uint> ReadOutputFile(string filePath)
     {
