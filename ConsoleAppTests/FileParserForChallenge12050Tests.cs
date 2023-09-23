@@ -58,4 +58,58 @@ public class FileParserForChallenge12050Tests
             fileParser.ListOfInputs[1].Should().Be(7);
         }
     }
+
+    [Fact]
+    public void CheckFillListOfOutputsBehavior()
+    {
+        // Arrange
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Samples", "SampleInput.txt");
+        var fileParser = new FileParserForChallenge12050();
+
+        // Act
+        fileParser.ReadFile(filePath);
+        fileParser.FillListOfOutputs();
+
+        // Assert
+        using (new AssertionScope())
+        {
+            fileParser.ListOfOutputs.Count.Should().Be(3);
+            fileParser.ListOfOutputs[0].Should().Be(1);
+            fileParser.ListOfOutputs[1].Should().Be(33);
+            fileParser.ListOfOutputs[2].Should().Be(151);
+        }
+
+        // Arrange for SampleInput2
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), "Samples", "SampleInput2.txt");
+        fileParser = new FileParserForChallenge12050();
+
+        // Act for SampleInput2
+        fileParser.ReadFile(filePath);
+        fileParser.FillListOfOutputs();
+
+        // Assert for SampleInput2
+        using (new AssertionScope())
+        {
+            fileParser.ListOfOutputs.Count.Should().Be(2);
+            fileParser.ListOfOutputs[0].Should().Be(5);
+            fileParser.ListOfOutputs[1].Should().Be(7);
+        }
+
+        // Arrange for SampleInput3
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), "Samples", "SampleInput3.txt");
+        fileParser = new FileParserForChallenge12050();
+
+        // Act for SampleInput3
+        fileParser.ReadFile(filePath);
+        fileParser.FillListOfOutputs();
+
+        // Assert for SampleInput3
+        using (new AssertionScope())
+        {
+            fileParser.ListOfOutputs.Count.Should().Be(3);
+            fileParser.ListOfOutputs[0].Should().Be(11);
+            fileParser.ListOfOutputs[1].Should().Be(111);
+            fileParser.ListOfOutputs[2].Should().Be(66);
+        }
+    }
 }
