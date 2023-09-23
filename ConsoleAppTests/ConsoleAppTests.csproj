@@ -33,16 +33,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="SampleInput.txt">
+    <None Update="Samples\SampleInput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SampleInput2.txt">
+    <None Update="Samples\SampleInput2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SampleInput3.txt">
+    <None Update="Samples\SampleInput3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SampleOutput.txt">
+    <None Update="Samples\SampleOutput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
