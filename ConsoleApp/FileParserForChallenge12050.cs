@@ -20,13 +20,14 @@ public class FileParserForChallenge12050
     public void ReadFile(string filePath)
     {
         using var fileContent = new StreamReader(filePath);
+        var input = -1;
 
         listOfInputs.Clear();
 
-        while (!fileContent.EndOfStream)
+        while (!fileContent.EndOfStream && input != 0)
         {
             var lineContent = fileContent.ReadLine();
-            var input = Convert.ToInt32(lineContent);
+            input = Convert.ToInt32(lineContent);
 
             if (input != 0)
             {
