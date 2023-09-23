@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2023-09-23_12-51-56" tag="b380200">
+  <assembly name="ConsoleApp">
+    <class name="ConsoleApp.FileParserForChallenge12050" coveredlines="15" coverablelines="29" totallines="82" coveredbranches="8" totalbranches="12" coveredcodeelements="3" totalcodeelements="6" />
+  </assembly>
+</coverage>
