@@ -6,7 +6,7 @@ namespace ConsoleApp;
 
 public class FileParserForChallenge12050
 {
-    private List<int> listOfInputs = new List<int>();
+    private readonly List<int> listOfInputs = new List<int>();
 
     public List<int> ListOfInputs
     {
