@@ -14,13 +14,14 @@ public class FileParserForChallenge12050Tests
     private const string samplesFolder = "Samples";
     private const string resultsFolder = "TestResults";
 
-
+    private readonly string[] sampleFileNames = new []{ "SampleInput.txt", "SampleInput2.txt", "SampleInput3.txt" };
+    private readonly string[] resultFileNames = new []{ "Output1.txt", "Output2.txt", "Output3.txt" };
 
     [Fact]
     public void CheckReadFileBehaviorWithSampleInput()
     {
         // Arrange
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput.txt");
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[0]);
         var fileParser = new FileParserForChallenge12050();
 
         // Act
@@ -36,7 +37,7 @@ public class FileParserForChallenge12050Tests
         }
 
         // New Arrangement
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput2.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[1]);
 
         // New Act
         fileParser.ReadFile(filePath);
@@ -50,7 +51,7 @@ public class FileParserForChallenge12050Tests
         }
 
         //Arrangement for a third sample file with zero before end of stream
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput3.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[2]);
 
         // Third act
         fileParser.ReadFile(filePath);
@@ -69,7 +70,7 @@ public class FileParserForChallenge12050Tests
     public void CheckFillListOfOutputsBehavior()
     {
         // Arrange
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput.txt");
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[0]);
         var fileParser = new FileParserForChallenge12050();
 
         // Act
@@ -86,7 +87,7 @@ public class FileParserForChallenge12050Tests
         }
 
         // Arrange for SampleInput2
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput2.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[1]);
         fileParser = new FileParserForChallenge12050();
 
         // Act for SampleInput2
@@ -102,7 +103,7 @@ public class FileParserForChallenge12050Tests
         }
 
         // Arrange for SampleInput3
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput3.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[2]);
         fileParser = new FileParserForChallenge12050();
 
         // Act for SampleInput3
@@ -123,42 +124,42 @@ public class FileParserForChallenge12050Tests
     public void CheckWriteOutputFileBehaviorWithSampleInputs()
     {
         // Arrange for Sample Input 1
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput.txt");
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[0]);
         var fileParser = new FileParserForChallenge12050();
 
         // Act for Sample Input 1
         fileParser.ReadFile(filePath);
         fileParser.FillListOfOutputs();
 
-        var output1File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, "Output1.txt");
+        var output1File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, resultFileNames[0]);
         fileParser.WriteOutputFile(output1File);
 
         // Assert for Sample Input 1
         File.Exists(output1File).Should().Be(true);
 
         // Arrange for Sample Input 2
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput2.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[1]);
         fileParser = new FileParserForChallenge12050();
 
         // Act for Sample Input 2
         fileParser.ReadFile(filePath);
         fileParser.FillListOfOutputs();
 
-        var output2File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, "Output2.txt");
+        var output2File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, resultFileNames[1]);
         fileParser.WriteOutputFile(output2File);
 
         // Assert for Sample Input 2
         File.Exists(output2File).Should().Be(true);
 
         // Arrange for Sample Input 3
-        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, "SampleInput3.txt");
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[2]);
         fileParser = new FileParserForChallenge12050();
 
         // Act for Sample Input 3
         fileParser.ReadFile(filePath);
         fileParser.FillListOfOutputs();
 
-        var output3File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, "Output3.txt");
+        var output3File = Path.Combine(Directory.GetCurrentDirectory(), resultsFolder, resultFileNames[2]);
         fileParser.WriteOutputFile(output3File);
 
         // Assert for Sample Input 3
