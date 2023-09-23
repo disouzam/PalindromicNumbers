@@ -1,0 +1,284 @@
+2023-09-23T14:52:30.7413319-03:00  [INF] Logging enabled at level Debug (3cce0059)
+2023-09-23T14:52:31.1647796-03:00  [INF] Stryker will use a max of 2 parallel testsessions. (b15d750f)
+2023-09-23T14:52:38.0518313-03:00  [DBG] Stryker started with options: StrykerOptions { MsBuildPath: null, DevMode: False, ProjectPath: "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests", IsSolutionContext: False, WorkingDirectory: "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests", OutputPath: "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests\StrykerOutput\2023-09-23.14-52-30", ReportPath: "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests\StrykerOutput\2023-09-23.14-52-30\reports", ReportFileName: "stryker-full-report", SolutionPath: "D:\GitHubRepos\PalindromicNumbers\PalindromicNumbers.sln", TargetFramework: "net6.0", LogOptions: LogOptions { LogToFile: True, LogLevel: Debug }, MutationLevel: Complete, Thresholds: Thresholds { High: 80, Low: 70, Break: 50 }, AdditionalTimeout: 30000, LanguageVersion: CSharp10, Concurrency: 2, SourceProjectName: "ConsoleApp\ConsoleApp.csproj", TestProjects: ["D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests\ConsoleAppTests.csproj"], TestCaseFilter: "", Reporters: [Progress, Html, ClearText], WithBaseline: False, BaselineProvider: Disk, AzureFileStorageUrl: "", AzureFileStorageSas: "", DashboardUrl: "https://dashboard.stryker-mutator.io", DashboardApiKey: null, Since: False, SinceTarget: "master", DiffIgnoreChanges: [], FallbackVersion: "master", ModuleName: "", ReportTypeToOpen: Html, Mutate: [FilePattern { Glob: Glob { Tokens: [WildcardDirectoryToken { TrailingPathSeparator: PathSeparatorToken { Value: \ }, LeadingPathSeparator: null }, LiteralToken { Value: "Program.cs" }] }, IsExclude: True, TextSpans: [TextSpan { Start: 0, End: 2147483647, Length: 2147483647, IsEmpty: False }] }, FilePattern { Glob: Glob { Tokens: [WildcardDirectoryToken { TrailingPathSeparator: PathSeparatorToken { Value: \ }, LeadingPathSeparator: null }, WildcardToken {  }] }, IsExclude: False, TextSpans: [TextSpan { Start: 0, End: 2147483647, Length: 2147483647, IsEmpty: False }] }], IgnoredMethods: [], ExcludedMutations: [], ExcludedLinqExpressions: [], OptimizationMode: CoverageBasedTest, ProjectName: "", ProjectVersion: "", BreakOnInitialTestFailure: True } (fac41b16)
+2023-09-23T14:52:38.1363353-03:00  [INF] Analysis starting. (7076a364)
+2023-09-23T14:52:38.1502314-03:00  [DBG] Using "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests\ConsoleAppTests.csproj" as test project (00c34121)
+2023-09-23T14:52:38.1611990-03:00  [DBG] Analyzing project file "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests\ConsoleAppTests.csproj" (59a92a9a)
+2023-09-23T14:52:47.9502787-03:00  [DBG] Using "D:\GitHubRepos\PalindromicNumbers\ConsoleApp\ConsoleApp.csproj" as project under test (b012007c)
+2023-09-23T14:52:47.9550970-03:00  [DBG] Analyzing project file "D:\GitHubRepos\PalindromicNumbers\ConsoleApp\ConsoleApp.csproj" (59a92a9a)
+2023-09-23T14:53:04.0433248-03:00  [DBG] Skipping auto-generated code file: "D:\GitHubRepos\PalindromicNumbers\ConsoleApp\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" (1e1226c3)
+2023-09-23T14:53:06.3717510-03:00  [DBG] Skipping auto-generated code file: "D:\GitHubRepos\PalindromicNumbers\ConsoleApp\obj\Debug\net6.0\ConsoleApp.AssemblyInfo.cs" (1e1226c3)
+2023-09-23T14:53:07.5485024-03:00  [INF] Found project "D:\GitHubRepos\PalindromicNumbers\ConsoleApp\ConsoleApp.csproj" to mutate. (2d705ac3)
+2023-09-23T14:53:07.7600830-03:00  [INF] Analysis complete. (f039f576)
+2023-09-23T14:53:07.7793934-03:00  [INF] Building test project "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests\ConsoleAppTests.csproj" (1/1) (e2c15ab4)
+2023-09-23T14:53:07.9125033-03:00  [DBG] Started initial build using "dotnet build" (a4e1a5e2)
+2023-09-23T14:53:07.9163274-03:00  [DBG] Initial build using path: "D:\GitHubRepos\PalindromicNumbers\PalindromicNumbers.sln" (657c8664)
+2023-09-23T14:53:37.8807803-03:00  [DBG] Initial build successful (61599426)
+2023-09-23T14:53:38.3524010-03:00  [DBG] VsTest zip was copied to: "C:\Users\Dickson\AppData\Local\Temp\lqokaso0.kg3\.vstest\vstest.zip" (8e340ff1)
+2023-09-23T14:53:46.8075229-03:00  [DBG] VsTest zip was unzipped to: "C:\Users\Dickson\AppData\Local\Temp\lqokaso0.kg3\.vstest" (679800d3)
+2023-09-23T14:53:46.8890068-03:00  [DBG] Using vstest from deployed vstest package (6132c740)
+2023-09-23T14:53:46.9080643-03:00  [DBG] Using vstest.console: "WINDOWS" for OS "C:\Users\Dickson\AppData\Local\Temp\lqokaso0.kg3\.vstest\tools\net462\vstest.console.exe" (38dfd549)
+2023-09-23T14:54:02.4824128-03:00  [INF] Number of tests found: 3 for project "D:\GitHubRepos\PalindromicNumbers\ConsoleApp\ConsoleApp.csproj". Initial test run started. (a32fa62b)
+2023-09-23T14:54:06.6486141-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:54:06.6578568-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:54:06.6759231-03:00  [DBG] Initial test run output: "". (e3b6099a)
+2023-09-23T14:54:06.8620900-03:00  [DBG] Mutating D:\GitHubRepos\PalindromicNumbers\ConsoleApp\FileParserForChallenge12050.cs (d268c1ae)
+2023-09-23T14:54:07.1031559-03:00  [DBG] Mutant 0 created "{
+            return listOfInputs;
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.2295816-03:00  [DBG] Mutant 1 created "{
+            return listOfOutputs;
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.2616952-03:00  [DBG] Mutant 2 created "{
+        listOfInputs.Clear();
+
+        using var fileContent = new StreamReader(filePath);
+        var lineContent = fileContent.ReadLine();
+        var input = Convert.ToInt32(lineContent);
+
+        if (input != 0)
+        {
+            listOfInputs.Add(input);
+        }
+
+        while (!fileContent.EndOfStream && input != 0)
+        {
+            lineContent = fileContent.ReadLine();
+            input = Convert.ToInt32(lineContent);
+
+            if (input != 0)
+            {
+                listOfInputs.Add(input);
+            }
+        }
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.2955580-03:00  [DBG] Mutant 3 created "listOfInputs.Clear();" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.3478875-03:00  [DBG] Mutant 4 created "input != 0" -> "input == 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.3975384-03:00  [DBG] Mutant 5 created "{
+            listOfInputs.Add(input);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.4052122-03:00  [DBG] Mutant 6 created "listOfInputs.Add(input);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.4139880-03:00  [DBG] Mutant 7 created "!fileContent.EndOfStream && input != 0" -> "!fileContent.EndOfStream || input != 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.4280960-03:00  [DBG] Mutant 8 created "!fileContent.EndOfStream && input != 0" -> "!(!fileContent.EndOfStream && input != 0)" using "Stryker.Core.Mutators.NegateConditionMutator" (310d25d3)
+2023-09-23T14:54:07.4544754-03:00  [DBG] Mutant 9 created "!fileContent.EndOfStream" -> "fileContent.EndOfStream" using "Stryker.Core.Mutators.PrefixUnaryMutator" (310d25d3)
+2023-09-23T14:54:07.4631972-03:00  [DBG] Mutant 10 created "input != 0" -> "input == 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.4766384-03:00  [DBG] Mutant 11 created "{
+            lineContent = fileContent.ReadLine();
+            input = Convert.ToInt32(lineContent);
+
+            if (input != 0)
+            {
+                listOfInputs.Add(input);
+            }
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.5116250-03:00  [DBG] Mutant 12 created "input != 0" -> "input == 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.5303835-03:00  [DBG] Mutant 13 created "{
+                listOfInputs.Add(input);
+            }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.5436525-03:00  [DBG] Mutant 14 created "listOfInputs.Add(input);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.5858401-03:00  [DBG] Mutant 15 created "{
+        listOfOutputs.Clear();
+
+        foreach (var input in listOfInputs)
+        {
+            var output = SinglePalindromes.GetNthPalindrome(input);
+            listOfOutputs.Add(output);
+        }
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.5928169-03:00  [DBG] Mutant 16 created "listOfOutputs.Clear();" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.6366158-03:00  [DBG] Mutant 17 created "{
+            var output = SinglePalindromes.GetNthPalindrome(input);
+            listOfOutputs.Add(output);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.6532480-03:00  [DBG] Mutant 18 created "listOfOutputs.Add(output);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.6761376-03:00  [DBG] Mutant 19 created "{
+        FillListOfOutputs();
+
+        var directoryInfo = Path.GetDirectoryName(filePath);
+        _ = Directory.CreateDirectory(directoryInfo);
+        var file = File.Create(filePath);
+        using var fileContent = new StreamWriter(file);
+
+        foreach (var output in listOfOutputs)
+        {
+            fileContent.WriteLine(output);
+        }
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.6909487-03:00  [DBG] Mutant 20 created "FillListOfOutputs();" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.7127003-03:00  [DBG] Mutant 21 created "{
+            fileContent.WriteLine(output);
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.7191462-03:00  [DBG] Mutant 22 created "fileContent.WriteLine(output);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.7441608-03:00  [DBG] Mutating D:\GitHubRepos\PalindromicNumbers\ConsoleApp\Program.cs (8840c3ed)
+2023-09-23T14:54:07.7783136-03:00  [DBG] Mutant 23 created "{
+        Console.WriteLine(\"Challenge 12050 - Palindrome Number - UVA Online Judge\");
+
+        if (args.Length > 0 && File.Exists(args[0]))
+        {
+            var fileParser = new FileParserForChallenge12050();
+            fileParser.ReadFile(args[0]);
+
+            if (args.Length == 2)
+            {
+                fileParser.WriteOutputFile(args[1]);
+            }
+            else
+            {
+                fileParser.WriteOutputFile(Path.Combine(Directory.GetCurrentDirectory(), \"Output\", \"Output.txt\"));
+            }
+        }
+    }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.7910330-03:00  [DBG] Mutant 24 created "Console.WriteLine(\"Challenge 12050 - Palindrome Number - UVA Online Judge\");" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.8120067-03:00  [DBG] Mutant 25 created "\"Challenge 12050 - Palindrome Number - UVA Online Judge\"" -> "\"\"" using "Stryker.Core.Mutators.StringMutator" (310d25d3)
+2023-09-23T14:54:07.8236886-03:00  [DBG] Mutant 26 created "args.Length > 0 && File.Exists(args[0])" -> "args.Length > 0 || File.Exists(args[0])" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.8317674-03:00  [DBG] Mutant 27 created "args.Length > 0 && File.Exists(args[0])" -> "!(args.Length > 0 && File.Exists(args[0]))" using "Stryker.Core.Mutators.NegateConditionMutator" (310d25d3)
+2023-09-23T14:54:07.8416918-03:00  [DBG] Mutant 28 created "args.Length > 0" -> "args.Length < 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.8532746-03:00  [DBG] Mutant 29 created "args.Length > 0" -> "args.Length >= 0" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.8793183-03:00  [DBG] Mutant 30 created "{
+            var fileParser = new FileParserForChallenge12050();
+            fileParser.ReadFile(args[0]);
+
+            if (args.Length == 2)
+            {
+                fileParser.WriteOutputFile(args[1]);
+            }
+            else
+            {
+                fileParser.WriteOutputFile(Path.Combine(Directory.GetCurrentDirectory(), \"Output\", \"Output.txt\"));
+            }
+        }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.8890341-03:00  [DBG] Mutant 31 created "fileParser.ReadFile(args[0]);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.9146966-03:00  [DBG] Mutant 32 created "args.Length == 2" -> "args.Length != 2" using "Stryker.Core.Mutators.BinaryExpressionMutator" (310d25d3)
+2023-09-23T14:54:07.9381843-03:00  [DBG] Mutant 33 created "{
+                fileParser.WriteOutputFile(args[1]);
+            }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.9448144-03:00  [DBG] Mutant 34 created "fileParser.WriteOutputFile(args[1]);" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.9531777-03:00  [DBG] Mutant 35 created "{
+                fileParser.WriteOutputFile(Path.Combine(Directory.GetCurrentDirectory(), \"Output\", \"Output.txt\"));
+            }" -> "{}" using "Stryker.Core.Mutators.BlockMutator" (310d25d3)
+2023-09-23T14:54:07.9680690-03:00  [DBG] Mutant 36 created "fileParser.WriteOutputFile(Path.Combine(Directory.GetCurrentDirectory(), \"Output\", \"Output.txt\"));" -> ";" using "Stryker.Core.Mutators.StatementMutator" (310d25d3)
+2023-09-23T14:54:07.9830663-03:00  [DBG] Mutant 37 created "\"Output\"" -> "\"\"" using "Stryker.Core.Mutators.StringMutator" (310d25d3)
+2023-09-23T14:54:07.9938992-03:00  [DBG] Mutant 38 created "\"Output.txt\"" -> "\"\"" using "Stryker.Core.Mutators.StringMutator" (310d25d3)
+2023-09-23T14:54:08.0032587-03:00  [DBG] 39 mutants created (edec1dee)
+2023-09-23T14:54:12.4762556-03:00  [DBG] Trying compilation for the "first" time. (f2d91e8b)
+2023-09-23T14:54:21.1462654-03:00  [DBG] Compilation successful (17bf6fae)
+2023-09-23T14:54:21.7524091-03:00  [DBG] Injected the mutated assembly file into "D:\GitHubRepos\PalindromicNumbers\ConsoleAppTests\bin\Debug\net6.0\ConsoleApp.dll" (92a3e3c8)
+2023-09-23T14:54:21.7700080-03:00  [INF] 39 mutants created (edec1dee)
+2023-09-23T14:54:21.7853578-03:00  [INF] Capture mutant coverage using 'CoverageBasedTest' mode. (133c36d4)
+2023-09-23T14:54:26.1362784-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:54:26.1383035-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:54:26.1944949-03:00  [DBG] Mutant 0 will be tested against (1) tests. (b3b197f5)
+2023-09-23T14:54:26.2032078-03:00  [DBG] Mutant 1 will be tested against (1) tests. (41145598)
+2023-09-23T14:54:26.2151673-03:00  [DBG] Mutant 2 will be tested against (3) tests. (e742d756)
+2023-09-23T14:54:26.2758710-03:00  [DBG] Mutant 3 will be tested against (3) tests. (26979ffd)
+2023-09-23T14:54:26.3107239-03:00  [DBG] Mutant 4 will be tested against (3) tests. (f1c457f0)
+2023-09-23T14:54:26.3235245-03:00  [DBG] Mutant 5 will be tested against (3) tests. (43617adf)
+2023-09-23T14:54:26.3330017-03:00  [DBG] Mutant 6 will be tested against (3) tests. (c5dd2992)
+2023-09-23T14:54:26.3471454-03:00  [DBG] Mutant 7 will be tested against (3) tests. (f17c8931)
+2023-09-23T14:54:26.4457016-03:00  [DBG] Mutant 8 will be tested against (3) tests. (b0adbbed)
+2023-09-23T14:54:26.4790394-03:00  [DBG] Mutant 9 will be tested against (3) tests. (9b1ecdfd)
+2023-09-23T14:54:26.4857481-03:00  [DBG] Mutant 10 will be tested against (3) tests. (1a291ca5)
+2023-09-23T14:54:26.5323860-03:00  [DBG] Mutant 11 will be tested against (3) tests. (66e37507)
+2023-09-23T14:54:26.5600324-03:00  [DBG] Mutant 12 will be tested against (3) tests. (46dfc1c5)
+2023-09-23T14:54:26.5775412-03:00  [DBG] Mutant 13 will be tested against (3) tests. (6cc5a3f8)
+2023-09-23T14:54:26.6283786-03:00  [DBG] Mutant 14 will be tested against (3) tests. (0ae3d6ac)
+2023-09-23T14:54:26.6757186-03:00  [DBG] Mutant 15 will be tested against (2) tests. (8cab4865)
+2023-09-23T14:54:26.6885425-03:00  [DBG] Mutant 16 will be tested against (2) tests. (03af960d)
+2023-09-23T14:54:26.6919550-03:00  [DBG] Mutant 17 will be tested against (2) tests. (c291f1bd)
+2023-09-23T14:54:26.6986395-03:00  [DBG] Mutant 18 will be tested against (2) tests. (20b2b3b8)
+2023-09-23T14:54:26.7045093-03:00  [DBG] Mutant 19 will be tested against (1) tests. (dcccb367)
+2023-09-23T14:54:26.7150703-03:00  [DBG] Mutant 20 will be tested against (1) tests. (cc2b7796)
+2023-09-23T14:54:26.7278863-03:00  [DBG] Mutant 21 will be tested against (1) tests. (03d69657)
+2023-09-23T14:54:26.7626783-03:00  [DBG] Mutant 22 will be tested against (1) tests. (987741e3)
+2023-09-23T14:54:26.7726285-03:00  [DBG] Mutant 23 is not covered by any test. (73ac7753)
+2023-09-23T14:54:26.7779448-03:00  [DBG] Mutant 24 is not covered by any test. (2d15f775)
+2023-09-23T14:54:26.7813026-03:00  [DBG] Mutant 25 is not covered by any test. (c5afe39e)
+2023-09-23T14:54:26.8069233-03:00  [DBG] Mutant 26 is not covered by any test. (81846aa2)
+2023-09-23T14:54:26.8116253-03:00  [DBG] Mutant 27 is not covered by any test. (07a75cc3)
+2023-09-23T14:54:26.8155624-03:00  [DBG] Mutant 28 is not covered by any test. (aba0e2e1)
+2023-09-23T14:54:26.8291751-03:00  [DBG] Mutant 29 is not covered by any test. (e3686f57)
+2023-09-23T14:54:26.8388069-03:00  [DBG] Mutant 30 is not covered by any test. (d67bcc8a)
+2023-09-23T14:54:26.8701736-03:00  [DBG] Mutant 31 is not covered by any test. (0a14d08f)
+2023-09-23T14:54:26.8783517-03:00  [DBG] Mutant 32 is not covered by any test. (c1e5c6d3)
+2023-09-23T14:54:26.8868089-03:00  [DBG] Mutant 33 is not covered by any test. (ca38381e)
+2023-09-23T14:54:26.8947892-03:00  [DBG] Mutant 34 is not covered by any test. (0e8fbc91)
+2023-09-23T14:54:26.9154853-03:00  [DBG] Mutant 35 is not covered by any test. (e3683de5)
+2023-09-23T14:54:26.9300528-03:00  [DBG] Mutant 36 is not covered by any test. (ec92ab83)
+2023-09-23T14:54:26.9363324-03:00  [DBG] Mutant 37 is not covered by any test. (2fb7a429)
+2023-09-23T14:54:26.9408089-03:00  [DBG] Mutant 38 is not covered by any test. (82043757)
+2023-09-23T14:54:33.1914909-03:00  [INF] 8     mutants got status Ignored.      Reason: "Removed by block already covered filter" (a6dc06f3)
+2023-09-23T14:54:33.7577422-03:00  [INF] 16    mutants got status Ignored.      Reason: "Removed by mutate filter" (55cfec49)
+2023-09-23T14:54:33.8714721-03:00  [INF] 24    total mutants are skipped for the above mentioned reasons (506ffda1)
+2023-09-23T14:54:34.3239435-03:00  [INF] 15    total mutants will be tested (db762a7b)
+2023-09-23T14:54:34.7377744-03:00  [DBG] Mutations will be tested in 13 test runs, instead of 15. (ed386fcc)
+2023-09-23T14:54:34.7664705-03:00  [DBG] Runner 0: Testing [6: Statement mutation] (1aab829e)
+2023-09-23T14:54:34.7744669-03:00  [DBG] Runner 1: Testing [0: Block removal mutation,1: Block removal mutation,20: Statement mutation] (641a6401)
+2023-09-23T14:54:34.8058930-03:00  [DBG] Runner 1: Using 36282 ms as test run timeout (b052572a)
+2023-09-23T14:54:34.8870477-03:00  [DBG] Runner 0: Using 36282 ms as test run timeout (06fcd16a)
+2023-09-23T14:54:43.7102824-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:54:43.7501127-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:54:43.8081619-03:00  [DBG] Test run for 0: Block removal mutation, 1: Block removal mutation, 20: Statement mutation is failed  (b9dd34d0)
+2023-09-23T14:54:43.8263458-03:00  [DBG] Runner 1: Testing [22: Statement mutation] (af29c99b)
+2023-09-23T14:54:43.8830691-03:00  [DBG] Runner 1: Using 36111 ms as test run timeout (8153b87f)
+2023-09-23T14:54:44.1426224-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-23T14:54:44.2027853-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-23T14:54:44.3327234-03:00  [DBG] Test run for 6: Statement mutation is failed  (1425152e)
+2023-09-23T14:54:44.5614285-03:00  [DBG] Runner 0: Testing [7: Logical mutation] (6183c568)
+2023-09-23T14:54:45.1264493-03:00  [DBG] Runner 0: Using 36282 ms as test run timeout (06fcd16a)
+2023-09-23T14:54:52.5401252-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:54:52.7002591-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:54:52.7933232-03:00  [DBG] Test run for 22: Statement mutation is failed  (cdb9e537)
+2023-09-23T14:54:52.8369491-03:00  [DBG] Runner 1: Testing [16: Statement mutation] (9a084ef8)
+2023-09-23T14:54:52.8660770-03:00  [DBG] Runner 1: Using 36157 ms as test run timeout (6c04ad4d)
+2023-09-23T14:54:53.5431665-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-23T14:54:53.5489893-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-23T14:54:53.5599073-03:00  [DBG] Test run for 7: Logical mutation is failed  (19fa85ef)
+2023-09-23T14:54:53.6331798-03:00  [DBG] Runner 0: Testing [8: Negate expression] (a61c5609)
+2023-09-23T14:54:53.6731716-03:00  [DBG] Runner 0: Using 36282 ms as test run timeout (06fcd16a)
+2023-09-23T14:55:01.2839767-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:55:01.2877474-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:55:01.2934657-03:00  [DBG] Test run for 16: Statement mutation is failed  (b9039f5d)
+2023-09-23T14:55:01.3002400-03:00  [DBG] Runner 1: Testing [18: Statement mutation] (28029914)
+2023-09-23T14:55:01.3403729-03:00  [DBG] Runner 1: Using 36157 ms as test run timeout (6c04ad4d)
+2023-09-23T14:55:01.3425350-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-23T14:55:01.3634761-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-23T14:55:01.5231462-03:00  [DBG] Test run for 8: Negate expression is failed  (f2eadbcd)
+2023-09-23T14:55:01.5305239-03:00  [DBG] Runner 0: Testing [9: LogicalNotExpression to un-LogicalNotExpression mutation] (73012e0e)
+2023-09-23T14:55:01.5337295-03:00  [DBG] Runner 0: Using 36282 ms as test run timeout (06fcd16a)
+2023-09-23T14:55:08.4087123-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:55:08.4108717-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:55:08.4140444-03:00  [DBG] Test run for 18: Statement mutation is failed  (99020c4f)
+2023-09-23T14:55:08.5453998-03:00  [DBG] Runner 1: Testing [3: Statement mutation] (e0aaaf07)
+2023-09-23T14:55:08.7594423-03:00  [DBG] Runner 1: Using 36282 ms as test run timeout (b052572a)
+2023-09-23T14:55:08.9889787-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-23T14:55:08.9922358-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-23T14:55:08.9955714-03:00  [DBG] Test run for 9: LogicalNotExpression to un-LogicalNotExpression mutation is failed  (78899a68)
+2023-09-23T14:55:09.1256954-03:00  [DBG] Runner 0: Testing [10: Equality mutation] (801ebb6c)
+2023-09-23T14:55:09.1301104-03:00  [DBG] Runner 0: Using 36282 ms as test run timeout (06fcd16a)
+2023-09-23T14:55:15.7731416-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-23T14:55:15.8255980-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-23T14:55:16.0147329-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-23T14:55:16.0208118-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-23T14:55:16.0229539-03:00  [DBG] Test run for 10: Equality mutation is failed  (cec2cf06)
+2023-09-23T14:55:16.1231301-03:00  [DBG] Runner 0: Testing [12: Equality mutation] (cf2f32df)
+2023-09-23T14:55:16.1255341-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:55:16.1563012-03:00  [DBG] Runner 0: Using 36282 ms as test run timeout (06fcd16a)
+2023-09-23T14:55:16.2725759-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:55:16.3019852-03:00  [DBG] Test run for 3: Statement mutation is failed  (e7a5593d)
+2023-09-23T14:55:16.3143408-03:00  [DBG] Runner 1: Testing [4: Equality mutation] (99ebbc6d)
+2023-09-23T14:55:16.5530474-03:00  [DBG] Runner 1: Using 36282 ms as test run timeout (b052572a)
+2023-09-23T14:55:21.4368259-03:00  [DBG] Runner 1: Each mutant's fate has been established, we can stop. (b49f87dc)
+2023-09-23T14:55:21.7391129-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:55:21.7413221-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:55:21.7437675-03:00  [DBG] Test run for 4: Equality mutation is failed  (38679a45)
+2023-09-23T14:55:21.7467356-03:00  [DBG] Runner 1: Testing [14: Statement mutation] (9a06d236)
+2023-09-23T14:55:21.7494222-03:00  [DBG] Runner 1: Using 36282 ms as test run timeout (b052572a)
+2023-09-23T14:55:26.0784638-03:00  [DBG] Runner 0: Each mutant's fate has been established, we can stop. (8d6235cf)
+2023-09-23T14:55:31.1210361-03:00  [DBG] Runner 1: Received testrun complete. (a3b9ae18)
+2023-09-23T14:55:31.1246616-03:00  [DBG] Runner 1: Test session finished. (d8817669)
+2023-09-23T14:55:31.1267982-03:00  [DBG] Test run for 14: Statement mutation is failed  (b9795f05)
+2023-09-23T14:55:52.7291083-03:00  [DBG] Runner 0: Received testrun complete. (58e3960e)
+2023-09-23T14:55:52.7383613-03:00  [DBG] Runner 0: Test session finished. (4c426f42)
+2023-09-23T14:55:52.7509075-03:00  [DBG] Test run for 12: Equality mutation is failed  (c3e14e50)
+2023-09-23T14:55:54.2196427-03:00  [INF] Time Elapsed 00:03:23.1300355 (f4427d77)
+2023-09-23T14:55:54.2233813-03:00  [INF] The final mutation score is 100.00 % (2ef58de4)

@@ -1,6 +1,7 @@
 {
     "configuration": "release",
-    "PalindromicLib.branchCoverage.threshold": 87.5,
+    "ConsoleApp.branchCoverage.threshold": 90,
+    "PalindromicLib.branchCoverage.threshold": 90,
     "debug.terminal.clearBeforeReusing": true,
     "terminal.integrated.automationProfile.windows": {
         "path": "C:\\Windows\\System32\\cmd.exe"

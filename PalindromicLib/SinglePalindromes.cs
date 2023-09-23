@@ -97,4 +97,18 @@ public static class SinglePalindromes
 
         return digits.ToArray();
     }
+
+    public static uint GetNthPalindrome(int position) 
+    {
+        var nthPalindrome = 1u;
+        var order = 1;
+
+        while (order != position) 
+        {
+            order++;
+            nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
+        }
+
+        return nthPalindrome;
+    }
 }
