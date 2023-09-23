@@ -29,5 +29,19 @@ public class FileParserForChallenge12050Tests
             fileParser.ListOfInputs[1].Should().Be(12);
             fileParser.ListOfInputs[2].Should().Be(24);
         }
+
+        // New Arrangement
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), "SampleInput2.txt");
+
+        // New Act
+        fileParser.ReadFile(filePath);
+
+        // New Assertions
+        using (new AssertionScope())
+        {
+            fileParser.ListOfInputs.Count.Should().Be(2);
+            fileParser.ListOfInputs[0].Should().Be(5);
+            fileParser.ListOfInputs[1].Should().Be(7);
+        }
     }
 }

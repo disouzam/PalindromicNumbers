@@ -33,6 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="SampleInput2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="SampleInput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
