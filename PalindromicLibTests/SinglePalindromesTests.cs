@@ -26,7 +26,7 @@ public class SinglePalindromesTests
         // Assert
         currentReturn.Should().BeEquivalentTo(expectedReturn);
 
-        for(var i = 0; i < arrayLength; i++)
+        for (var i = 0; i < arrayLength; i++)
         {
             currentReturn[i].Should().Be(expectedReturn[i]);
         }
@@ -151,5 +151,31 @@ public class SinglePalindromesTests
 
         // Assert
         currentList.Should().BeEquivalentTo(expectedList);
+    }
+
+
+    [Theory]
+    [InlineData(1, 1)]
+    [InlineData(2, 2)]
+    [InlineData(3, 3)]
+    [InlineData(4, 4)]
+    [InlineData(5, 5)]
+    [InlineData(6, 6)]
+    [InlineData(7, 7)]
+    [InlineData(8, 8)]
+    [InlineData(9, 9)]
+    [InlineData(10, 11)]
+    [InlineData(11, 22)]
+    [InlineData(12, 33)]
+    public void CheckNthPalindromes(int position, uint nthPalindrome)
+    {
+        // Arrange
+        uint? currentNthPalindrome;
+
+        // Act
+        currentNthPalindrome = SinglePalindromes.GetNthPalindrome(position);
+
+        // Assert
+        currentNthPalindrome.Should().Be(nthPalindrome);
     }
 }
