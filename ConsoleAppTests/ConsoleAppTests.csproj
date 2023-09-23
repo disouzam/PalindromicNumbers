@@ -33,10 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="SampleInput2.txt">
+    <None Update="SampleInput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SampleInput.txt">
+    <None Update="SampleInput2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="SampleInput3.txt">
