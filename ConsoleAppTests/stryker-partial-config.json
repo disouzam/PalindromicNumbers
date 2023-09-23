@@ -13,7 +13,9 @@
         "ignore-methods": [],
         "ignore-mutations": [],
         "language-version": "Csharp10",
-        "mutate": [],
+        "mutate": [
+            "!**/Program.cs"
+        ],
         "mutation-level": "Complete",
         "project": "ConsoleApp\\ConsoleApp.csproj",
         "project-info": {},

@@ -134,6 +134,27 @@
             ],
             "problemMatcher": "$msCompile"
         },
+        // Task ------ [REPOSITORY-LEVEL] Run all mutation testing 
+        {
+            "label": "[REPOSITORY-LEVEL] Run all mutation testing",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Run all mutation testing\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[PalindromicLibTests] Run full Stryker.NET analysis",
+                "[ConsoleAppTests] Run full Stryker.NET analysis"
+            ],
+            "problemMatcher": "$msCompile"
+        },
         // Task ------ [REPOSITORY-LEVEL] Open reports tasks
         {
             "label": "[REPOSITORY-LEVEL] Open all reports",
