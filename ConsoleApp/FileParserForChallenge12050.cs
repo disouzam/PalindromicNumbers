@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 
+using PalindromicLib;
+
 namespace ConsoleApp;
 
 public class FileParserForChallenge12050
 {
     private readonly List<int> listOfInputs = new List<int>();
+
 
     public List<int> ListOfInputs
     {
@@ -16,6 +19,15 @@ public class FileParserForChallenge12050
         }
     }
 
+    private readonly List<uint> listOfOutputs = new List<uint>();
+
+    public List<uint> ListOfOutputs
+    {
+        get
+        {
+            return listOfOutputs;
+        }
+    }
 
     public void ReadFile(string filePath)
     {
@@ -39,6 +51,32 @@ public class FileParserForChallenge12050
             {
                 listOfInputs.Add(input);
             }
+        }
+    }
+
+    private void FillListOfOutputs()
+    {
+        listOfOutputs.Clear();
+
+        foreach (var input in listOfInputs) 
+        {
+            var output = SinglePalindromes.GetNthPalindrome(input);
+            listOfOutputs.Add(output);
+        }
+    }
+
+    public void WriteOutputFile(string filePath)
+    {
+        FillListOfOutputs();
+
+        var directoryInfo = Path.GetDirectoryName(filePath);
+        _ = Directory.CreateDirectory(directoryInfo);
+        var file = File.Create(filePath);
+        using var fileContent = new StreamWriter(file);
+
+        foreach (var output in listOfOutputs) 
+        {
+            fileContent.WriteLine(output);
         }
     }
 }

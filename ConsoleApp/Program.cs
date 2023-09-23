@@ -13,6 +13,15 @@ public static class Program
         {
             var fileParser = new FileParserForChallenge12050();
             fileParser.ReadFile(args[0]);
+
+            if (args.Length == 2)
+            {
+                fileParser.WriteOutputFile(args[1]);
+            }
+            else
+            {
+                fileParser.WriteOutputFile(Path.Combine(Directory.GetCurrentDirectory(), "Output", "Output.txt"));
+            }
         }
     }
 }
