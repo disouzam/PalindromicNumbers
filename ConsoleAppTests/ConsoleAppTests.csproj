@@ -39,6 +39,9 @@
     <None Update="SampleInput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="SampleInput3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="SampleOutput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

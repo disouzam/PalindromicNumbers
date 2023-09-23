@@ -43,5 +43,19 @@ public class FileParserForChallenge12050Tests
             fileParser.ListOfInputs[0].Should().Be(5);
             fileParser.ListOfInputs[1].Should().Be(7);
         }
+
+        //Arrangement for a third sample file with zero before end of stream
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), "SampleInput3.txt");
+
+        // Third act
+        fileParser.ReadFile(filePath);
+
+        // Third set of Assertions
+        using (new AssertionScope())
+        {
+            fileParser.ListOfInputs.Count.Should().Be(2);
+            fileParser.ListOfInputs[0].Should().Be(5);
+            fileParser.ListOfInputs[1].Should().Be(7);
+        }
     }
 }
