@@ -91,7 +91,6 @@ public class FileParserForChallenge12050Tests
 
         // Arrange for SampleInput2
         filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[1]);
-        fileParser = new FileParserForChallenge12050();
 
         // Act for SampleInput2
         fileParser.ReadFile(filePath);
@@ -107,7 +106,6 @@ public class FileParserForChallenge12050Tests
 
         // Arrange for SampleInput3
         filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[2]);
-        fileParser = new FileParserForChallenge12050();
 
         // Act for SampleInput3
         fileParser.ReadFile(filePath);
