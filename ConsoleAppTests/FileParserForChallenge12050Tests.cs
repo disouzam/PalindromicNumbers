@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 using ConsoleApp;
 
@@ -14,8 +17,8 @@ public class FileParserForChallenge12050Tests
     private const string samplesFolder = "Samples";
     private const string resultsFolder = "TestResults";
 
-    private readonly string[] sampleFileNames = new []{ "SampleInput.txt", "SampleInput2.txt", "SampleInput3.txt" };
-    private readonly string[] resultFileNames = new []{ "Output1.txt", "Output2.txt", "Output3.txt" };
+    private readonly string[] sampleFileNames = new[] { "SampleInput.txt", "SampleInput2.txt", "SampleInput3.txt" };
+    private readonly string[] resultFileNames = new[] { "Output1.txt", "Output2.txt", "Output3.txt" };
 
     [Fact]
     public void CheckReadFileBehaviorWithSampleInput()
@@ -136,6 +139,15 @@ public class FileParserForChallenge12050Tests
 
         // Assert for Sample Input 1
         File.Exists(output1File).Should().Be(true);
+        var listOfOutputs1 = ReadOutputFile(output1File);
+
+        using (new AssertionScope())
+        {
+            listOfOutputs1.Count.Should().Be(3);
+            listOfOutputs1[0].Should().Be(1);
+            listOfOutputs1[1].Should().Be(33);
+            listOfOutputs1[2].Should().Be(151);
+        }
 
         // Arrange for Sample Input 2
         filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[1]);
@@ -150,6 +162,14 @@ public class FileParserForChallenge12050Tests
 
         // Assert for Sample Input 2
         File.Exists(output2File).Should().Be(true);
+        var listOfOutputs2 = ReadOutputFile(output2File);
+
+        using (new AssertionScope())
+        {
+            listOfOutputs2.Count.Should().Be(2);
+            listOfOutputs2[0].Should().Be(5);
+            listOfOutputs2[1].Should().Be(7);
+        }
 
         // Arrange for Sample Input 3
         filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[2]);
@@ -164,5 +184,66 @@ public class FileParserForChallenge12050Tests
 
         // Assert for Sample Input 3
         File.Exists(output3File).Should().Be(true);
+        var listOfOutputs3 = ReadOutputFile(output3File);
+
+        using (new AssertionScope())
+        {
+            listOfOutputs3.Count.Should().Be(3);
+            listOfOutputs3[0].Should().Be(11);
+            listOfOutputs3[1].Should().Be(111);
+            listOfOutputs3[2].Should().Be(66);
+        }
+
+        // Delete all output files and folder
+        if (File.Exists(output1File))
+        {
+            File.Delete(output1File);
+        }
+
+        if (File.Exists(output2File))
+        {
+            File.Delete(output2File);
+        }
+
+        if (File.Exists(output3File))
+        {
+            File.Delete(output3File);
+        }
+
+        Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), resultsFolder)).Should().BeTrue();
+        if (Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), resultsFolder)))
+        {
+            Directory.EnumerateFiles(Path.Combine(Directory.GetCurrentDirectory(), resultsFolder)).Count().Should().Be(0);
+            Directory.Delete(Path.Combine(Directory.GetCurrentDirectory(), resultsFolder));
+        }
+
+        using (new AssertionScope())
+        {
+            File.Exists(output1File).Should().Be(false);
+            File.Exists(output2File).Should().Be(false);
+            File.Exists(output3File).Should().Be(false);
+        }
+    }
+
+
+    private static List<uint> ReadOutputFile(string filePath)
+    {
+        var listOfOutputs = new List<uint>();
+
+        using var fileContent = new StreamReader(filePath);
+        var lineContent = fileContent.ReadLine();
+        var output = Convert.ToUInt32(lineContent);
+
+        listOfOutputs.Add(output);
+
+        while (!fileContent.EndOfStream)
+        {
+            lineContent = fileContent.ReadLine();
+            output = Convert.ToUInt32(lineContent);
+
+            listOfOutputs.Add(output);
+        }
+
+        return listOfOutputs;
     }
 }
