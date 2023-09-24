@@ -16,11 +16,14 @@ public static class Program
 
             if (args.Length == 2)
             {
+                Console.WriteLine($"Results will be written to file {args[1]}");
                 fileParser.WriteOutputFile(args[1]);
             }
             else
             {
-                fileParser.WriteOutputFile(Path.Combine(Directory.GetCurrentDirectory(), "Output", "Output.txt"));
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Output", "Output.txt");
+                Console.WriteLine($"Results will be written to file {filePath}");
+                fileParser.WriteOutputFile(filePath);
             }
         }
     }
