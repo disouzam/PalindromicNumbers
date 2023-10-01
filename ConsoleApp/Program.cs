@@ -46,5 +46,7 @@ public static class Program
         }
 
         Log.Logger.Information("Console App Finishing...");
+
+        Log.CloseAndFlush();
     }
 }

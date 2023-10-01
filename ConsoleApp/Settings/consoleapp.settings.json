@@ -1,30 +1,33 @@
 {
-    "Serilog": {
-        "Using": [],
-        "MinimumLevel": {
-            "Default": "Information",
-            "Override": {
-                "Microsoft": "Warning",
-                "System": "Warning"
-            }
-        },
-        "Enrich": [
-            "FromLogContext",
-            "WithMachineName",
-            "WithProcessId",
-            "WithThreadId"
-        ],
-        "WriteTo": [
-            {
-                "Name": "Console"
-            },
-            {
-                "Name": "File",
-                "Args": {
-                    "path": "{Insert file path, down to file name and extension}",
-                    "outputTemplate": "{Timestamp:G} {Message}{NewLine:1}{Exception:1}"
-                }
-            }
-        ]
-    }
+  "Serilog": {
+    "Using": [],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    },
+    "Enrich": [
+      "FromLogContext",
+      "WithMachineName",
+      "WithProcessId",
+      "WithThreadId"
+    ],
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "[{Timestamp:u} {Level:u3}] - {Message}{NewLine:1}{Exception:1}"
+        }
+      },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "{Insert file path, down to file name and extension}",
+          "outputTemplate": "[{Timestamp:u} {Level:u3}] - {Message}{NewLine:1}MachineName: {MachineName:1} - ProcessId: {ProcessId:1} - ThreadId: {ThreadId:1}{NewLine:1}{Exception:1}{NewLine:1}"
+        }
+      }
+    ]
+  }
 }
