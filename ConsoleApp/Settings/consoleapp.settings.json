@@ -17,6 +17,13 @@
         "WriteTo": [
             {
                 "Name": "Console"
+            },
+            {
+                "Name": "File",
+                "Args": {
+                    "path": "{Insert file path, down to file name and extension}",
+                    "outputTemplate": "{Timestamp:G} {Message}{NewLine:1}{Exception:1}"
+                }
             }
         ]
     }
