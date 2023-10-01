@@ -2,7 +2,7 @@
   "profiles": {
     "ConsoleApp": {
       "commandName": "Project",
-      "commandLineArgs": "\"D:\\GitHubRepos\\PalindromicNumbers\\ConsoleAppTests\\Samples\\SampleInput.txt\"\r\n\"D:\\GitHubRepos\\PalindromicNumbers\\ConsoleApp\\\"\r\n"
+      "commandLineArgs": "\"D:\\GitHubRepos\\PalindromicNumbers\\ConsoleAppTests\\Samples\\SampleInput5.txt\"\r\n\"D:\\GitHubRepos\\PalindromicNumbers\\ConsoleApp\\Output5.txt\"\r\n"
     }
   }
 }
