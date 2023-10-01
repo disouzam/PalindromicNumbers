@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Palindromes\Palindromes.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Settings\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
