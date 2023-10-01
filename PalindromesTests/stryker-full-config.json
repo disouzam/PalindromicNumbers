@@ -10,11 +10,9 @@
         "ignore-methods": [],
         "ignore-mutations": [],
         "language-version": "Csharp10",
-        "mutate": [
-            "!**/Program.cs"
-        ],
+        "mutate": [],
         "mutation-level": "Complete",
-        "project": "ConsoleApp\\ConsoleApp.csproj",
+        "project": "Palindromes\\Palindromes.csproj",
         "project-info": {},
         "report-file-name": "stryker-full-report.html",
         "reporters": [
@@ -26,7 +24,7 @@
         "target-framework": "net6.0",
         "test-case-filter": "",
         "test-projects": [
-            "ConsoleAppTests.csproj"
+            "PalindromesTests.csproj"
         ],
         "thresholds": {
             "high": 80,

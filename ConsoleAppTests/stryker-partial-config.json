@@ -25,7 +25,7 @@
             "html",
             "cleartext"
         ],
-        "solution": "..\\PalindromicNumbers.sln",
+        "solution": "..\\Palindromes.sln",
         "target-framework": "net6.0",
         "test-case-filter": "",
         "test-projects": [
