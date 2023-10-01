@@ -1,5 +1,5 @@
 {
-    "configuration": "release",
+    "configuration": "Release",
     "ConsoleApp.branchCoverage.threshold": 90,
     "Palindromes.branchCoverage.threshold": 90,
     "debug.terminal.clearBeforeReusing": true,

@@ -1,12 +1,30 @@
 ﻿using System;
 using System.IO;
 
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+
+using Serilog;
+
 namespace ConsoleApp;
 
 public static class Program
 {
     static void Main(string[] args)
     {
+        var builder = new ConfigurationBuilder();
+        Startup.BuildConfig(builder);
+
+        Log.Logger = new LoggerConfiguration()
+                         .ReadFrom.Configuration(builder.Build())
+                         .CreateLogger();
+
+        Log.Logger.Information("Console App Starting...");
+
+        _ = Host.CreateDefaultBuilder()
+            .UseSerilog()
+            .Build();
+
         Console.WriteLine("Challenge 12050 - Palindrome Number - UVA Online Judge");
 
         if (args.Length > 0 && File.Exists(args[0]))
@@ -26,5 +44,9 @@ public static class Program
                 fileParser.WriteOutputFile(filePath);
             }
         }
+
+        Log.Logger.Information("Console App Finishing...");
+
+        Log.CloseAndFlush();
     }
 }
