@@ -1,8 +1,8 @@
 {
-  "profiles": {
-    "ConsoleApp": {
-      "commandName": "Project",
-      "commandLineArgs": "\"D:\\GitHubRepos\\Palindromes\\ConsoleAppTests\\Samples\\SampleInput.txt\"\r\n\"D:\\GitHubRepos\\Palindromes\\ConsoleApp\\Output.txt\"\r\n"
+    "profiles": {
+        "ConsoleApp": {
+            "commandName": "Project",
+            "commandLineArgs": "\"D:\\GitHubRepos\\Palindromes\\ConsoleAppTests\\Samples\\SampleInput.txt\"\r\n\"D:\\GitHubRepos\\Palindromes\\ConsoleApp\\SampleOutputs\\Output.txt\"\r\n"
+        }
     }
-  }
 }
