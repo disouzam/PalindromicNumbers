@@ -17,7 +17,6 @@ public static class Program
 
         Log.Logger = new LoggerConfiguration()
                          .ReadFrom.Configuration(builder.Build())
-                         .Enrich.FromLogContext()
                          .CreateLogger();
 
         Log.Logger.Information("Console App Starting...");
