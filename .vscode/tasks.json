@@ -59,10 +59,10 @@
                 "[ConsoleApp] Remove bin and obj folders",
                 "[ConsoleAppTests] Clean",
                 "[ConsoleAppTests] Remove bin and obj folders",
-                "[PalindromicLib] Clean",
-                "[PalindromicLib] Remove bin and obj folders",
-                "[PalindromicLibTests] Clean",
-                "[PalindromicLibTests] Remove bin and obj folders",
+                "[Palindromes] Clean",
+                "[Palindromes] Remove bin and obj folders",
+                "[PalindromesTests] Clean",
+                "[PalindromesTests] Remove bin and obj folders",
             ],
             "problemMatcher": "$msCompile"
         },
@@ -84,8 +84,8 @@
             "dependsOn": [
                 "[ConsoleApp] Build",
                 "[ConsoleAppTests] Build",
-                "[PalindromicLib] Build",
-                "[PalindromicLibTests] Build",
+                "[Palindromes] Build",
+                "[PalindromesTests] Build",
             ],
             "problemMatcher": "$msCompile"
         },
@@ -129,7 +129,7 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "[GIT] Get the last commit hash (in current branch)",
-                "[PalindromicLib] Build, Test, Generate and Open Report",
+                "[Palindromes] Build, Test, Generate and Open Report",
                 "[ConsoleApp] Build, Test, Generate and Open Report"
             ],
             "problemMatcher": "$msCompile"
@@ -150,7 +150,7 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "[PalindromicLibTests] Run full Stryker.NET analysis",
+                "[PalindromesTests] Run full Stryker.NET analysis",
                 "[ConsoleAppTests] Run full Stryker.NET analysis"
             ],
             "problemMatcher": "$msCompile"
@@ -171,15 +171,15 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "[PalindromicLib] Open Tests Report",
+                "[Palindromes] Open Tests Report",
                 "[ConsoleApp] Open Tests Report"
             ],
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ CLEAN
-        // Task ------ [PalindromicLib] Clean
+        // Task ------ [Palindromes] Clean
         {
-            "label": "[PalindromicLib] Clean",
+            "label": "[Palindromes] Clean",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -193,13 +193,13 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.csproj"
+                "${workspaceFolder}\\Palindromes\\Palindromes.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [PalindromicLibTests] Clean
+        // Task ------ [PalindromesTests] Clean
         {
-            "label": "[PalindromicLibTests] Clean",
+            "label": "[PalindromesTests] Clean",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -213,7 +213,7 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj"
+                "${workspaceFolder}\\PalindromesTests\\PalindromesTests.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -258,9 +258,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ REMOVE BIN AND OBJ FOLDERS
-        // Task ------ [PalindromicLib] Remove bin and obj folders
+        // Task ------ [Palindromes] Remove bin and obj folders
         {
-            "label": "[PalindromicLib] Remove bin and obj folders",
+            "label": "[Palindromes] Remove bin and obj folders",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -270,14 +270,14 @@
                 "clear": false
             },
             "hide": false,
-            "command": "cd .vscode\\BatchScripts && PalindromicLib-remove-bin-obj.bat",
+            "command": "cd .vscode\\BatchScripts && Palindromes-remove-bin-obj.bat",
             "type": "shell",
             "args": [],
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [PalindromicLibTests] Remove bin and obj folders
+        // Task ------ [PalindromesTests] Remove bin and obj folders
         {
-            "label": "[PalindromicLibTests] Remove bin and obj folders",
+            "label": "[PalindromesTests] Remove bin and obj folders",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -287,7 +287,7 @@
                 "clear": false
             },
             "hide": false,
-            "command": "cd .vscode\\BatchScripts && PalindromicLibTests-remove-bin-obj.bat",
+            "command": "cd .vscode\\BatchScripts && PalindromesTests-remove-bin-obj.bat",
             "type": "shell",
             "args": [],
             "problemMatcher": "$msCompile"
@@ -327,9 +327,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ BUILD AND TEST
-        // Task ------ [PalindromicLib] Build, Test, Generate and Open Report
+        // Task ------ [Palindromes] Build, Test, Generate and Open Report
         {
-            "label": "[PalindromicLib] Build, Test, Generate and Open Report",
+            "label": "[Palindromes] Build, Test, Generate and Open Report",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -339,15 +339,15 @@
                 "clear": false
             },
             "hide": false,
-            "command": "echo Finished task \"[PalindromicLib] Build, Test, Generate and Open Report\"",
+            "command": "echo Finished task \"[Palindromes] Build, Test, Generate and Open Report\"",
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "[GIT] Get the last commit hash (in current branch)",
-                "[PalindromicLibTests] Build",
-                "[PalindromicLib] Run Tests",
-                "[PalindromicLib] Generate Tests Report",
-                "[PalindromicLib] Open Tests Report"
+                "[PalindromesTests] Build",
+                "[Palindromes] Run Tests",
+                "[Palindromes] Generate Tests Report",
+                "[Palindromes] Open Tests Report"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -376,9 +376,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ BUILD TASKS
-        // Task ------ [PalindromicLib] Build
+        // Task ------ [Palindromes] Build
         {
-            "label": "[PalindromicLib] Build",
+            "label": "[Palindromes] Build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -392,16 +392,16 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.csproj",
+                "${workspaceFolder}\\Palindromes\\Palindromes.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [PalindromicLibTests] Build
+        // Task ------ [PalindromesTests] Build
         {
-            "label": "[PalindromicLibTests] Build",
+            "label": "[PalindromesTests] Build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -415,7 +415,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "${workspaceFolder}\\PalindromesTests\\PalindromesTests.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -469,9 +469,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ PUBLISH TASKS
-        // Task ------ [PalindromicLibTests] Publish project
+        // Task ------ [PalindromesTests] Publish project
         {
-            "label": "[PalindromicLibTests] Publish project",
+            "label": "[PalindromesTests] Publish project",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -485,7 +485,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "${workspaceFolder}\\PalindromesTests\\PalindromesTests.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -513,9 +513,9 @@
             ],
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [PalindromicLib] Publish project
+        // Task ------ [Palindromes] Publish project
         {
-            "label": "[PalindromicLib] Publish project",
+            "label": "[Palindromes] Publish project",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -529,16 +529,16 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\PalindromicLib\\PalindromicLib.csproj",
+                "${workspaceFolder}\\Palindromes\\Palindromes.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ WATCH TASKS
-        // Task ------ [PalindromicLibTests] Watch
+        // Task ------ [PalindromesTests] Watch
         {
-            "label": "[PalindromicLibTests] Watch",
+            "label": "[PalindromesTests] Watch",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -553,7 +553,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "${workspaceFolder}\\PalindromesTests\\PalindromesTests.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -608,9 +608,9 @@
         },
         // TASK GROUP ------ TESTS TASKS
         // Cobertura: https://docs.microsoft.com/pt-br/dotnet/core/testing/unit-testing-code-coverage?tabs=windows
-        // Task ------ [PalindromicLib] Run Tests
+        // Task ------ [Palindromes] Run Tests
         {
-            "label": "[PalindromicLib] Run Tests",
+            "label": "[Palindromes] Run Tests",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -624,15 +624,15 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}\\PalindromicLibTests\\PalindromicLibTests.csproj",
+                "${workspaceFolder}\\PalindromesTests\\PalindromesTests.csproj",
                 "-v:Minimal",
                 "-c:${config:configuration}",
                 "-p:CollectCoverage=true",
                 "-p:CoverletOutputFormat=opencover",
-                "-p:CoverletOutput=${workspaceFolder}\\PalindromicLibTests\\coverage.opencover.xml",
+                "-p:CoverletOutput=${workspaceFolder}\\PalindromesTests\\coverage.opencover.xml",
                 "-p:ThresholdType=Branch",
-                "-p:Threshold=${config:PalindromicLib.branchCoverage.threshold}",
-                "-p:Exclude=\"[{otherProjects}]*,[{otherProjects2}]*,[PalindromicLib.otherNamespace]*\"",
+                "-p:Threshold=${config:Palindromes.branchCoverage.threshold}",
+                "-p:Exclude=\"[{otherProjects}]*,[{otherProjects2}]*,[Palindromes.otherNamespace]*\"",
                 "--no-build"
             ],
             "problemMatcher": "$msCompile"
@@ -662,15 +662,15 @@
                 "-p:ThresholdType=Branch",
                 "-p:Threshold=${config:ConsoleApp.branchCoverage.threshold}",
                 "-p:ExcludeByFile=\"**\\Program.cs\"",
-                "-p:Exclude=\"[PalindromicLib]*,[{otherProjects2}]*,[ConsoleApp.otherNamespace]*\"",
+                "-p:Exclude=\"[Palindromes]*,[{otherProjects2}]*,[ConsoleApp.otherNamespace]*\"",
                 "--no-build"
             ],
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ GENERATE TESTS REPORTS
-        // Task ------ [PalindromicLib] Generate Tests Report
+        // Task ------ [Palindromes] Generate Tests Report
         {
-            "label": "[PalindromicLib] Generate Tests Report",
+            "label": "[Palindromes] Generate Tests Report",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -684,11 +684,11 @@
             "type": "process",
             "args": [
                 "reportgenerator",
-                "-reports:\"${workspaceFolder}\\PalindromicLibTests\\coverage.opencover.xml\"",
-                "-targetdir:\"${workspaceFolder}\\PalindromicLibTests\\coveragereport\"",
+                "-reports:\"${workspaceFolder}\\PalindromesTests\\coverage.opencover.xml\"",
+                "-targetdir:\"${workspaceFolder}\\PalindromesTests\\coveragereport\"",
                 "-reporttypes:Html",
-                "-historydir:\"${workspaceFolder}\\PalindromicLibTests\\coveragehistory\"",
-                "-Title:\"PalindromicLib - Test report\"",
+                "-historydir:\"${workspaceFolder}\\PalindromesTests\\coveragehistory\"",
+                "-Title:\"Palindromes - Test report\"",
                 "-Tag:${input:last.commit.hash}"
             ],
             "problemMatcher": "$msCompile"
@@ -719,9 +719,9 @@
             "problemMatcher": "$msCompile"
         },
         // TASK GROUP ------ OPEN TESTS REPORT
-        // Task ------ [PalindromicLib] Open Tests Report
+        // Task ------ [Palindromes] Open Tests Report
         {
-            "label": "[PalindromicLib] Open Tests Report",
+            "label": "[Palindromes] Open Tests Report",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -738,7 +738,7 @@
             },
             "args": [
                 "chrome",
-                "${workspaceFolder}\\PalindromicLibTests\\coveragereport\\index.html"
+                "${workspaceFolder}\\PalindromesTests\\coveragereport\\index.html"
             ],
             "problemMatcher": []
         },
@@ -766,9 +766,9 @@
             "problemMatcher": []
         },
         // TASK GROUP ------ Stryker.NET
-        // Task ------ [PalindromicLibTests] Run full Stryker.NET analysis
+        // Task ------ [PalindromesTests] Run full Stryker.NET analysis
         {
-            "label": "[PalindromicLibTests] Run full Stryker.NET analysis",
+            "label": "[PalindromesTests] Run full Stryker.NET analysis",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -787,13 +787,13 @@
                 "--open-report"
             ],
             "options": {
-                "cwd": "${workspaceFolder}\\PalindromicLibTests"
+                "cwd": "${workspaceFolder}\\PalindromesTests"
             },
             "problemMatcher": "$msCompile"
         },
-        // Task ------ [PalindromicLibTests] Run partial Stryker.NET analysis
+        // Task ------ [PalindromesTests] Run partial Stryker.NET analysis
         {
-            "label": "[PalindromicLibTests] Run partial Stryker.NET analysis",
+            "label": "[PalindromesTests] Run partial Stryker.NET analysis",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -812,7 +812,7 @@
                 "--open-report"
             ],
             "options": {
-                "cwd": "${workspaceFolder}\\PalindromicLibTests"
+                "cwd": "${workspaceFolder}\\PalindromesTests"
             },
             "problemMatcher": "$msCompile"
         },

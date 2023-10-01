@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PalindromicLib\PalindromicLib.csproj" />
+    <ProjectReference Include="..\Palindromes\Palindromes.csproj" />
   </ItemGroup>
 
 </Project>
