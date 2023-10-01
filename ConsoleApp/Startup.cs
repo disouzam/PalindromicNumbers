@@ -10,8 +10,8 @@ internal static class Startup
     internal static void BuildConfig(IConfigurationBuilder builder)
     {
         builder.SetBasePath(Directory.GetCurrentDirectory())
-               .AddJsonFile("consoleapp.settings.json", false, true)
-               .AddJsonFile($"consoleapp.settings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", true)
+               .AddJsonFile("Settings\\consoleapp.settings.json", false, true)
+               .AddJsonFile($"Settings\\consoleapp.settings.{Environment.GetEnvironmentVariable("CONSOLE_ENVIRONMENT") ?? "Production"}.json", true)
                .AddEnvironmentVariables();
     }
 }
