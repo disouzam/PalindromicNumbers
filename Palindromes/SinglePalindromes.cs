@@ -6,7 +6,7 @@ namespace Palindromes;
 /// <summary>
 /// This class contain methods to check if a given number (in base 10) is a palindrome or not
 /// </summary>
-public static class SinglePalindromes
+public class SinglePalindromes
 {
     public static bool IsPalindrome(uint number)
     {
