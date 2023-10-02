@@ -57,10 +57,11 @@ public class FileParserForChallenge12050
     public void FillListOfOutputs()
     {
         listOfOutputs.Clear();
+        var singlePalindromes = new SinglePalindromes();
 
         foreach (var input in listOfInputs)
         {
-            var output = SinglePalindromes.GetNthPalindrome(input);
+            var output = singlePalindromes.GetNthPalindrome(input);
             listOfOutputs.Add(output);
         }
     }

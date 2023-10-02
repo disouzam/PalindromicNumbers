@@ -19,9 +19,10 @@ public class SinglePalindromesTests
     {
         // Arrange
         var arrayLength = expectedReturn.Length;
+        var singlePalindromes = new SinglePalindromes();
 
         // Act
-        var currentReturn = SinglePalindromes.GetDigits(currentNumber);
+        var currentReturn = singlePalindromes.GetDigits(currentNumber);
 
         // Assert
         currentReturn.Should().BeEquivalentTo(expectedReturn);
@@ -69,8 +70,11 @@ public class SinglePalindromesTests
     [InlineData(57275)]
     public void CheckValidPalindromeNumbers(uint currentNumber)
     {
+        // Arrange
+        var singlePalindromes = new SinglePalindromes();
+
         // Act
-        var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
+        var palindromNumber = singlePalindromes.IsPalindrome(currentNumber);
 
         // Assert
         palindromNumber.Should().BeTrue();
@@ -93,8 +97,11 @@ public class SinglePalindromesTests
 
     public void CheckInvalidPalindromeNumbers(uint currentNumber)
     {
+        // Arrange 
+        var singlePalindromes = new SinglePalindromes();
+
         // Act
-        var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
+        var palindromNumber = singlePalindromes.IsPalindrome(currentNumber);
 
         // Assert
         palindromNumber.Should().BeFalse();
@@ -124,10 +131,11 @@ public class SinglePalindromesTests
     public void CheckTheNextLowestPalindrome(uint currentNumber, uint nextPalindrome)
     {
         // Arrange
+        var singlePalindromes = new SinglePalindromes();
         uint? nextLowestPalindrome;
 
         // Act
-        nextLowestPalindrome = SinglePalindromes.GetLowestNextPalindrome(currentNumber);
+        nextLowestPalindrome = singlePalindromes.GetLowestNextPalindrome(currentNumber);
 
         // Assert
         nextLowestPalindrome.Should().Be(nextPalindrome);
@@ -172,9 +180,10 @@ public class SinglePalindromesTests
     {
         // Arrange
         uint? currentNthPalindrome;
+        var singlePalindromes = new SinglePalindromes();
 
         // Act
-        currentNthPalindrome = SinglePalindromes.GetNthPalindrome(position);
+        currentNthPalindrome = singlePalindromes.GetNthPalindrome(position);
 
         // Assert
         currentNthPalindrome.Should().Be(nthPalindrome);

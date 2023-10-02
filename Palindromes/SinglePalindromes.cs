@@ -8,7 +8,7 @@ namespace Palindromes;
 /// </summary>
 public class SinglePalindromes
 {
-    public static bool IsPalindrome(uint number)
+    public bool IsPalindrome(uint number)
     {
         if(number == 0)
         {
@@ -18,7 +18,7 @@ public class SinglePalindromes
         var normalOrderDigits = GetDigits(number);
         var numberOfDigits = normalOrderDigits.Count();
 
-        short[] reverseOrderDigits = new short[normalOrderDigits.Length];
+        var reverseOrderDigits = new short[normalOrderDigits.Length];
         normalOrderDigits.CopyTo(reverseOrderDigits, 0);
 
         reverseOrderDigits = reverseOrderDigits.Reverse().ToArray();
@@ -42,7 +42,7 @@ public class SinglePalindromes
         return !foundDifferentDigit;
     }
 
-    public static uint GetLowestNextPalindrome(uint number)
+    public uint GetLowestNextPalindrome(uint number)
     {
         var isNextPalindrome = false;
         var i = number;
@@ -80,7 +80,7 @@ public class SinglePalindromes
         return palindromes;
     }
 
-    public static short[] GetDigits(uint number)
+    public short[] GetDigits(uint number)
     {
         var digits = new List<short>();
         var remainder = number;
@@ -98,7 +98,7 @@ public class SinglePalindromes
         return digits.ToArray();
     }
 
-    public static uint GetNthPalindrome(int position) 
+    public uint GetNthPalindrome(int position) 
     {
         var nthPalindrome = 1u;
         var order = 1;
