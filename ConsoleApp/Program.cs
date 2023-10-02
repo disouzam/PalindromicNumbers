@@ -18,7 +18,7 @@ public static class Program
         Log.Logger = new LoggerConfiguration()
                          .ReadFrom.Configuration(builder.Build())
                          .CreateLogger();
-
+        
         Log.Logger.Information("Console App Starting...");
 
         _ = Host.CreateDefaultBuilder()
