@@ -29,7 +29,7 @@ public static class Program
 
         if (args.Length > 0 && File.Exists(args[0]))
         {
-            var fileParser = new FileParserForChallenge12050();
+            var fileParser = new FileParserForChallenge12050(Log.Logger);
             fileParser.ReadFile(args[0]);
 
             if (args.Length == 2)

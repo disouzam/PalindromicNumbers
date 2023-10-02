@@ -8,6 +8,9 @@ using ConsoleApp;
 using FluentAssertions;
 using FluentAssertions.Execution;
 
+using Serilog;
+using Serilog.Core;
+
 using Xunit;
 
 namespace ConsoleAppTests;
@@ -20,12 +23,14 @@ public class FileParserForChallenge12050Tests
     private readonly string[] sampleFileNames = new[] { "SampleInput.txt", "SampleInput2.txt", "SampleInput3.txt" };
     private readonly string[] resultFileNames = new[] { "Output1.txt", "Output2.txt", "Output3.txt" };
 
+    private readonly Logger logger = new LoggerConfiguration().CreateLogger();
+
     [Fact]
     public void CheckReadFileBehaviorWithSampleInput()
     {
         // Arrange
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[0]);
-        var fileParser = new FileParserForChallenge12050();
+        var fileParser = new FileParserForChallenge12050(logger);
 
         // Act
         fileParser.ReadFile(filePath);
@@ -74,7 +79,7 @@ public class FileParserForChallenge12050Tests
     {
         // Arrange
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[0]);
-        var fileParser = new FileParserForChallenge12050();
+        var fileParser = new FileParserForChallenge12050(logger);
 
         // Act
         fileParser.ReadFile(filePath);
@@ -126,7 +131,7 @@ public class FileParserForChallenge12050Tests
     {
         // Arrange for Sample Input 1
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[0]);
-        var fileParser = new FileParserForChallenge12050();
+        var fileParser = new FileParserForChallenge12050(logger);
 
         // Act for Sample Input 1
         fileParser.ReadFile(filePath);
@@ -148,7 +153,7 @@ public class FileParserForChallenge12050Tests
 
         // Arrange for Sample Input 2
         filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[1]);
-        fileParser = new FileParserForChallenge12050();
+        fileParser = new FileParserForChallenge12050(logger);
 
         // Act for Sample Input 2
         fileParser.ReadFile(filePath);
@@ -169,7 +174,7 @@ public class FileParserForChallenge12050Tests
 
         // Arrange for Sample Input 3
         filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[2]);
-        fileParser = new FileParserForChallenge12050();
+        fileParser = new FileParserForChallenge12050(logger);
 
         // Act for Sample Input 3
         fileParser.ReadFile(filePath);

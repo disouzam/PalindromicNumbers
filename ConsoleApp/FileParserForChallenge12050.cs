@@ -4,12 +4,20 @@ using System.IO;
 
 using Palindromes;
 
+using Serilog;
+
 namespace ConsoleApp;
 
 public class FileParserForChallenge12050
 {
-    private readonly List<int> listOfInputs = new List<int>();
+    private readonly ILogger logger;
 
+    public FileParserForChallenge12050(ILogger logger)
+    {
+        this.logger = logger;
+    }
+
+    private readonly List<int> listOfInputs = new List<int>();
 
     public List<int> ListOfInputs
     {
@@ -57,7 +65,7 @@ public class FileParserForChallenge12050
     public void FillListOfOutputs()
     {
         listOfOutputs.Clear();
-        var singlePalindromes = new SinglePalindromes();
+        var singlePalindromes = new SinglePalindromes(logger);
 
         foreach (var input in listOfInputs)
         {

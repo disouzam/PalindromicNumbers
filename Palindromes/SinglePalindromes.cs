@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+using Serilog;
+using Serilog.Core;
+
 namespace Palindromes;
 
 /// <summary>
@@ -8,6 +11,13 @@ namespace Palindromes;
 /// </summary>
 public class SinglePalindromes
 {
+    private readonly ILogger logger;
+
+    public SinglePalindromes(ILogger logger)
+    {
+        this.logger = logger;
+    }
+
     public bool IsPalindrome(uint number)
     {
         if(number == 0)
@@ -100,6 +110,8 @@ public class SinglePalindromes
 
     public uint GetNthPalindrome(int position) 
     {
+        logger.Information("Starting GetNthPalindrome for {position}", position);
+
         var nthPalindrome = 1u;
         var order = 1;
 
@@ -109,6 +121,7 @@ public class SinglePalindromes
             nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
         }
 
+        logger.Information("Finished GetNthPalindrome for {position} - Palindrome is: {palindrome}", position, nthPalindrome);
         return nthPalindrome;
     }
 }
