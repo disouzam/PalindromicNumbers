@@ -145,9 +145,10 @@ public class SinglePalindromesTests
     public void CheckListOfPalindromesInARange(uint maxNumber, uint[] expectedList)
     {
         // Arrange
+        var singlePalindromes = new SinglePalindromes();
 
         // Act
-        var currentList = SinglePalindromes.GetAllPalindromesInARange(maxNumber);
+        var currentList = singlePalindromes.GetAllPalindromesInARange(maxNumber);
 
         // Assert
         currentList.Should().BeEquivalentTo(expectedList);

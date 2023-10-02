@@ -56,7 +56,7 @@ public class SinglePalindromes
         return i;
     }
 
-    public static List<uint> GetAllPalindromesInARange(uint maxNumber)
+    public List<uint> GetAllPalindromesInARange(uint maxNumber)
     {
         var palindromes = new List<uint>();
 
