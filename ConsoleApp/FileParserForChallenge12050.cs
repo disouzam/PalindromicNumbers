@@ -66,11 +66,20 @@ public class FileParserForChallenge12050
     {
         listOfOutputs.Clear();
         var singlePalindromes = new SinglePalindromes(logger);
+        uint output;
+
 
         foreach (var input in listOfInputs)
         {
-            var output = singlePalindromes.GetNthPalindrome(input);
-            listOfOutputs.Add(output);
+            try
+            {
+                output = singlePalindromes.GetNthPalindrome(input);
+                listOfOutputs.Add(output);
+            }
+            catch 
+            {
+                logger.Error("{methodName} was not able to get the corresponding {input}th", nameof(FillListOfOutputs), input);
+            }
         }
     }
 

@@ -59,6 +59,11 @@ public class SinglePalindromes
 
         while (!isNextPalindrome)
         {
+            if (i == uint.MaxValue)
+            {
+                throw new System.OverflowException();
+            }
+
             i++;
             isNextPalindrome = IsPalindrome(i);
         }
@@ -123,36 +128,43 @@ public class SinglePalindromes
         var thirdquarter = 3 * position / 4;
         var thirdquarterDisplayMessage = true;
 
-        while (order != position)
+        try
         {
-            var remainder = order % 10000;
-            if (remainder == 1)
+            while (order != position)
             {
-                logger.Error("CurrentPalindrome: {currentPalindrome} - Maximum value for uint: {maxInt}", nthPalindrome, uint.MaxValue);
-                logger.Information("{currentOrder}th Palindrome is: {currentPalindrome}", order, nthPalindrome);
+                var remainder = order % 10000;
+                if (remainder == 1)
+                {
+                    logger.Error("CurrentPalindrome: {currentPalindrome} - Maximum value for uint: {maxInt}", nthPalindrome, uint.MaxValue);
+                    logger.Information("{currentOrder}th Palindrome is: {currentPalindrome}", order, nthPalindrome);
+                }
+
+                if (quarterDisplayMessage && order >= quarter - 1 && order <= quarter + 1)
+                {
+                    logger.Information("A quarter of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                    quarterDisplayMessage = false;
+                }
+                else if (halfDisplayMessage && order >= half - 1 && order <= half + 1)
+                {
+                    logger.Information("Half of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                    halfDisplayMessage = false;
+                }
+                else if (thirdquarterDisplayMessage && order >= thirdquarter - 1 && order <= thirdquarter + 1)
+                {
+                    logger.Information("Three quarters of processing for {currentOrder} have been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                    thirdquarterDisplayMessage = false;
+                }
+
+                order++;
+                nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
             }
 
-            if (quarterDisplayMessage && order >= quarter - 1 && order <= quarter + 1)
-            {
-                logger.Information("A quarter of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
-                quarterDisplayMessage = false;
-            }
-            else if (halfDisplayMessage && order >= half - 1 && order <= half + 1)
-            {
-                logger.Information("Half of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
-                halfDisplayMessage = false;
-            }
-            else if (thirdquarterDisplayMessage && order >= thirdquarter - 1 && order <= thirdquarter + 1)
-            {
-                logger.Information("Three quarters of processing for {currentOrder} have been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
-                thirdquarterDisplayMessage = false;
-            }
-
-            order++;
-            nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
+            logger.Information("Finished GetNthPalindrome for {position} - Palindrome is: {palindrome}", position, nthPalindrome);
+            return nthPalindrome;
         }
-
-        logger.Information("Finished GetNthPalindrome for {position} - Palindrome is: {palindrome}", position, nthPalindrome);
-        return nthPalindrome;
+        finally
+        {
+            logger.Error("The maximum palindrome that this program is able to calculate is {nthPalindrome} at {order}th position", nthPalindrome, --order);
+        }
     }
 }
