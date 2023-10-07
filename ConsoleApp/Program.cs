@@ -18,7 +18,7 @@ public static class Program
         Log.Logger = new LoggerConfiguration()
                          .ReadFrom.Configuration(builder.Build())
                          .CreateLogger();
-
+        
         Log.Logger.Information("Console App Starting...");
 
         _ = Host.CreateDefaultBuilder()
@@ -29,7 +29,7 @@ public static class Program
 
         if (args.Length > 0 && File.Exists(args[0]))
         {
-            var fileParser = new FileParserForChallenge12050();
+            var fileParser = new FileParserForChallenge12050(Log.Logger);
             fileParser.ReadFile(args[0]);
 
             if (args.Length == 2)

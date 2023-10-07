@@ -1,16 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+using Serilog;
+using Serilog.Core;
+
 namespace Palindromes;
 
 /// <summary>
 /// This class contain methods to check if a given number (in base 10) is a palindrome or not
 /// </summary>
-public static class SinglePalindromes
+public class SinglePalindromes
 {
-    public static bool IsPalindrome(uint number)
+    private readonly ILogger logger;
+
+    public SinglePalindromes(ILogger logger)
     {
-        if(number == 0)
+        this.logger = logger;
+    }
+
+    public bool IsPalindrome(uint number)
+    {
+        if (number == 0)
         {
             return false;
         }
@@ -18,7 +28,7 @@ public static class SinglePalindromes
         var normalOrderDigits = GetDigits(number);
         var numberOfDigits = normalOrderDigits.Count();
 
-        short[] reverseOrderDigits = new short[normalOrderDigits.Length];
+        var reverseOrderDigits = new short[normalOrderDigits.Length];
         normalOrderDigits.CopyTo(reverseOrderDigits, 0);
 
         reverseOrderDigits = reverseOrderDigits.Reverse().ToArray();
@@ -26,12 +36,12 @@ public static class SinglePalindromes
         var i = 0;
         var foundDifferentDigit = false;
 
-        while(i < numberOfDigits && !foundDifferentDigit)
+        while (i < numberOfDigits && !foundDifferentDigit)
         {
             var nextDigit = normalOrderDigits[i];
             var reverseDigit = reverseOrderDigits[i];
 
-            if(nextDigit != reverseDigit)
+            if (nextDigit != reverseDigit)
             {
                 foundDifferentDigit = true;
             }
@@ -42,12 +52,12 @@ public static class SinglePalindromes
         return !foundDifferentDigit;
     }
 
-    public static uint GetLowestNextPalindrome(uint number)
+    public uint GetLowestNextPalindrome(uint number)
     {
         var isNextPalindrome = false;
         var i = number;
 
-        while(!isNextPalindrome)
+        while (!isNextPalindrome)
         {
             i++;
             isNextPalindrome = IsPalindrome(i);
@@ -56,7 +66,7 @@ public static class SinglePalindromes
         return i;
     }
 
-    public static List<uint> GetAllPalindromesInARange(uint maxNumber)
+    public List<uint> GetAllPalindromesInARange(uint maxNumber)
     {
         var palindromes = new List<uint>();
 
@@ -66,13 +76,13 @@ public static class SinglePalindromes
         {
             palindromes.Add(i);
             i = GetLowestNextPalindrome(i);
-        } while(i < maxNumber);
+        } while (i < maxNumber);
 
         palindromes.Add(i);
 
         var numberOfItems = palindromes.Count;
 
-        if(palindromes[numberOfItems - 1] > maxNumber)
+        if (palindromes[numberOfItems - 1] > maxNumber)
         {
             palindromes.RemoveAt(numberOfItems - 1);
         }
@@ -80,13 +90,13 @@ public static class SinglePalindromes
         return palindromes;
     }
 
-    public static short[] GetDigits(uint number)
+    public short[] GetDigits(uint number)
     {
         var digits = new List<short>();
         var remainder = number;
         uint currentDigit;
 
-        while(remainder > 0)
+        while (remainder > 0)
         {
             currentDigit = remainder % 10;
             remainder = remainder / 10;
@@ -98,17 +108,51 @@ public static class SinglePalindromes
         return digits.ToArray();
     }
 
-    public static uint GetNthPalindrome(int position) 
+    public uint GetNthPalindrome(int position)
     {
+        logger.Information("Starting GetNthPalindrome for {position}", position);
+
         var nthPalindrome = 1u;
         var order = 1;
+        var quarter = position / 4;
+        var quarterDisplayMessage = true;
 
-        while (order != position) 
+        var half = position / 2;
+        var halfDisplayMessage = true;
+
+        var thirdquarter = 3 * position / 4;
+        var thirdquarterDisplayMessage = true;
+
+        while (order != position)
         {
+            var remainder = order % 10000;
+            if (remainder == 1)
+            {
+                logger.Error("CurrentPalindrome: {currentPalindrome} - Maximum value for uint: {maxInt}", nthPalindrome, uint.MaxValue);
+                logger.Information("{currentOrder}th Palindrome is: {currentPalindrome}", order, nthPalindrome);
+            }
+
+            if (quarterDisplayMessage && order >= quarter - 1 && order <= quarter + 1)
+            {
+                logger.Information("A quarter of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                quarterDisplayMessage = false;
+            }
+            else if (halfDisplayMessage && order >= half - 1 && order <= half + 1)
+            {
+                logger.Information("Half of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                halfDisplayMessage = false;
+            }
+            else if (thirdquarterDisplayMessage && order >= thirdquarter - 1 && order <= thirdquarter + 1)
+            {
+                logger.Information("Three quarters of processing for {currentOrder} have been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                thirdquarterDisplayMessage = false;
+            }
+
             order++;
             nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
         }
 
+        logger.Information("Finished GetNthPalindrome for {position} - Palindrome is: {palindrome}", position, nthPalindrome);
         return nthPalindrome;
     }
 }

@@ -29,10 +29,6 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Logs\" />
-  </ItemGroup>
-
   <ProjectExtensions><VisualStudio><UserProperties settings_4consoleapp_1settings_1json__JsonSchema="https://json.schemastore.org/appsettings.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

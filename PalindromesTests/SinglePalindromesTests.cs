@@ -4,12 +4,17 @@ using FluentAssertions;
 
 using Palindromes;
 
+using Serilog;
+using Serilog.Core;
+
 using Xunit;
 
 namespace PalindromesTests;
 
 public class SinglePalindromesTests
 {
+    private readonly Logger logger = new LoggerConfiguration().CreateLogger();
+
     [Theory]
     [InlineData(102, new short[] { 1, 0, 2 })]
     [InlineData(100, new short[] { 1, 0, 0 })]
@@ -19,9 +24,10 @@ public class SinglePalindromesTests
     {
         // Arrange
         var arrayLength = expectedReturn.Length;
+        var singlePalindromes = new SinglePalindromes(logger);
 
         // Act
-        var currentReturn = SinglePalindromes.GetDigits(currentNumber);
+        var currentReturn = singlePalindromes.GetDigits(currentNumber);
 
         // Assert
         currentReturn.Should().BeEquivalentTo(expectedReturn);
@@ -69,8 +75,11 @@ public class SinglePalindromesTests
     [InlineData(57275)]
     public void CheckValidPalindromeNumbers(uint currentNumber)
     {
+        // Arrange
+        var singlePalindromes = new SinglePalindromes(logger);
+
         // Act
-        var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
+        var palindromNumber = singlePalindromes.IsPalindrome(currentNumber);
 
         // Assert
         palindromNumber.Should().BeTrue();
@@ -93,8 +102,11 @@ public class SinglePalindromesTests
 
     public void CheckInvalidPalindromeNumbers(uint currentNumber)
     {
+        // Arrange 
+        var singlePalindromes = new SinglePalindromes(logger);
+
         // Act
-        var palindromNumber = SinglePalindromes.IsPalindrome(currentNumber);
+        var palindromNumber = singlePalindromes.IsPalindrome(currentNumber);
 
         // Assert
         palindromNumber.Should().BeFalse();
@@ -124,10 +136,11 @@ public class SinglePalindromesTests
     public void CheckTheNextLowestPalindrome(uint currentNumber, uint nextPalindrome)
     {
         // Arrange
+        var singlePalindromes = new SinglePalindromes(logger);
         uint? nextLowestPalindrome;
 
         // Act
-        nextLowestPalindrome = SinglePalindromes.GetLowestNextPalindrome(currentNumber);
+        nextLowestPalindrome = singlePalindromes.GetLowestNextPalindrome(currentNumber);
 
         // Assert
         nextLowestPalindrome.Should().Be(nextPalindrome);
@@ -145,9 +158,10 @@ public class SinglePalindromesTests
     public void CheckListOfPalindromesInARange(uint maxNumber, uint[] expectedList)
     {
         // Arrange
+        var singlePalindromes = new SinglePalindromes(logger);
 
         // Act
-        var currentList = SinglePalindromes.GetAllPalindromesInARange(maxNumber);
+        var currentList = singlePalindromes.GetAllPalindromesInARange(maxNumber);
 
         // Assert
         currentList.Should().BeEquivalentTo(expectedList);
@@ -171,9 +185,10 @@ public class SinglePalindromesTests
     {
         // Arrange
         uint? currentNthPalindrome;
+        var singlePalindromes = new SinglePalindromes(logger);
 
         // Act
-        currentNthPalindrome = SinglePalindromes.GetNthPalindrome(position);
+        currentNthPalindrome = singlePalindromes.GetNthPalindrome(position);
 
         // Assert
         currentNthPalindrome.Should().Be(nthPalindrome);
