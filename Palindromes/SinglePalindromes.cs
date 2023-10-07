@@ -128,6 +128,7 @@ public class SinglePalindromes
             var remainder = order % 10000;
             if (remainder == 1)
             {
+                logger.Error("CurrentPalindrome: {currentPalindrome} - Maximum value for uint: {maxInt}", nthPalindrome, uint.MaxValue);
                 logger.Information("{currentOrder}th Palindrome is: {currentPalindrome}", order, nthPalindrome);
             }
 
