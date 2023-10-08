@@ -15,13 +15,14 @@ public class SinglePalindromes
 
     public SinglePalindromes(ILogger logger)
     {
-        this.logger = logger;
+        this.logger = logger.ForContext<SinglePalindromes>();
     }
 
     public bool IsPalindrome(uint number)
     {
         if (number == 0)
         {
+            logger.Verbose("Zero is not a valid palindrome number");
             return false;
         }
 
@@ -44,6 +45,7 @@ public class SinglePalindromes
             if (nextDigit != reverseDigit)
             {
                 foundDifferentDigit = true;
+                logger.Verbose("Found a different digit in position {position}", i);
             }
 
             i++;
@@ -61,6 +63,7 @@ public class SinglePalindromes
         {
             if (i == uint.MaxValue)
             {
+                logger.Error("Search for lowest next palindrome caused an overflow exception.");
                 throw new System.OverflowException();
             }
 
@@ -68,6 +71,7 @@ public class SinglePalindromes
             isNextPalindrome = IsPalindrome(i);
         }
 
+        logger.Verbose("After {number}, the next palindrome is {i}", number, i);
         return i;
     }
 
@@ -92,6 +96,7 @@ public class SinglePalindromes
             palindromes.RemoveAt(numberOfItems - 1);
         }
 
+        logger.Verbose("There are {numberOfPalindromes} palindromes up to {MaximumNumber}", palindromes.Count, maxNumber);
         return palindromes;
     }
 

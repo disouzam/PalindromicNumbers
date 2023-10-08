@@ -5,7 +5,9 @@
       "Default": "Information",
       "Override": {
         "Microsoft": "Warning",
-        "System": "Warning"
+        "System": "Warning",
+        "ConsoleApp": "Information",
+        "Palindromes": "Information"
       }
     },
     "Enrich": [
@@ -18,12 +20,14 @@
       {
         "Name": "Console",
         "Args": {
+          "restrictedToMinimumLevel": "Verbose",
           "outputTemplate": "[{Timestamp:u} {Level:u3}] - {Message}{NewLine:1}{Exception:1}"
         }
       },
       {
         "Name": "File",
         "Args": {
+          "restrictedToMinimumLevel": "Error",
           "path": "D:\\GitHubRepos\\Palindromes\\ConsoleApp\\Logs\\logs.txt",
           "outputTemplate": "[{Timestamp:u} {Level:u3}] - {Message}{NewLine:1}{Exception:1}",
           "buffered": "true",
