@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 using FluentAssertions;
 
@@ -133,6 +133,7 @@ public class SinglePalindromesTests
     [InlineData(99, 101)]
     [InlineData(101, 111)]
     [InlineData(111, 121)]
+    [InlineData(4294884923, 4294884924)]
     public void CheckTheNextLowestPalindrome(uint currentNumber, uint nextPalindrome)
     {
         // Arrange
@@ -144,6 +145,21 @@ public class SinglePalindromesTests
 
         // Assert
         nextLowestPalindrome.Should().Be(nextPalindrome);
+    }
+
+    [Fact]
+    public void GetLowestNextPalindromeMustThrowOverflowException()
+    {
+        // Arrange
+        var singlePalindromes = new SinglePalindromes(logger);
+        uint? nextLowestPalindrome;
+        var currentNumber = 4294884924;
+
+        // Act
+        var act = () => nextLowestPalindrome = singlePalindromes.GetLowestNextPalindrome(currentNumber);
+
+        // Assert
+        act.Should().Throw<OverflowException>();
     }
 
     [Theory]
