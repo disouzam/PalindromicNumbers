@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2023-10-08_08-00-36" tag="30b5ed5">
+  <assembly name="Palindromes">
+    <class name="Palindromes.SinglePalindromes" coveredlines="76" coverablelines="76" totallines="170" coveredbranches="42" totalbranches="42" coveredcodeelements="6" totalcodeelements="6" />
+  </assembly>
+</coverage>
