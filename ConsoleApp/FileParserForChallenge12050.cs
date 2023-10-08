@@ -15,6 +15,8 @@ public class FileParserForChallenge12050
     public FileParserForChallenge12050(ILogger logger)
     {
         this.logger = logger.ForContext<FileParserForChallenge12050>();
+        logger.Debug("ListOfInputs initialized with {count} elements", ListOfInputs.Count);
+        logger.Debug("ListOfOutputs initialized with {count} elements", ListOfOutputs.Count);
     }
 
     private readonly List<int> listOfInputs = new List<int>();
@@ -60,6 +62,16 @@ public class FileParserForChallenge12050
                 listOfInputs.Add(input);
             }
         }
+
+        if (fileContent.EndOfStream)
+        {
+            logger.Verbose("File was processed until the end.");
+        }
+        else
+        {
+            logger.Verbose("File processing was interrupted before end of file due to a zero value found.");
+        }
+
     }
 
     public void FillListOfOutputs()
@@ -67,7 +79,7 @@ public class FileParserForChallenge12050
         listOfOutputs.Clear();
         var singlePalindromes = new SinglePalindromes(logger);
         uint output;
-
+        var invalidEntries = 0;
 
         foreach (var input in listOfInputs)
         {
@@ -76,13 +88,17 @@ public class FileParserForChallenge12050
                 output = singlePalindromes.GetNthPalindrome(input);
                 listOfOutputs.Add(output);
             }
-            catch 
+            catch
             {
                 logger.Error("{methodName} was not able to get the corresponding {input}th", nameof(FillListOfOutputs), input);
+                invalidEntries++;
+                
                 // Zero will be added as a marker that calculation of Palindrome was not possible for that input and avoid misaligning input and output
                 listOfOutputs.Add(0);
             }
         }
+
+        logger.Verbose("Valid entries: {validEntries} - Invalid entries: {invalidEntries}", listOfInputs.Count - invalidEntries, invalidEntries);
     }
 
     public void WriteOutputFile(string filePath)
@@ -98,5 +114,7 @@ public class FileParserForChallenge12050
         {
             fileContent.WriteLine(output);
         }
+
+        logger.Verbose("Finished writing output file at {filePath}", filePath);
     }
 }
