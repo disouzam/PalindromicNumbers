@@ -21,13 +21,12 @@ public static class Program
                          .ReadFrom.Configuration(builder.Build())                         
                          .CreateLogger();
 
-        logger = Log.Logger;
-
-        logger.Information("Console App Starting...");
-
         _ = Host.CreateDefaultBuilder()
             .UseSerilog()
             .Build();
+        
+        logger = Log.Logger;
+        logger.Information("Console App Starting...");
 
         Console.WriteLine("Challenge 12050 - Palindrome Number - UVA Online Judge");
 
