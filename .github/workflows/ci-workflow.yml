@@ -31,6 +31,6 @@ jobs:
     - name: 'ReportGenerator for ConsoleApp'
       uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
       with:
-        reports: 'ConsoleAppTests/coverage.opencover.xml'
+        reports: './ConsoleAppTests/coverage.opencover.xml'
         targetdir: 'coveragereport'
   
