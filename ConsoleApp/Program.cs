@@ -10,6 +10,8 @@ namespace ConsoleApp;
 
 public static class Program
 {
+    private static ILogger logger;
+
     static void Main(string[] args)
     {
         var builder = new ConfigurationBuilder();
@@ -18,8 +20,10 @@ public static class Program
         Log.Logger = new LoggerConfiguration()
                          .ReadFrom.Configuration(builder.Build())                         
                          .CreateLogger();
-        
-        Log.Logger.Information("Console App Starting...");
+
+        logger = Log.Logger;
+
+        logger.Information("Console App Starting...");
 
         _ = Host.CreateDefaultBuilder()
             .UseSerilog()
@@ -29,7 +33,7 @@ public static class Program
 
         if (args.Length > 0 && File.Exists(args[0]))
         {
-            var fileParser = new FileParserForChallenge12050(Log.Logger);
+            var fileParser = new FileParserForChallenge12050(logger);
             fileParser.ReadFile(args[0]);
 
             if (args.Length == 2)
@@ -45,7 +49,7 @@ public static class Program
             }
         }
 
-        Log.Logger.Information("Console App Finishing...");
+        logger.Information("Console App Finishing...");
 
         Log.CloseAndFlush();
     }
