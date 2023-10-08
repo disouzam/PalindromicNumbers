@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Serilog;
@@ -116,6 +117,13 @@ public class SinglePalindromes
     {
         logger.Information("Starting GetNthPalindrome for {position}", position);
 
+        if (position > 142946)
+        {
+            var message = $"The maximum palindrome that this program is able to calculate is 4294884924 at 142946th position";
+            logger.Error("The maximum palindrome that this program is able to calculate is {nthPalindrome} at {order}th position", 4294884924, 142946);
+            throw new ArgumentOutOfRangeException(message);
+        }
+
         var nthPalindrome = 1u;
         var order = 1;
         var quarter = position / 4;
@@ -127,40 +135,33 @@ public class SinglePalindromes
         var thirdquarter = 3 * position / 4;
         var thirdquarterDisplayMessage = true;
 
-        try
+        while (order != position)
         {
-            while (order != position)
+            var remainder = order % 10000;
+            if (remainder == 1)
             {
-                var remainder = order % 10000;
-                if (remainder == 1)
-                {
-                    logger.Error("CurrentPalindrome: {currentPalindrome} - Maximum value for uint: {maxInt}", nthPalindrome, uint.MaxValue);
-                    logger.Information("{currentOrder}th Palindrome is: {currentPalindrome}", order, nthPalindrome);
-                }
-
-                if (quarterDisplayMessage && order >= quarter - 1 && order <= quarter + 1)
-                {
-                    logger.Information("A quarter of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
-                    quarterDisplayMessage = false;
-                }
-                else if (halfDisplayMessage && order >= half - 1 && order <= half + 1)
-                {
-                    logger.Information("Half of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
-                    halfDisplayMessage = false;
-                }
-                else if (thirdquarterDisplayMessage && order >= thirdquarter - 1 && order <= thirdquarter + 1)
-                {
-                    logger.Information("Three quarters of processing for {currentOrder} have been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
-                    thirdquarterDisplayMessage = false;
-                }
-
-                order++;
-                nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
+                logger.Error("CurrentPalindrome: {currentPalindrome} - Maximum value for uint: {maxInt}", nthPalindrome, uint.MaxValue);
+                logger.Information("{currentOrder}th Palindrome is: {currentPalindrome}", order, nthPalindrome);
             }
-        }
-        catch
-        {
-            logger.Error("The maximum palindrome that this program is able to calculate is {nthPalindrome} at {order}th position", nthPalindrome, --order);
+
+            if (quarterDisplayMessage && order >= quarter - 1 && order <= quarter + 1)
+            {
+                logger.Information("A quarter of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                quarterDisplayMessage = false;
+            }
+            else if (halfDisplayMessage && order >= half - 1 && order <= half + 1)
+            {
+                logger.Information("Half of processing for {currentOrder} has been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                halfDisplayMessage = false;
+            }
+            else if (thirdquarterDisplayMessage && order >= thirdquarter - 1 && order <= thirdquarter + 1)
+            {
+                logger.Information("Three quarters of processing for {currentOrder} have been completed - Current palindrome: {palindrome}...", order, nthPalindrome);
+                thirdquarterDisplayMessage = false;
+            }
+
+            order++;
+            nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
         }
 
         logger.Information("Finished GetNthPalindrome for {position} - Palindrome is: {palindrome}", position, nthPalindrome);

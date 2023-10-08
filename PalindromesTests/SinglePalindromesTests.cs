@@ -1,6 +1,7 @@
 ﻿using System;
 
 using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Palindromes;
 
@@ -8,12 +9,27 @@ using Serilog;
 using Serilog.Core;
 
 using Xunit;
+using Xunit.Abstractions;
+using Xunit.Sdk;
 
 namespace PalindromesTests;
 
 public class SinglePalindromesTests
 {
-    private readonly Logger logger = new LoggerConfiguration().CreateLogger();
+    private readonly Logger logger;
+
+    private readonly TestOutputHelper logOutput;
+
+    public SinglePalindromesTests(ITestOutputHelper output)
+    {
+        logOutput = (TestOutputHelper)output;
+
+        Log.Logger = new LoggerConfiguration()
+            .WriteTo.TestOutput(logOutput)
+            .CreateLogger();
+
+        logger = (Logger)Log.Logger;
+    }
 
     [Theory]
     [InlineData(102, new short[] { 1, 0, 2 })]
@@ -208,5 +224,75 @@ public class SinglePalindromesTests
 
         // Assert
         currentNthPalindrome.Should().Be(nthPalindrome);
+    }
+
+    [Fact]
+    public void CheckLogMessages()
+    {
+        // Arrange
+        var singlePalindromes = new SinglePalindromes(logger);
+
+        // Act
+        _ = singlePalindromes.GetNthPalindrome(100);
+        var outputContent = logOutput.Output.Split(Environment.NewLine);
+
+        // Assert
+        using (new AssertionScope())
+        {
+            logOutput.Output.Should().NotBeNullOrEmpty();
+            outputContent.Length.Should().Be(8);
+            outputContent[0].Substring(15).Should().Be("Starting GetNthPalindrome for 100");
+            outputContent[1].Substring(15).Should().Be("CurrentPalindrome: 1 - Maximum value for uint: 4294967295");
+            outputContent[2].Substring(15).Should().Be("1th Palindrome is: 1");
+            outputContent[3].Substring(15).Should().Be("A quarter of processing for 24 has been completed - Current palindrome: 151...");
+            outputContent[4].Substring(15).Should().Be("Half of processing for 49 has been completed - Current palindrome: 404...");
+            outputContent[5].Substring(15).Should().Be("Three quarters of processing for 74 have been completed - Current palindrome: 656...");
+            outputContent[6].Substring(15).Should().Be("Finished GetNthPalindrome for 100 - Palindrome is: 919");
+        }
+    }
+
+    [Fact]
+    public void CheckLogMessages2()
+    {
+        // Arrange
+        var singlePalindromes = new SinglePalindromes(logger);
+
+        // Act
+        _ = singlePalindromes.GetNthPalindrome(99);
+        var outputContent = logOutput.Output.Split(Environment.NewLine);
+
+        // Assert
+        using (new AssertionScope())
+        {
+            logOutput.Output.Should().NotBeNullOrEmpty();
+            outputContent.Length.Should().Be(8);
+            outputContent[0].Substring(15).Should().Be("Starting GetNthPalindrome for 99");
+            outputContent[1].Substring(15).Should().Be("CurrentPalindrome: 1 - Maximum value for uint: 4294967295");
+            outputContent[2].Substring(15).Should().Be("1th Palindrome is: 1");
+            outputContent[3].Substring(15).Should().Be("A quarter of processing for 23 has been completed - Current palindrome: 141...");
+            outputContent[4].Substring(15).Should().Be("Half of processing for 48 has been completed - Current palindrome: 393...");
+            outputContent[5].Substring(15).Should().Be("Three quarters of processing for 73 have been completed - Current palindrome: 646...");
+            outputContent[6].Substring(15).Should().Be("Finished GetNthPalindrome for 99 - Palindrome is: 909");
+        }
+    }
+
+    [Fact]
+    public void GetNthPalindromeShouldThrowException()
+    {
+        // Arrange
+        var singlePalindromes = new SinglePalindromes(logger);
+
+        // Act
+        var act = () => singlePalindromes.GetNthPalindrome(142947);
+
+        // Assert
+        using (new AssertionScope())
+        {
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage("Specified argument was out of the range of valid values. (Parameter 'The maximum palindrome that this program is able to calculate is 4294884924 at 142946th position')");
+            logOutput.Output.Should().NotBeNullOrEmpty();
+            var outputContent = logOutput.Output.Split(Environment.NewLine);
+            outputContent.Length.Should().Be(3);
+            outputContent[1].Substring(15).Should().Be("The maximum palindrome that this program is able to calculate is 4294884924 at 142946th position");
+        }
     }
 }
