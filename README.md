@@ -1,3 +1,5 @@
+[![.NET](https://github.com/disouzam/Palindromes/actions/workflows/dotnet.yml/badge.svg)](https://github.com/disouzam/Palindromes/actions/workflows/dotnet.yml)
+
 # PalindromicNumbers
 This repository contains code related to some exercises and experimentation around palindromic numbers
 
