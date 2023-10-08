@@ -2,7 +2,6 @@
 using System.Linq;
 
 using Serilog;
-using Serilog.Core;
 
 namespace Palindromes;
 
