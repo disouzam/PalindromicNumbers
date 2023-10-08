@@ -661,7 +661,7 @@
                 "-p:CoverletOutput=${workspaceFolder}\\ConsoleAppTests\\coverage.opencover.xml",
                 "-p:ThresholdType=Branch",
                 "-p:Threshold=${config:ConsoleApp.branchCoverage.threshold}",
-                "-p:ExcludeByFile=\"**\\Program.cs\"",
+                "-p:ExcludeByFile=\"**\\Program.cs,**\\Startup.cs\"",
                 "-p:Exclude=\"[Palindromes]*,[{otherProjects2}]*,[ConsoleApp.otherNamespace]*\"",
                 "--no-build"
             ],

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Serilog;
-using Serilog.Core;
 
 namespace Palindromes;
 
@@ -59,6 +59,11 @@ public class SinglePalindromes
 
         while (!isNextPalindrome)
         {
+            if (i == uint.MaxValue)
+            {
+                throw new System.OverflowException();
+            }
+
             i++;
             isNextPalindrome = IsPalindrome(i);
         }
@@ -111,6 +116,13 @@ public class SinglePalindromes
     public uint GetNthPalindrome(int position)
     {
         logger.Information("Starting GetNthPalindrome for {position}", position);
+
+        if (position > 142946)
+        {
+            var message = $"The maximum palindrome that this program is able to calculate is 4294884924 at 142946th position";
+            logger.Error("The maximum palindrome that this program is able to calculate is {nthPalindrome} at {order}th position", 4294884924, 142946);
+            throw new ArgumentOutOfRangeException(message);
+        }
 
         var nthPalindrome = 1u;
         var order = 1;
