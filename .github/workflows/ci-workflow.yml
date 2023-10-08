@@ -28,3 +28,9 @@ jobs:
       run: dotnet test ConsoleAppTests/ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="ConsoleAppTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude="[Palindromes]*"
     - name: 'Run tests for Palindromes'
       run: dotnet test PalindromesTests/PalindromesTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="ConsoleAppTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude=""
+    - name: 'ReportGenerator for ConsoleApp'
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
+      with:
+        reports: 'ConsoleAppTests/coverage.opencover.xml'
+        targetdir: 'coveragereport'
+  
