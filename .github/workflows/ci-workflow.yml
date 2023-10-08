@@ -25,4 +25,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: 'Test complete'
-      run: dotnet test '**/ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="\ConsoleAppTests\coverage.opencover.xml" -p:CoverletOutputFormat:opencover -p:ThresholdType=Branch -p:Threshold=80'
+      run: dotnet test 'ConsoleAppTests\ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="\ConsoleAppTests\coverage.opencover.xml" -p:CoverletOutputFormat:opencover -p:ThresholdType=Branch -p:Threshold=80'
