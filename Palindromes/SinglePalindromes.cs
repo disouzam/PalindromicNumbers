@@ -15,7 +15,7 @@ public class SinglePalindromes
 
     public SinglePalindromes(ILogger logger)
     {
-        this.logger = logger;
+        this.logger = logger.ForContext<SinglePalindromes>();
     }
 
     public bool IsPalindrome(uint number)

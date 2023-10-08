@@ -5,7 +5,9 @@
       "Default": "Information",
       "Override": {
         "Microsoft": "Warning",
-        "System": "Warning"
+        "System": "Warning",
+        "ConsoleApp": "Fatal",
+        "Palindromes": "Fatal"
       }
     },
     "Enrich": [
@@ -18,6 +20,7 @@
       {
         "Name": "Console",
         "Args": {
+          "restrictedToMinimumLevel": "Information",
           "outputTemplate": "[{Timestamp:u} {Level:u3}] - {Message}{NewLine:1}{Exception:1}"
         }
       },

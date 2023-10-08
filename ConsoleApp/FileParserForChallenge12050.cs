@@ -14,7 +14,7 @@ public class FileParserForChallenge12050
 
     public FileParserForChallenge12050(ILogger logger)
     {
-        this.logger = logger;
+        this.logger = logger.ForContext<FileParserForChallenge12050>();
     }
 
     private readonly List<int> listOfInputs = new List<int>();
