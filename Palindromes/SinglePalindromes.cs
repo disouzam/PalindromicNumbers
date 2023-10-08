@@ -157,13 +157,13 @@ public class SinglePalindromes
                 order++;
                 nthPalindrome = GetLowestNextPalindrome(nthPalindrome);
             }
-
-            logger.Information("Finished GetNthPalindrome for {position} - Palindrome is: {palindrome}", position, nthPalindrome);
-            return nthPalindrome;
         }
-        finally
+        catch
         {
             logger.Error("The maximum palindrome that this program is able to calculate is {nthPalindrome} at {order}th position", nthPalindrome, --order);
         }
+
+        logger.Information("Finished GetNthPalindrome for {position} - Palindrome is: {palindrome}", position, nthPalindrome);
+        return nthPalindrome;
     }
 }
