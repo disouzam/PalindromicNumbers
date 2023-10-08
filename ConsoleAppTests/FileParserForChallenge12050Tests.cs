@@ -20,7 +20,7 @@ public class FileParserForChallenge12050Tests
     private const string samplesFolder = "Samples";
     private const string resultsFolder = "TestResults";
 
-    private readonly string[] sampleFileNames = new[] { "SampleInput.txt", "SampleInput2.txt", "SampleInput3.txt" };
+    private readonly string[] sampleFileNames = new[] { "SampleInput.txt", "SampleInput2.txt", "SampleInput3.txt", "SampleInput5.txt" , "SampleInput8.txt" };
     private readonly string[] resultFileNames = new[] { "Output1.txt", "Output2.txt", "Output3.txt" };
 
     private readonly Logger logger = new LoggerConfiguration().CreateLogger();
@@ -123,6 +123,48 @@ public class FileParserForChallenge12050Tests
             fileParser.ListOfOutputs[0].Should().Be(11);
             fileParser.ListOfOutputs[1].Should().Be(111);
             fileParser.ListOfOutputs[2].Should().Be(66);
+        }
+    }
+
+    [Fact]
+    public void CheckFillListOfOutputsBehaviorWithAnOverflow()
+    {
+        // Arrange
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[3]);
+        var fileParser = new FileParserForChallenge12050(logger);
+
+        // Act
+        fileParser.ReadFile(filePath);
+        fileParser.FillListOfOutputs();
+
+        // Assert
+        using (new AssertionScope())
+        {
+            fileParser.ListOfOutputs.Count.Should().Be(1);
+            fileParser.ListOfOutputs[0].Should().Be(0);
+        }
+
+        // Arrange for scenario with multiple failed inputs
+        filePath = Path.Combine(Directory.GetCurrentDirectory(), samplesFolder, sampleFileNames[4]);
+        fileParser = new FileParserForChallenge12050(logger);
+
+        // Act for scenario with multiple failed inputs
+        fileParser.ReadFile(filePath);
+        fileParser.FillListOfOutputs();
+
+        // Assert for scenario with multiple failed inputs
+        using (new AssertionScope())
+        {
+            fileParser.ListOfOutputs.Count.Should().Be(9);
+            fileParser.ListOfOutputs[0].Should().Be(1);
+            fileParser.ListOfOutputs[1].Should().Be(919);
+            fileParser.ListOfOutputs[2].Should().Be(0);
+            fileParser.ListOfOutputs[3].Should().Be(0);
+            fileParser.ListOfOutputs[4].Should().Be(0);
+            fileParser.ListOfOutputs[5].Should().Be(0);
+            fileParser.ListOfOutputs[6].Should().Be(0);
+            fileParser.ListOfOutputs[7].Should().Be(90109);
+            fileParser.ListOfOutputs[8].Should().Be(11);
         }
     }
 

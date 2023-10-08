@@ -79,6 +79,8 @@ public class FileParserForChallenge12050
             catch 
             {
                 logger.Error("{methodName} was not able to get the corresponding {input}th", nameof(FillListOfOutputs), input);
+                // Zero will be added as a marker that calculation of Palindrome was not possible for that input and avoid misaligning input and output
+                listOfOutputs.Add(0);
             }
         }
     }
