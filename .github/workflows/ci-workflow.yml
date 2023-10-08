@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  buildAndTestjob:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -24,5 +24,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: 'Test complete'
+    - name: 'Run tests for ConsoleApp'
       run: dotnet test ConsoleAppTests/ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="ConsoleAppTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude="[Palindromes]*"
+    - name: 'Run tests for Palindromes'
+      run: dotnet test PalindromesTests/PalindromesTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="ConsoleAppTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude=""
