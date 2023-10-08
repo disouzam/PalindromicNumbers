@@ -30,6 +30,8 @@ public static class Program
 
         Console.WriteLine("Challenge 12050 - Palindrome Number - UVA Online Judge");
 
+        logger.Debug("List of arguments inject: {args}", args);
+
         if (args.Length > 0 && File.Exists(args[0]))
         {
             var fileParser = new FileParserForChallenge12050(logger);
@@ -38,14 +40,20 @@ public static class Program
             if (args.Length == 2)
             {
                 Console.WriteLine($"Results will be written to file {args[1]}");
+                logger.Verbose("Results will be written to file {fileName}", args[1]);
                 fileParser.WriteOutputFile(args[1]);
             }
             else
             {
                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Output", "Output.txt");
                 Console.WriteLine($"Results will be written to file {filePath}");
+                logger.Verbose("Results will be written to file {fileName}", filePath);
                 fileParser.WriteOutputFile(filePath);
             }
+        }
+        else
+        {
+            logger.Error("No file was processed.");
         }
 
         logger.Information("Console App Finishing...");
