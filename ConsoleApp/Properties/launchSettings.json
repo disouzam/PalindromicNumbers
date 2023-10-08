@@ -2,7 +2,7 @@
     "profiles": {
         "ConsoleApp": {
             "commandName": "Project",
-            "commandLineArgs": "\"D:\\GitHubRepos\\Palindromes\\ConsoleAppTests\\Samples\\SampleInput7.txt\"\r\n\"D:\\GitHubRepos\\Palindromes\\ConsoleApp\\SampleOutputs\\Output.txt\"\r\n"
+            "commandLineArgs": "\"D:\\GitHubRepos\\Palindromes\\ConsoleAppTests\\Samples\\SampleInput8.txt\"\r\n\"D:\\GitHubRepos\\Palindromes\\ConsoleApp\\SampleOutputs\\Output.txt\"\r\n"
         }
     }
 }
