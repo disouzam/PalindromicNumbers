@@ -14,11 +14,11 @@ public static class Program
 
     static void Main(string[] args)
     {
-        var builder = new ConfigurationBuilder();
-        Startup.BuildConfig(builder);
+        var configurationBuilder = new ConfigurationBuilder();
+        Startup.BuildConfig(configurationBuilder);
 
         Log.Logger = new LoggerConfiguration()
-                         .ReadFrom.Configuration(builder.Build())                         
+                         .ReadFrom.Configuration(configurationBuilder.Build())                         
                          .CreateLogger();
 
         _ = Host.CreateDefaultBuilder()
