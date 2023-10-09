@@ -47,6 +47,7 @@ jobs:
       run: |
         pwd
         dir -1
+        find . -type f
     - name: 'ReportGenerator for ConsoleApp'
       uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
       with:
