@@ -66,8 +66,8 @@ jobs:
     - name: 'ReportGenerator for Palindromes'
       uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
       with:
-        reports: 'ConsoleAppTests/coverage.opencover.xml'
-        targetdir: 'ConsoleAppTests/coveragereport'
+        reports: 'PalindromesTests/coverage.opencover.xml'
+        targetdir: 'PalindromesTests/coveragereport'
         reporttypes: Html;Badges;Cobertura;MarkdownSummary
     - name: Publish coverage summary for Palindromes
       uses: marocchino/sticky-pull-request-comment@v2
