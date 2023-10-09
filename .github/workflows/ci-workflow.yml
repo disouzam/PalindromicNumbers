@@ -31,21 +31,27 @@ jobs:
     - name: 'Run tests for ConsoleApp'
       run: dotnet test ConsoleAppTests/ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="ConsoleAppTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude="[Palindromes]*"
     - name: 'Run tests for Palindromes'
-      run: dotnet test PalindromesTests/PalindromesTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="ConsoleAppTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude=""
+      run: dotnet test PalindromesTests/PalindromesTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="PalindromesTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude=""
     - name: Display current directory content
       shell: bash
-      run: pwd
+      run: |
+        pwd
+        dir -1
     - name: SwitchDirectories
       shell: bash
-      run: cd ..
+      run: |
+        cd ..
+        dir -1
     - name: Display current directory content after switching
       shell: bash
-      run: pwd
+      run: |
+        pwd
+        dir -1
     - name: 'ReportGenerator for ConsoleApp'
       uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
       with:
-        reports: 'ConsoleAppTests/coverage.opencover.xml'
-        targetdir: 'ConsoleAppTests/coveragereport'
+        reports: './ConsoleAppTests/coverage.opencover.xml'
+        targetdir: './ConsoleAppTests/coveragereport'
         reporttypes: Html;Badges;Cobertura;MarkdownSummary
     - name: Publish coverage summary
       uses: marocchino/sticky-pull-request-comment@v2
