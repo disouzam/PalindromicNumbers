@@ -54,10 +54,10 @@ jobs:
         reports: 'ConsoleAppTests/coverage.opencover.xml'
         targetdir: 'ConsoleAppTests/coveragereport'
         reporttypes: Html;Badges;Cobertura;MarkdownSummary
-    - name: Publish coverage summary
+    - name: Publish coverage summary for ConsoleAppTests
       uses: marocchino/sticky-pull-request-comment@v2
       with:
-        path: coveragereport/Summary.md
+        path: ConsoleAppTests/coveragereport/Summary.md
     - name: Upload coverage report artifact
       uses: actions/upload-artifact@v2.2.3
       with:
@@ -72,7 +72,7 @@ jobs:
     - name: Publish coverage summary for Palindromes
       uses: marocchino/sticky-pull-request-comment@v2
       with:
-        path: coveragereport/Summary.md
+        path: PalindromesTests/coveragereport/Summary.md
     - name: Upload coverage report artifact for Palindromes
       uses: actions/upload-artifact@v2.2.3
       with:
