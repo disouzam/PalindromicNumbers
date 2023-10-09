@@ -29,9 +29,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: 'Run tests for ConsoleApp'
-      run: dotnet test ConsoleAppTests/ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="ConsoleAppTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude="[Palindromes]*"
+      run: dotnet test ConsoleAppTests/ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude="[Palindromes]*"
     - name: 'Run tests for Palindromes'
-      run: dotnet test PalindromesTests/PalindromesTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="PalindromesTests/coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude=""
+      run: dotnet test PalindromesTests/PalindromesTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude=""
     - name: Display current directory content
       shell: bash
       run: |
