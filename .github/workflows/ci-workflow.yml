@@ -61,6 +61,21 @@ jobs:
     - name: Upload coverage report artifact
       uses: actions/upload-artifact@v2.2.3
       with:
-        name: CoverageReport # Artifact name        
+        name: CoverageReportForConsoleApp # Artifact name        
         path: ConsoleAppTests/coveragereport # Directory containing files to upload
+    - name: 'ReportGenerator for Palindromes'
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
+      with:
+        reports: 'ConsoleAppTests/coverage.opencover.xml'
+        targetdir: 'ConsoleAppTests/coveragereport'
+        reporttypes: Html;Badges;Cobertura;MarkdownSummary
+    - name: Publish coverage summary for Palindromes
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        path: coveragereport/Summary.md
+    - name: Upload coverage report artifact for Palindromes
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: CoverageReportForPalindromes # Artifact name        
+        path: PalindromesTests/coveragereport # Directory containing files to upload
   
