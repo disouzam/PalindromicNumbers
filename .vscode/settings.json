@@ -23,5 +23,8 @@
     "files.autoSave": "onWindowChange",
     "editor.stickyTabStops": true,
     "editor.detectIndentation": false,
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "github-actions.workflows.pinned.workflows": [
+        ".github/workflows/ci-workflow.yml"
+    ]
 }

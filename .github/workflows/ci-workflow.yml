@@ -2,6 +2,9 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 name: 'Build and Test All projects'
 
+env:
+  ACTIONS_RUNNER_DEBUG : true
+
 on:
   push:
     branches: [ "main" ]
@@ -9,12 +12,14 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-
 jobs:
-  build:
-
+  buildAndTestjob:
+    permissions: 
+      pull-requests: write 
     runs-on: ubuntu-latest
-
+    defaults:
+        run:
+          working-directory: .
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -25,5 +30,56 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: 'Run tests for ConsoleApp'
+      run: dotnet test ConsoleAppTests/ConsoleAppTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude="[Palindromes]*"
+    - name: 'Run tests for Palindromes'
+      run: dotnet test PalindromesTests/PalindromesTests.csproj --configuration:Release -p:CollectCoverage=true -p:CoverletOutput="coverage.opencover.xml" -p:CoverletOutputFormat=opencover -p:ThresholdType=Branch -p:Threshold=63 -p:Exclude=""
+    - name: Display current directory content
+      shell: bash
+      run: |
+        pwd
+        dir -1
+    - name: SwitchDirectories
+      shell: bash
+      run: |
+        cd ..
+        dir -1
+    - name: Display current directory content after switching
+      shell: bash
+      run: |
+        pwd
+        dir -1
+        find . -type f
+    - name: 'ReportGenerator for ConsoleApp'
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
+      with:
+        reports: 'ConsoleAppTests/coverage.opencover.xml'
+        targetdir: 'ConsoleAppTests/coveragereport'
+        reporttypes: Html;Badges;Cobertura;MarkdownSummary
+    - name: Publish coverage summary for ConsoleAppTests
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        header: Summary for Console App
+        path: ConsoleAppTests/coveragereport/Summary.md
+    - name: Upload coverage report artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: CoverageReportForConsoleApp # Artifact name        
+        path: ConsoleAppTests/coveragereport # Directory containing files to upload
+    - name: 'ReportGenerator for Palindromes'
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
+      with:
+        reports: 'PalindromesTests/coverage.opencover.xml'
+        targetdir: 'PalindromesTests/coveragereport'
+        reporttypes: Html;Badges;Cobertura;MarkdownSummary
+    - name: Publish coverage summary for Palindromes
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        header: Summary for Palindromes Library
+        path: PalindromesTests/coveragereport/Summary.md
+    - name: Upload coverage report artifact for Palindromes
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: CoverageReportForPalindromes # Artifact name        
+        path: PalindromesTests/coveragereport # Directory containing files to upload
+  
