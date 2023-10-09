@@ -50,8 +50,8 @@ jobs:
     - name: 'ReportGenerator for ConsoleApp'
       uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
       with:
-        reports: './ConsoleAppTests/coverage.opencover.xml'
-        targetdir: './ConsoleAppTests/coveragereport'
+        reports: 'ConsoleAppTests/coverage.opencover.xml'
+        targetdir: 'ConsoleAppTests/coveragereport'
         reporttypes: Html;Badges;Cobertura;MarkdownSummary
     - name: Publish coverage summary
       uses: marocchino/sticky-pull-request-comment@v2
@@ -61,5 +61,5 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         name: CoverageReport # Artifact name        
-        path: coveragereport # Directory containing files to upload
+        path: ConsoleAppTests/coveragereport # Directory containing files to upload
   
